@@ -64,6 +64,11 @@ export default function Home() {
           margin: '0 auto',
         }}
       >
+        <p>
+          <a href="https://github.com/Jinksi/product-describer-gpt/">
+            Source on GitHub
+          </a>
+        </p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Product Title</label>
           <input
