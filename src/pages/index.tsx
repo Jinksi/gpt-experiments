@@ -57,10 +57,6 @@ export default function Home() {
         <title>✨ Product Describer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-        />
       </Head>
       <main
         style={{
