@@ -75,25 +75,30 @@ export default function Home() {
             name="title"
             defaultValue="Fluffy Rainbow Unicorn Socks"
           />
+
           <label htmlFor="description">Product attributes</label>
           <textarea
             name="description"
             defaultValue={`colorful\ncomfortable\nwarm\nfuzzy\nmagical\n`}
           />
 
-          <label htmlFor="tone">Desired tone</label>
-          <p>
-            Try luxury, philosophical, professional, exclusive or silly and
-            humorous.
-          </p>
+          <label htmlFor="tone">
+            Desired tone{' '}
+            <em>
+              (e.g luxury, philosophical, professional, exclusive or silly and
+              humorous)
+            </em>
+          </label>
           <input
             type="text"
             name="tone"
             defaultValue="Friendly and conversational"
           />
 
-          <label htmlFor="targetAudience">Target Audience</label>
-          <p>Try Fathers, Children, Doctors or Company Executives</p>
+          <label htmlFor="targetAudience">
+            Target Audience{' '}
+            <em>(e.g. fathers, children, doctors or company executives)</em>
+          </label>
           <input
             type="text"
             name="targetAudience"
