@@ -39,7 +39,7 @@ export function WCPayQAForm() {
     const question = data.get('question')?.toString() || ''
     const country = data.get('country')?.toString() || ''
     const currency = data.get('currency')?.toString() || ''
-    const withinNewAccountPeriod = !!data.get('withinNewAccountPeriod')
+    const completed_waiting_period = !!data.get('completed_waiting_period')
     const depositDestination: string | undefined =
       data.get('depositDestination')?.toString() || ''
 
@@ -49,7 +49,9 @@ export function WCPayQAForm() {
         country,
         currency,
         depositDestination,
-        withinNewAccountPeriod,
+        deposits: {
+          completed_waiting_period,
+        },
       })
 
       setOutput(response.answer)
@@ -74,9 +76,13 @@ export function WCPayQAForm() {
           <input type="text" name="currency" defaultValue="AUD" />
 
           <p>
-            <label htmlFor="withinNewAccountPeriod">
-              Within new account waiting period?{' '}
-              <input type="checkbox" name="withinNewAccountPeriod" />
+            <label htmlFor="completed_waiting_period">
+              Completed new account waiting period?{' '}
+              <input
+                type="checkbox"
+                name="completed_waiting_period"
+                defaultChecked
+              />
             </label>
           </p>
 

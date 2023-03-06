@@ -12,14 +12,14 @@ async function fetchWCPayQA({
   question,
   store = WCPayDocsStore,
   country,
-  withinNewAccountPeriod,
+  deposits,
   currency,
   depositDestination,
 }: WCPayQARequestProps): Promise<WCPayQAResponseProps> {
   /* Initialize the LLM to use to answer the question */
   const model = new OpenAI({
     modelName: 'gpt-3.5-turbo',
-    temperature: 0.5,
+    temperature: 0.3, // Low temperature results in less creativity, more factual
   })
 
   /* Load the vectorstore */
@@ -35,10 +35,10 @@ async function fetchWCPayQA({
   Format your answer with multiple newline characters where appropriate.
   Your first merchant has a woocommerce payments account with the following attributes:
   Account country: ${country || 'unknown'}.
-  Account within the new merchant account period: ${
-    withinNewAccountPeriod === undefined
+  Account has completed the new merchant account waiting period: ${
+    deposits?.completed_waiting_period === undefined
       ? 'unknown'
-      : withinNewAccountPeriod
+      : deposits?.completed_waiting_period
       ? 'yes'
       : 'no'
   }.

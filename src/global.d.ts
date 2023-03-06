@@ -9,15 +9,28 @@ type ProductDescriptionResponseProps = {
   description: string
 }
 
-type WCPayMerchantProps = {}
-
 type WCPayQARequestProps = {
   question: string
   store?: string
   country?: string
-  withinNewAccountPeriod?: boolean
   currency?: string
+  supportedCurrencies?: string[]
+  locale?: string
+  isLive?: boolean
+  hasPendingRequirements?: boolean
+  hasOverdueRequirements?: boolean
   depositDestination?: string
+  instantDepositsEligible?: boolean
+  deposits?: {
+    status?: string
+    interval?: string
+    weekly_anchor?: string
+    monthly_anchor?: string
+    delay_days?: number
+    completed_waiting_period?: boolean
+  }
+  has_active_loan?: boolean
+  has_previous_loans?: boolean
 }
 
 type WCPayQAResponseProps = {
