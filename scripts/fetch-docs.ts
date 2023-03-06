@@ -10,15 +10,46 @@ dotenv.config({ path: '.env.local' })
 
 const urls = [
   'https://woocommerce.com/document/woocommerce-payments/',
+  'https://woocommerce.com/document/woocommerce-payments/deposits/',
   'https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/',
   `https://woocommerce.com/document/woocommerce-payments/deposits/instant-deposits/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/scheduled-deposit-vs-instant-deposit/`,
+  `https://woocommerce.com/document/payments/instant-deposits/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/deposit-currencies/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-account-info/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-schedule/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-schedule/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/failed-deposit/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/why-deposits-suspended/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/deposits-and-payouts/`,
+  `https://woocommerce.com/document/woocommerce-payments/deposits/deposits-and-payouts/`,
+  `https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/`,
+  `https://woocommerce.com/document/woocommerce-payments/taxes/`,
+  `https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/`,
+  `https://woocommerce.com/document/woocommerce-payments/stripe-capital/`,
+  `https://woocommerce.com/document/woocommerce-payments/payment-methods/`,
+  `https://woocommerce.com/document/woocommerce-payments/our-policies/`,
+  `https://woocommerce.com/document/woocommerce-payments/in-person-payments/`,
+  `https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/`,
+  `https://woocommerce.com/document/woocommerce-payments/fees-and-debits/`,
+  `https://woocommerce.com/document/woocommerce-payments/customization-and-translation/`,
+  `https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/`,
+  `https://woocommerce.com/document/payments/faq/scheduled-deposit-vs-instant-deposit/`,
+  `https://woocommerce.com/document/woocommerce-payments/currencies/`,
+  `https://woocommerce.com/document/woocommerce-payments/account-management/`,
+  `https://woocommerce.com/document/payments/settings-guide/`,
+  `https://woocommerce.com/document/payments/managing-money/`,
 ]
+
+const uniqueUrls = urls.filter((url, index) => urls.indexOf(url) === index)
 
 async function run() {
   const posts = []
   const metadatas = []
 
-  for (const url of urls) {
+  for (const url of uniqueUrls) {
     const response = await fetch(url)
     const html = await response.text()
     const $ = cheerio.load(html)
