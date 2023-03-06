@@ -1,11 +1,12 @@
+import path from 'path'
 import type { NextApiRequest, NextApiResponse } from 'next'
-
 import { OpenAI } from 'langchain/llms'
 import { ChatVectorDBQAChain } from 'langchain/chains'
 import { HNSWLib } from 'langchain/vectorstores'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
 
-const WCPayDocsStore = `public/vectorstores/wcpay-docs`
+const WCPayDocsStore = path.resolve('./public', `vectorstores/wcpay-docs`)
+console.log(WCPayDocsStore)
 
 async function fetchWCPayQA({
   question,
