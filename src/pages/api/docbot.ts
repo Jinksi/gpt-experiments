@@ -5,7 +5,7 @@ import { ChatVectorDBQAChain } from 'langchain/chains'
 import { HNSWLib } from 'langchain/vectorstores'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
 
-const WCPayDocsStore = 'vectorstores/wcpay-docs'
+const WCPayDocsStore = `public/vectorstores/wcpay-docs`
 
 async function fetchWCPayQA({
   question,
