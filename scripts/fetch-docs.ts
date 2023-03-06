@@ -28,6 +28,7 @@ const urls = [
   `https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/`,
   `https://woocommerce.com/document/woocommerce-payments/taxes/`,
   `https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/`,
+  `https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/subscriptions-basics/`,
   `https://woocommerce.com/document/woocommerce-payments/stripe-capital/`,
   `https://woocommerce.com/document/woocommerce-payments/payment-methods/`,
   `https://woocommerce.com/document/woocommerce-payments/our-policies/`,
