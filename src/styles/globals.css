@@ -5,3 +5,7 @@
 input {
   width: 100%;
 }
+
+.nav > * {
+  margin: 0 1rem 0 0;
+}

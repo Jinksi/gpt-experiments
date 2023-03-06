@@ -2,14 +2,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { OpenAIChat } from 'langchain/llms'
 
-const model = new OpenAIChat({ modelName: 'gpt-3.5-turbo' })
+const model = new OpenAIChat({ modelName: 'gpt-3.5-turbo', temperature: 0.9 })
 
 function getProductDescriptionPrompt({
   title,
   description,
   tone,
   targetAudience,
-}: ProductDescriptionRequest) {
+}: ProductDescriptionRequestProps) {
   let prompt = `
   I want you to act as a marketing content creator.
   You will need to create engaging and informative content for creating product descriptions on ecommerce websites.
@@ -27,9 +27,9 @@ function getProductDescriptionPrompt({
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductDescriptionResponse>
+  res: NextApiResponse<ProductDescriptionResponseProps>
 ) {
-  const body: ProductDescriptionRequest = req.body
+  const body: ProductDescriptionRequestProps = req.body
   let {
     title = 'Mega Rainbow Unicorn Onesie',
     description = 'Colorful, comfortable, warm, fuzzy and magical.',

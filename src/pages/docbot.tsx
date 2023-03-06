@@ -1,11 +1,11 @@
 import Layout from '@/components/Layout'
-import { ProductDescription } from '@/components/ProductDescription'
+import { WCPayQAForm } from '@/components/WCPayQA'
 
 export default function Home() {
   return (
     <>
       <Layout>
-        <ProductDescription />
+        <WCPayQAForm />
       </Layout>
     </>
   )
