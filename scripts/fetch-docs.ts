@@ -35,6 +35,7 @@ const urls = [
   `https://woocommerce.com/document/woocommerce-payments/in-person-payments/`,
   `https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/`,
   `https://woocommerce.com/document/woocommerce-payments/fees-and-debits/`,
+  `https://woocommerce.com/document/woocommerce-payments/fees-and-debits/account-showing-negative-balance/`,
   `https://woocommerce.com/document/woocommerce-payments/customization-and-translation/`,
   `https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/`,
   `https://woocommerce.com/document/payments/faq/scheduled-deposit-vs-instant-deposit/`,
