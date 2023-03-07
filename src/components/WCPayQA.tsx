@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRemark } from 'react-remark'
 
 const exampleQuestions = [
   `How long does it take to get paid?`,
@@ -23,7 +24,7 @@ async function fetchQuestionAnswer(props: WCPayQARequestProps) {
 }
 
 export function WCPayQAForm() {
-  const [output, setOutput] = useState<string>('')
+  const [outputMarkdown, setOutput] = useRemark()
   const [sources, setSources] = useState<string[]>([])
   const [error, setError] = useState<string | undefined>()
   const [loadingState, setLoadingState] = useState<'loading' | 'idle'>('idle')
@@ -70,8 +71,8 @@ export function WCPayQAForm() {
       })
 
       const output =
-        response.answer + `\n\nSource:\n${response.sources.join('\n')}`
-
+        response.answer + `\n\nSource:  \n${response.sources.join('  \n')}`
+      console.log(response)
       setOutput(output)
       setSources(response.sources)
     } catch (error) {
@@ -85,6 +86,25 @@ export function WCPayQAForm() {
     <div>
       <h2>Personalised WCPay QA Bot</h2>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="question">Question</label>
+        <input
+          type="text"
+          name="question"
+          defaultValue={exampleQuestions[0]}
+          placeholder={exampleQuestions[0]}
+        />
+        <button type="submit" disabled={loadingState === 'loading'}>
+          Ask
+        </button>
+
+        <fieldset>
+          <legend>Answer</legend>
+          <div>
+            {loadingState === 'loading' && <p>Thinking...</p>}
+            {outputMarkdown}
+          </div>
+        </fieldset>
+
         <fieldset disabled={loadingState === 'loading'}>
           <legend>Account details</legend>
           <label htmlFor="country">Country</label>
@@ -189,35 +209,9 @@ export function WCPayQAForm() {
             <input type="checkbox" name="instantDepositsEligible" />
           </label>
         </fieldset>
-
-        <label htmlFor="question">Question</label>
-        <input
-          type="text"
-          name="question"
-          defaultValue={exampleQuestions[0]}
-          placeholder={
-            exampleQuestions[
-              Math.floor(Math.random() * exampleQuestions.length)
-            ]
-          }
-        />
-
-        <button type="submit" disabled={loadingState === 'loading'}>
-          Ask
-        </button>
       </form>
 
-      <hr />
-
-      <h3>Answer</h3>
-      <textarea
-        name="output"
-        value={output}
-        readOnly
-        style={{
-          minHeight: '20rem',
-        }}
-      />
+      <br />
 
       {error && (
         <p

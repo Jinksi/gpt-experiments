@@ -73,8 +73,10 @@ async function generateAnswer({
   const questionWithContext = `
   You are a helpful WooCommerce Payments support AI who will answer questions for merchants.
   Translate your response into the account's language.
+  Include links to documentation where appropriate.
+  Format your response using markdown.
   Today is ${new Date().toLocaleDateString(locale)}.
-  Your first merchant has a woocommerce payments account with the following attributes that you already know about:
+  The merchant has a woocommerce payments account with the following attributes that you have access to:
   Account country: ${country || 'unknown'}.
   Account language: ${locale ? getLanguageFromLocale(locale) : 'unknown'}.
   Account currency: ${currency || 'unknown'}.
@@ -94,7 +96,7 @@ async function generateAnswer({
   Deposits schedule (when the available balance deposit will be dispatched to the merchant's bank): ${getDepositsScheduleString(
     deposits
   )}.
-  Deposits pending period (the number of days incoming transactions will be held before being included in the available balance): ${
+  Deposits pending period (the number of days payments received will be held before being included in the available balance): ${
     deposits?.delay_days || 'unknown'
   } days.
   ${instantDepositsEligible ? 'Account is eligible for instant deposits.' : ''}
@@ -102,7 +104,7 @@ async function generateAnswer({
     depositDestination || 'unknown'
   }.
 
-  Their question is: ${question}
+  The merchant's question is: ${question}
   `.replace(/\n\s+/g, ' ')
 
   const modelResponse = await chain.call({
