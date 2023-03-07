@@ -6,13 +6,53 @@ import { HNSWLib } from 'langchain/vectorstores'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
 
 const WCPayDocsStore = path.resolve('./public', `vectorstores/wcpay-docs`)
-console.log(WCPayDocsStore)
 
-async function fetchWCPayQA({
+function getTernaryString(value: boolean | undefined) {
+  if (value === undefined) {
+    return 'unknown'
+  }
+  return value ? 'yes' : 'no'
+}
+
+function getLanguageFromLocale(locale: string) {
+  const formattedLocale = locale.substring(0, 2).toLowerCase()
+  try {
+    return new Intl.Locale(formattedLocale).language
+  } catch (e) {
+    return 'unknown'
+  }
+}
+
+function getDepositsScheduleString(
+  depositsState: WCPayQARequestProps['deposits']
+) {
+  if (depositsState?.interval === 'weekly') {
+    return `weekly on ${depositsState?.weekly_anchor}`
+  }
+  if (depositsState?.interval === 'monthly') {
+    if (depositsState?.monthly_anchor === 31) {
+      return 'monthly on the last day of month'
+    }
+    return `monthly on day of month ${
+      depositsState?.monthly_anchor || 'unknown'
+    }`
+  }
+  return depositsState?.interval || 'unknown'
+}
+
+async function generateAnswer({
   question,
   store = WCPayDocsStore,
+  locale,
   country,
   deposits,
+  has_active_loan,
+  has_previous_loans,
+  isLive,
+  supportedCurrencies,
+  instantDepositsEligible,
+  hasOverdueRequirements,
+  hasPendingRequirements,
   currency,
   depositDestination,
 }: WCPayQARequestProps): Promise<WCPayQAResponseProps> {
@@ -31,26 +71,41 @@ async function fetchWCPayQA({
 
   /* Ask it a question */
   const questionWithContext = `
-  Act as a friendly WooCommerce Payments expert support agent who answer questions for merchants.
-  Format your answer with multiple newline characters where appropriate.
-  Your first merchant has a woocommerce payments account with the following attributes:
+  You are a helpful WooCommerce Payments support AI who will answer questions for merchants.
+  Translate your response into the account's language.
+  Today is ${new Date().toLocaleDateString(locale)}.
+  Your first merchant has a woocommerce payments account with the following attributes that you already know about:
   Account country: ${country || 'unknown'}.
-  Account has completed the new merchant account waiting period: ${
-    deposits?.completed_waiting_period === undefined
-      ? 'unknown'
-      : deposits?.completed_waiting_period
-      ? 'yes'
-      : 'no'
-  }.
+  Account language: ${locale ? getLanguageFromLocale(locale) : 'unknown'}.
   Account currency: ${currency || 'unknown'}.
+  Currencies accepted by this account: ${
+    supportedCurrencies?.join(', ') || 'unknown'
+  }.
+  Account is a live account (not a test account): ${getTernaryString(isLive)}.
+  Account has an active Capital loan: ${getTernaryString(has_active_loan)}.
+  Account has had previous Capital loans: ${getTernaryString(
+    has_previous_loans
+  )}.
+  Account has overdue requirements: ${getTernaryString(hasOverdueRequirements)}.
+  Account has pending requirements: ${getTernaryString(hasPendingRequirements)}.
+  Account has completed the new account waiting period: ${getTernaryString(
+    deposits?.completed_waiting_period
+  )}.
+  Deposits schedule (when the available balance deposit will be dispatched to the merchant's bank): ${getDepositsScheduleString(
+    deposits
+  )}.
+  Deposits pending period (the number of days incoming transactions will be held before being included in the available balance): ${
+    deposits?.delay_days || 'unknown'
+  } days.
+  ${instantDepositsEligible ? 'Account is eligible for instant deposits.' : ''}
   Account deposits received via bank account or debit card: ${
     depositDestination || 'unknown'
   }.
 
   Their question is: ${question}
-  `
+  `.replace(/\n\s+/g, ' ')
 
-  const res = await chain.call({
+  const modelResponse = await chain.call({
     question: questionWithContext,
     chat_history: [],
   })
@@ -62,7 +117,8 @@ async function fetchWCPayQA({
     }
   }
 
-  const sources: string[] = res.sourceDocuments.reduce(
+  // Reduce the source documents to an array of unique URLs.
+  const sources: string[] = modelResponse.sourceDocuments.reduce(
     (acc: string[], sourceDocument: SourceDocument) => {
       const {
         metadata: { url },
@@ -74,7 +130,7 @@ async function fetchWCPayQA({
   )
 
   return {
-    answer: res.text.trim(),
+    answer: modelResponse.text.trim(),
     sources,
   }
 }
@@ -85,9 +141,7 @@ export default async function handler(
 ) {
   const body: WCPayQARequestProps = req.body
 
-  console.log(body)
-
-  const answer = await fetchWCPayQA({
+  const answer = await generateAnswer({
     ...body,
   })
 

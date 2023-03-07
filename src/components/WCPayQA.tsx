@@ -36,25 +36,43 @@ export function WCPayQAForm() {
     setLoadingState('loading')
 
     const data = new FormData(event.currentTarget)
-    const question = data.get('question')?.toString() || ''
-    const country = data.get('country')?.toString() || ''
-    const currency = data.get('currency')?.toString() || ''
-    const completed_waiting_period = !!data.get('completed_waiting_period')
-    const depositDestination: string | undefined =
-      data.get('depositDestination')?.toString() || ''
 
     try {
       const response = await fetchQuestionAnswer({
-        question,
-        country,
-        currency,
-        depositDestination,
+        question: data.get('question')?.toString() || '',
+        country: data.get('country')?.toString() || '',
+        currency: data.get('currency')?.toString() || '',
+        supportedCurrencies:
+          data.get('supportedCurrencies')?.toString().split(',') || [],
+        locale: data.get('locale')?.toString() || '',
+        has_active_loan: !!data.get('has_active_loan'),
+        has_previous_loans: !!data.get('has_previous_loans'),
+        isLive: !!data.get('isLive'),
+        hasOverdueRequirements: !!data.get('hasOverdueRequirements'),
+        hasPendingRequirements: !!data.get('hasPendingRequirements'),
+        depositDestination: data.get('depositDestination')?.toString() || '',
+        instantDepositsEligible: !!data.get('instantDepositsEligible'),
         deposits: {
-          completed_waiting_period,
+          completed_waiting_period: !!data.get('completed_waiting_period'),
+          interval:
+            (data.get('depositInterval')?.toString() as
+              | 'daily'
+              | 'weekly'
+              | 'monthly'
+              | undefined) || 'daily',
+          delay_days: parseInt(data.get('delay_days')?.toString() || '', 10),
+          monthly_anchor: parseInt(
+            data.get('monthly_anchor')?.toString() || '',
+            10
+          ),
+          weekly_anchor: data.get('weekly_anchor')?.toString() || '',
         },
       })
 
-      setOutput(response.answer)
+      const output =
+        response.answer + `\n\nSource:\n${response.sources.join('\n')}`
+
+      setOutput(output)
       setSources(response.sources)
     } catch (error) {
       console.error(error)
@@ -72,10 +90,55 @@ export function WCPayQAForm() {
           <label htmlFor="country">Country</label>
           <input type="text" name="country" defaultValue="AU" />
 
+          <label htmlFor="locale">
+            Locale (try different locales to test i18n, e.g. ES, FR)
+          </label>
+          <input type="text" name="locale" defaultValue="EN" />
+
           <label htmlFor="currency">Currency</label>
           <input type="text" name="currency" defaultValue="AUD" />
 
-          <p>
+          <label htmlFor="supportedCurrencies">
+            Supported currencies (additional currencies accepted)
+          </label>
+          <input type="text" name="supportedCurrencies" defaultValue="" />
+
+          <div>
+            <label htmlFor="has_active_loan">
+              Has active Stripe Capital loan
+              <input type="checkbox" name="has_active_loan" defaultChecked />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="has_previous_loans">
+              Has previous Stripe Capital loans
+              <input type="checkbox" name="has_previous_loans" defaultChecked />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="isLive">
+              Is live account
+              <input type="checkbox" name="isLive" defaultChecked />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="hasOverdueRequirements">
+              Has overdue requirements
+              <input type="checkbox" name="hasOverdueRequirements" />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="hasPendingRequirements">
+              Has pending requirements
+              <input type="checkbox" name="hasPendingRequirements" />
+            </label>
+          </div>
+
+          <div>
             <label htmlFor="completed_waiting_period">
               Completed new account waiting period?{' '}
               <input
@@ -84,14 +147,47 @@ export function WCPayQAForm() {
                 defaultChecked
               />
             </label>
-          </p>
+          </div>
 
           <label htmlFor="depositDestination">Deposit destination</label>
-          <select name="depositDestination">
-            <option value="">Select the accounts deposit destination</option>
+          <select name="depositDestination" defaultValue={'Bank account'}>
             <option value="Bank account">Bank account</option>
             <option value="Debit card">Debit card</option>
           </select>
+
+          <label htmlFor="depositInterval">Deposit interval</label>
+          <select name="depositInterval" defaultValue={'weekly'}>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+
+          <label htmlFor="weekly_anchor">Deposit weekly anchor</label>
+          <select name="weekly_anchor" defaultValue={'tuesday'}>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+          </select>
+
+          <label htmlFor="monthly_anchor">Deposit monthly anchor</label>
+          <select name="monthly_anchor" defaultValue={14}>
+            {Array.from(Array(28).keys()).map((i) => (
+              <option key={`monthly_anchor_${i}`} value={i + 1}>
+                {i + 1}
+              </option>
+            ))}
+            <option value={31}>Last day of the month</option>
+          </select>
+
+          <label htmlFor="delay_days">Delay days (pending period)</label>
+          <input type="number" name="delay_days" defaultValue="2" />
+
+          <label htmlFor="instantDepositsEligible">
+            Instant deposits eligible
+            <input type="checkbox" name="instantDepositsEligible" />
+          </label>
         </fieldset>
 
         <label htmlFor="question">Question</label>
@@ -122,14 +218,6 @@ export function WCPayQAForm() {
           minHeight: '20rem',
         }}
       />
-      {sources.length > 0 && (
-        <div>
-          <h3>Sources</h3>
-          {sources.map((source) => (
-            <div key={source}>{source}</div>
-          ))}
-        </div>
-      )}
 
       {error && (
         <p

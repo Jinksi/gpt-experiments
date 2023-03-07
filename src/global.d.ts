@@ -23,9 +23,9 @@ type WCPayQARequestProps = {
   instantDepositsEligible?: boolean
   deposits?: {
     status?: string
-    interval?: string
+    interval?: 'daily' | 'weekly' | 'monthly' | 'manual'
     weekly_anchor?: string
-    monthly_anchor?: string
+    monthly_anchor?: number
     delay_days?: number
     completed_waiting_period?: boolean
   }
