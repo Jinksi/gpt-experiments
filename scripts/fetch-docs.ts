@@ -11,6 +11,7 @@ dotenv.config({ path: '.env.local' })
 
 const urls = [
   'https://woocommerce.com/document/woocommerce-payments/',
+  `https://woocommerce.com/document/woocommerce-payments/compatibility/countries/`,
   'https://woocommerce.com/document/woocommerce-payments/deposits/',
   'https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/',
   `https://woocommerce.com/document/woocommerce-payments/deposits/instant-deposits/`,
@@ -29,6 +30,10 @@ const urls = [
   `https://woocommerce.com/document/woocommerce-payments/stripe-capital/overview/`,
   `https://woocommerce.com/document/woocommerce-payments/stripe-capital/faq/`,
   `https://woocommerce.com/document/woocommerce-payments/payment-methods/`,
+  `https://woocommerce.com/document/woocommerce-payments/payment-methods/apple-pay/`,
+  `https://woocommerce.com/document/woocommerce-payments/payment-methods/google-pay/`,
+  `https://woocommerce.com/document/woocommerce-payments/payment-methods/link-by-stripe/`,
+  `https://woocommerce.com/document/woopay-merchant-documentation/`,
   `https://woocommerce.com/document/woocommerce-payments/our-policies/`,
   `https://woocommerce.com/document/woocommerce-payments/our-policies/reserves/`,
   `https://woocommerce.com/document/woocommerce-payments/our-policies/pci-compliance/`,
