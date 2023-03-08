@@ -1,6 +1,6 @@
 import path from 'path'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { OpenAI } from 'langchain/llms'
+import { OpenAIChat } from 'langchain/llms'
 import { ChatVectorDBQAChain } from 'langchain/chains'
 import { HNSWLib } from 'langchain/vectorstores'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
@@ -56,28 +56,17 @@ async function generateAnswer({
   currency,
   depositDestination,
 }: WCPayQARequestProps): Promise<WCPayQAResponseProps> {
-  /* Initialize the LLM to use to answer the question */
-  const model = new OpenAI({
-    modelName: 'gpt-3.5-turbo',
-    temperature: 0.3, // Low temperature results in less creativity, more factual
-  })
-
-  /* Load the vectorstore */
-  const vectorStore = await HNSWLib.load(store, new OpenAIEmbeddings())
-
-  /* Create the chain */
-  const chain = ChatVectorDBQAChain.fromLLM(model, vectorStore)
-  chain.returnSourceDocuments = true
-
-  /* Ask it a question */
-  const questionWithContext = `
-  You are a helpful WooCommerce Payments support AI who will answer questions for merchants.
+  // Prepare the prompt
+  const systemMessage = `
+  You are a friendly WooCommerce Payments support engineer who will answer questions for merchants.
   Translate your response into the account's language.
-  Include links to documentation where appropriate.
-  Format your response using markdown.
+  Format your response using markdown, including markdown-compatible links to documentation relevant to your answer where appropriate.
+  Don't make any assumptions about the merchant's account but tailor your answer to the account's attributes.
+  Always consider if the merchant is eligible for a feature before answering questions about it.
   Today is ${new Date().toLocaleDateString(locale)}.
-  The merchant has a woocommerce payments account with the following attributes that you have access to:
-  Account country: ${country || 'unknown'}.
+
+  The merchant you are talking to has a woocommerce payments account with the following attributes:
+  Account country code: ${country || 'unknown'}.
   Account language: ${locale ? getLanguageFromLocale(locale) : 'unknown'}.
   Account currency: ${currency || 'unknown'}.
   Currencies accepted by this account: ${
@@ -90,7 +79,7 @@ async function generateAnswer({
   )}.
   Account has overdue requirements: ${getTernaryString(hasOverdueRequirements)}.
   Account has pending requirements: ${getTernaryString(hasPendingRequirements)}.
-  Account has completed the new account waiting period: ${getTernaryString(
+  Account has completed the new account deposits waiting period: ${getTernaryString(
     deposits?.completed_waiting_period
   )}.
   Deposits schedule (when the available balance deposit will be dispatched to the merchant's bank): ${getDepositsScheduleString(
@@ -104,20 +93,29 @@ async function generateAnswer({
     depositDestination || 'unknown'
   }.
 
-  The merchant's question is: ${question}
+  This merchant asks you:
   `.replace(/\n\s+/g, ' ')
 
-  const modelResponse = await chain.call({
-    question: questionWithContext,
-    chat_history: [],
+  // Initialize the LLM to use to answer the question
+  const model = new OpenAIChat({
+    modelName: 'gpt-3.5-turbo',
+    temperature: 0.3, // Low temperature results in less creativity, more factual
+    // prefixMessages: [{ role: 'system', content: systemMessage }],
+    cache: false,
   })
 
-  type SourceDocument = {
-    pageContent: string
-    metadata: {
-      url: string
-    }
-  }
+  // Load the vectorstore
+  const vectorStore = await HNSWLib.load(store, new OpenAIEmbeddings())
+
+  // Create the chain
+  const chain = ChatVectorDBQAChain.fromLLM(model, vectorStore)
+  chain.returnSourceDocuments = true
+
+  // Ask it a question
+  const modelResponse = await chain.call({
+    question: systemMessage + `\n` + question,
+    chat_history: [],
+  })
 
   // Reduce the source documents to an array of unique URLs.
   const sources: string[] = modelResponse.sourceDocuments.reduce(
