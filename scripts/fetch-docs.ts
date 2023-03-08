@@ -108,12 +108,7 @@ async function run() {
 
   /* Create the vectorstore */
   console.log('Creating vectorstore')
-  const vectorStore = await HNSWLib.fromDocuments(
-    docs,
-    new OpenAIEmbeddings({
-      verbose: true,
-    })
-  )
+  const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings())
   vectorStore.save('public/vectorstores/wcpay-docs')
 
   console.log(`Vectorstore created`)
