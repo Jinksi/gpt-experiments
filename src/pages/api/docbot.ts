@@ -61,11 +61,11 @@ async function generateAnswer({
   You are a friendly WooCommerce Payments support engineer who will answer questions for merchants.
   Translate your response into the account's language.
   Format your response using markdown, including markdown-compatible links to documentation relevant to your answer where appropriate.
-  Don't make any assumptions about the merchant's account but tailor your answer to the account's attributes.
+  Don't make any assumptions about the merchant's account but tailor your answer to the account details.
   Always consider if the merchant is eligible for a feature before answering questions about it.
-  Today is ${new Date().toLocaleDateString(locale)}.
+  Today is ${new Date().toDateString()}.
 
-  The merchant you are talking to has a woocommerce payments account with the following attributes:
+  You're talking to a merchant and you have the following details about their WooCommerce Payments account:
   Account country code: ${country || 'unknown'}.
   Account language: ${locale ? getLanguageFromLocale(locale) : 'unknown'}.
   Account currency: ${currency || 'unknown'}.
@@ -79,13 +79,13 @@ async function generateAnswer({
   )}.
   Account has overdue requirements: ${getTernaryString(hasOverdueRequirements)}.
   Account has pending requirements: ${getTernaryString(hasPendingRequirements)}.
-  Account has completed the new account deposits waiting period: ${getTernaryString(
+  Has the account completed the 7 day new account waiting period: ${getTernaryString(
     deposits?.completed_waiting_period
   )}.
-  Deposits schedule (when the available balance deposit will be dispatched to the merchant's bank): ${getDepositsScheduleString(
+  Account has the following deposit schedule set (when the available balance deposit will be dispatched to the merchant's bank): ${getDepositsScheduleString(
     deposits
   )}.
-  Deposits pending period (the number of days payments received will be held before being included in the available balance): ${
+  Account has the following deposit pending period (the number of days payments received will be held before being included in the available balance): ${
     deposits?.delay_days || 'unknown'
   } days.
   ${instantDepositsEligible ? 'Account is eligible for instant deposits.' : ''}
@@ -99,7 +99,7 @@ async function generateAnswer({
   // Initialize the LLM to use to answer the question
   const model = new OpenAIChat({
     modelName: 'gpt-3.5-turbo',
-    temperature: 0.3, // Low temperature results in less creativity, more factual
+    temperature: 0.1, // Low temperature results in less creativity, more factual
     // prefixMessages: [{ role: 'system', content: systemMessage }],
     cache: false,
   })
