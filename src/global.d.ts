@@ -35,6 +35,7 @@ type WCPayQARequestProps = {
 
 type WCPayQAResponseProps = {
   answer: string
+  answerDuration: number
   sources: string[]
 }
 

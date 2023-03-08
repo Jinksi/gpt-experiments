@@ -112,10 +112,15 @@ async function generateAnswer({
   chain.returnSourceDocuments = true
 
   // Ask it a question
+  console.log(question)
+  const start = Date.now()
   const modelResponse = await chain.call({
     question: systemMessage + `\n` + question,
     chat_history: [],
   })
+  const end = Date.now()
+  const answerDuration = end - start
+  console.log(`Answered in ${answerDuration}ms`)
 
   // Reduce the source documents to an array of unique URLs.
   const sources: string[] = modelResponse.sourceDocuments.reduce(
@@ -132,6 +137,7 @@ async function generateAnswer({
   return {
     answer: modelResponse.text.trim(),
     sources,
+    answerDuration,
   }
 }
 
