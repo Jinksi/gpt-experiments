@@ -11,7 +11,7 @@ const exampleQuestions = [
 ]
 
 async function fetchQuestionAnswer(props: WCPayQARequestProps) {
-  const response = await fetch(`/api/docbot`, {
+  const response = await fetch(`/api/docbot-with-agent-tools`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(props),
