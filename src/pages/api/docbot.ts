@@ -63,6 +63,7 @@ async function generateAnswer({
   Format your response using markdown, including markdown-compatible links to documentation relevant to your answer where appropriate.
   Don't make any assumptions about the merchant's account but tailor your answer to the account details.
   Always consider if the merchant is eligible for a feature before answering questions about it.
+  If you don't know the answer, just say that you don't know, don't try to make up an answer.
   Today is ${new Date().toDateString()}.
 
   You're talking to a merchant and you have the following details about their WooCommerce Payments account:
