@@ -25,7 +25,7 @@ async function fetchQuestionAnswer(props: WCPayQARequestProps) {
 
 export function WCPayQAForm() {
   const [outputMarkdown, setOutput] = useRemark()
-  const [sources, setSources] = useState<string[]>([])
+  const [sources, setSources] = useState<SourceDocument[]>([])
   const [error, setError] = useState<string | undefined>()
   const [loadingState, setLoadingState] = useState<'loading' | 'idle'>('idle')
 
@@ -70,8 +70,11 @@ export function WCPayQAForm() {
         },
       })
 
-      const output =
-        response.answer + `\n\nSource:  \n${response.sources.join('  \n')}`
+      const sourcesString = response.sources
+        .map((source) => `[${source.metadata.title}](${source.metadata.url})`)
+        .join('  \n')
+
+      const output = response.answer + `\n\nSource:  \n${sourcesString}`
       console.log(response)
       setOutput(output)
       setSources(response.sources)

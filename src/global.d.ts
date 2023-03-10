@@ -36,12 +36,13 @@ type WCPayQARequestProps = {
 type WCPayQAResponseProps = {
   answer: string
   answerDuration: number
-  sources: string[]
+  sources: SourceDocument[]
 }
 
 type SourceDocument = {
   pageContent: string
   metadata: {
     url: string
+    title: string
   }
 }

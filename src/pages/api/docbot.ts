@@ -115,29 +115,23 @@ async function generateAnswer({
   // Ask it a question
   console.log(question)
   const start = Date.now()
-  const modelResponse = await chain.call({
+
+  type modelResponse = {
+    text: string
+    sourceDocuments: SourceDocument[]
+  }
+  const modelResponse = (await chain.call({
     question: systemMessage + `\n` + question,
     chat_history: [],
-  })
+  })) as modelResponse
+
   const end = Date.now()
   const answerDuration = end - start
   console.log(`Answered in ${answerDuration}ms`)
 
-  // Reduce the source documents to an array of unique URLs.
-  const sources: string[] = modelResponse.sourceDocuments.reduce(
-    (acc: string[], sourceDocument: SourceDocument) => {
-      const {
-        metadata: { url },
-      } = sourceDocument
-      if (acc.includes(url)) return acc
-      return [...acc, url]
-    },
-    []
-  )
-
   return {
     answer: modelResponse.text.trim(),
-    sources,
+    sources: modelResponse.sourceDocuments,
     answerDuration,
   }
 }
