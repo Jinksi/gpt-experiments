@@ -1,0 +1,418 @@
+[
+  {
+    "title": "Accepting Apple Pay with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/payment-methods/apple-pay/"
+  },
+  {
+    "title": "What is the difference between a scheduled deposit and instant deposit?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/scheduled-deposit-vs-instant-deposit/"
+  },
+  {
+    "title": "WooCommerce In-Person Payments Quick Start Guide - Canada Merchants",
+    "url": "https://woocommerce.com/document/woocommerce-in-person-payments-quick-start-guide-canada-merchants/"
+  },
+  {
+    "title": "WooCommerce Payments: Customization & Translation",
+    "url": "https://woocommerce.com/document/woocommerce-payments/customization-and-translation/"
+  },
+  {
+    "title": "WooCommerce Payments: Testing & Troubleshooting",
+    "url": "https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/"
+  },
+  {
+    "title": "WooCommerce Payments + Stripe Capital",
+    "url": "https://woocommerce.com/document/woocommerce-payments-stripe-capital/"
+  },
+  {
+    "title": "Instant Deposits with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/instant-deposits/"
+  },
+  {
+    "title": "WooCommerce Payments: Link by Stripe",
+    "url": "https://woocommerce.com/document/woocommerce-payments/payment-methods/link-by-stripe/"
+  },
+  {
+    "title": "WooCommerce Payments: Subscriptions",
+    "url": "https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/"
+  },
+  {
+    "title": "Connecting to WordPress.com with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/connection/"
+  },
+  {
+    "title": "Translations (Localization)",
+    "url": "https://woocommerce.com/document/woocommerce-payments/customization-and-translation/translations/"
+  },
+  {
+    "title": "Can I change the title and description of the payment gateway shown during checkout?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/customization-and-translation/change-title-in-checkout/"
+  },
+  {
+    "title": "Comparing subscription options",
+    "url": "https://woocommerce.com/document/payments/subscriptions-basics/comparison/"
+  },
+  {
+    "title": "WooCommerce Payments: \"Know Your Customer\"",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/woocommerce-payments-know-your-customer/"
+  },
+  {
+    "title": "How do I change my business type?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/change-business-type/"
+  },
+  {
+    "title": "Can I sell CBD and Other Hemp-Derived Products with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/cbd/"
+  },
+  {
+    "title": "Moving from WooCommerce Subscriptions to the WooCommerce Payments subscriptions functionality",
+    "url": "https://woocommerce.com/document/payments/subscriptions-basics/moving-from-the-woocommerce-subscriptions-extension/"
+  },
+  {
+    "title": "Does WooCommerce Payments support Pre-Orders?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/pre-orders/"
+  },
+  {
+    "title": "What happens to my subscriptions if I disable the WooCommerce Payments gateway?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/disable-gateway/"
+  },
+  {
+    "title": "Does WooCommerce Payments support Subscriptions and recurring payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/subscriptions/"
+  },
+  {
+    "title": "What are the fees for WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/fees/"
+  },
+  {
+    "title": "Upgrading to the Subscriptions extension from the WooCommerce Payments built-in subscriptions",
+    "url": "https://woocommerce.com/document/payments/subscriptions-basics/upgrading-to-subscriptions/"
+  },
+  {
+    "title": "Does WooCommerce Payments have any fraud prevention enabled?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/fraud-prevention/"
+  },
+  {
+    "title": "Preventing Disputes with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/preventing-disputes-with-woocommerce-payments/"
+  },
+  {
+    "title": "How do I sign up for Stripe using the same email as my WooCommerce Payments account?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/sign-up-for-stripe-same-email/"
+  },
+  {
+    "title": "Additional payment methods",
+    "url": "https://woocommerce.com/document/payments/additional-payment-methods/"
+  },
+  {
+    "title": "WooCommerce Payments: Fees & Debits",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/"
+  },
+  {
+    "title": "Deposit currencies",
+    "url": "https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/"
+  },
+  {
+    "title": "WooCommerce Payments built in partnership with Stripe",
+    "url": "https://woocommerce.com/document/payments/built-in-partnership-with-stripe/"
+  },
+  {
+    "title": "Do I need WooCommerce Payments for all other payment gateways?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/need-woocommerce-payments-for-other-gateways/"
+  },
+  {
+    "title": "How do I respond to card testing attacks?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/card-testing/"
+  },
+  {
+    "title": "Why is there a charge from WooPay.id on my credit card?",
+    "url": "https://woocommerce.com/document/woopay-statement-descriptor/"
+  },
+  {
+    "title": "Why aren’t fees refunded when I refund a charge with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/why-arent-fees-refunded/"
+  },
+  {
+    "title": "Requirements and recommendations for bank statement descriptor",
+    "url": "https://woocommerce.com/document/payments/bank-statement-descriptor/"
+  },
+  {
+    "title": "Stripe Capital FAQ",
+    "url": "https://woocommerce.com/document/stripe-capital-faq/"
+  },
+  {
+    "title": "Multi-Currency with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/currencies/multi-currency-setup/"
+  },
+  {
+    "title": "WooCommerce Payments: Taxes",
+    "url": "https://woocommerce.com/document/woocommerce-payments/taxes/"
+  },
+  {
+    "title": "Can I migrate my information between accounts?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/migrate-information-between-accounts/"
+  },
+  {
+    "title": "WooCommerce In-Person Payments Quick Start Guide",
+    "url": "https://woocommerce.com/document/payments/woocommerce-in-person-payments-quick-start-guide/"
+  },
+  {
+    "title": "Testing WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/testing/"
+  },
+  {
+    "title": "WooCommerce Payments in Your Country",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/countries/"
+  },
+  {
+    "title": "WooCommerce Payments: Currencies",
+    "url": "https://woocommerce.com/document/woocommerce-payments/currencies/"
+  },
+  {
+    "title": "Deactivating WooCommerce Subscriptions with WooCommerce Payments active",
+    "url": "https://woocommerce.com/document/subscriptions/deactivation/"
+  },
+  {
+    "title": "WooCommerce Payments Safe Mode",
+    "url": "https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/safe-mode/"
+  },
+  {
+    "title": "What happens to my subscriptions if I deactivate the WooCommerce Payments plugin?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/deactivate/"
+  },
+  {
+    "title": "How do I change my deposit schedule?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-schedule/"
+  },
+  {
+    "title": "Can I use WooCommerce Payments and the Stripe plugin at the same time?",
+    "url": "https://woocommerce.com/document/can-i-use-woocommerce-payments-and-the-stripe-plugin-at-the-same-time/"
+  },
+  {
+    "title": "Why does Stripe say that my account is linked to a business that works with Stripe?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/stripe-account-linked-to-business/"
+  },
+  {
+    "title": "WooCommerce Payments: In-Person Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/in-person-payments/"
+  },
+  {
+    "title": "WooCommerce Payments: Payment Methods",
+    "url": "https://woocommerce.com/document/woocommerce-payments/payment-methods/"
+  },
+  {
+    "title": "Subscriptions with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/subscriptions-basics/"
+  },
+  {
+    "title": "Im a developer or agency. How can I set up WooCommerce Payments for my client?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/developer-or-agency-setup/"
+  },
+  {
+    "title": "Is WooCommerce Payments compatible with High-Performance Order Storage?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/high-performance-order-storage-compatibility/"
+  },
+  {
+    "title": "Why is my account showing a negative balance?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/account-showing-negative-balance/"
+  },
+  {
+    "title": "WooCommerce Payments: Startup Guide",
+    "url": "https://woocommerce.com/document/payments/"
+  },
+  {
+    "title": "WooCommerce Payments: Stripe Capital",
+    "url": "https://woocommerce.com/document/woocommerce-payments/stripe-capital/"
+  },
+  {
+    "title": "What foreign exchange fees are charged with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/currency-conversion-fees/"
+  },
+  {
+    "title": "Managing Disputes with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/managing-disputes-with-woocommerce-payments/"
+  },
+  {
+    "title": "Switching from Stripe to WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/switching-from-stripe-to-woocommerce-payments/"
+  },
+  {
+    "title": "What’s the difference between a Payout and a Deposit in WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/deposits-and-payouts/"
+  },
+  {
+    "title": "Can I sell alcohol with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/can-i-sell-alcohol-with-woocommerce-payments/"
+  },
+  {
+    "title": "How do I update my business name or DBA with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/name-changes/"
+  },
+  {
+    "title": "WooCommerce Payments: Reserves",
+    "url": "https://woocommerce.com/document/payments/reserves/"
+  },
+  {
+    "title": "WooCommerce Payments: Compatibility",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/"
+  },
+  {
+    "title": "How do I update my tax ID number with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/tax-id-changes/"
+  },
+  {
+    "title": "WooCommerce Payments: Dev Mode",
+    "url": "https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/testing/dev-mode/"
+  },
+  {
+    "title": "WooCommerce Payments: Our Policies",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/"
+  },
+  {
+    "title": "Does WooCommerce Payments support 3D Secure?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/3d-secure/"
+  },
+  {
+    "title": "WooCommerce Payments vs. Stripe Plugin Comparison",
+    "url": "https://woocommerce.com/document/woocommerce-payments-vs-stripe-plugin-comparison/"
+  },
+  {
+    "title": "Is WooCommerce Payments PCI Compliant?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/pci-compliance/"
+  },
+  {
+    "title": "WooCommerce Payments Settings Guide",
+    "url": "https://woocommerce.com/document/woocommerce-payments/settings-guide/"
+  },
+  {
+    "title": "Why are deposits to my bank account suspended?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/why-deposits-suspended/"
+  },
+  {
+    "title": "WooCommerce Payments: Deposits",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/"
+  },
+  {
+    "title": "Troubleshooting WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/troubleshooting/"
+  },
+  {
+    "title": "How do I update my contact details such as email address or phone number in Stripe?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/update-my-contact-details/"
+  },
+  {
+    "title": "What products are not permitted on my store when accepting payments with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/our-policies/restricted-products/"
+  },
+  {
+    "title": "WooCommerce Payments FAQs",
+    "url": "https://woocommerce.com/document/payments/faq/"
+  },
+  {
+    "title": "Why is there a debit from WCPAYMENTS or WooCommerce Payments on my bank account?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/why-was-i-debited/"
+  },
+  {
+    "title": "Can one WooCommerce Payments account be used with multiple websites?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/one-woocommerce-payments-account-multiple-websites/"
+  },
+  {
+    "title": "How do I change my deposit account information with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-account-info/"
+  },
+  {
+    "title": "Can I use my existing Stripe account with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/existing-stripe-account/"
+  },
+  {
+    "title": "WooCommerce Payments Card Reader Return Policy",
+    "url": "https://woocommerce.com/document/woocommerce-payments/in-person-payments/woocommerce-payments-card-reader-return-policy/"
+  },
+  {
+    "title": "WooCommerce Payments Documentation",
+    "url": "https://woocommerce.com/document/woocommerce-payments/"
+  },
+  {
+    "title": "What currency is used to determine fees in a transaction with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fees-and-debits/fee-currency/"
+  },
+  {
+    "title": "WooCommerce Payments: Account Management",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/"
+  },
+  {
+    "title": "WooCommerce Payments — Documents",
+    "url": "https://woocommerce.com/document/woocommerce-payments/taxes/woocommerce-payments-documents/"
+  },
+  {
+    "title": "What is Form 1099-K?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/taxes/what-is-form-1099k/"
+  },
+  {
+    "title": "What is the \"Things to do\" checklist?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/things-to-do-checklist/"
+  },
+  {
+    "title": "Why is there a Subscriptions item in my WooCommerce menu?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/subscriptions-item-in-menu/"
+  },
+  {
+    "title": "How do I access my Stripe Express account for WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/access-stripe-account/"
+  },
+  {
+    "title": "When will I receive deposits for my WooCommerce Payments account balance?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/"
+  },
+  {
+    "title": "Currencies with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/currencies/"
+  },
+  {
+    "title": "WooCommerce Payments: Fraud and Disputes",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/"
+  },
+  {
+    "title": "Getting started with In-Person Payments with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/payments/getting-started-with-in-person-payments-with-woocommerce-payments/"
+  },
+  {
+    "title": "Managing Money with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/managing-money/"
+  },
+  {
+    "title": "How do I delete or stop using my WooCommerce Payments account?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/delete-my-woocommerce-payments-account/"
+  },
+  {
+    "title": "What currencies can I accept with WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/currencies/available-currencies/"
+  },
+  {
+    "title": "Which add-ons are compatible with subscriptions built-in to WooCommerce Payments?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/compatibility/compatible-subscriptions-extensions/"
+  },
+  {
+    "title": "Does WooCommerce Payments use Stripe Radar?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/does-woocommerce-payments-use-stripe-radar/"
+  },
+  {
+    "title": "Authorize and capture",
+    "url": "https://woocommerce.com/document/woocommerce-payments/settings-guide/authorize-and-capture/"
+  },
+  {
+    "title": "How do I transfer a site that uses WooCommerce Payments to a new owner?",
+    "url": "https://woocommerce.com/document/woocommerce-payments/account-management/transfer-site-to-new-owner/"
+  },
+  {
+    "title": "Accepting Google Pay with WooCommerce Payments",
+    "url": "https://woocommerce.com/document/woocommerce-payments/payment-methods/google-pay/"
+  },
+  {
+    "title": "Croatian Kuna (HRK) transition to Euro (EUR)",
+    "url": "https://woocommerce.com/document/woocommerce-payments/currencies/croatian-kuna-to-euro-transition/"
+  },
+  {
+    "title": "WooCommerce In-Person Payments: Tap to Pay on iPhone Quick Start Guide",
+    "url": "https://woocommerce.com/document/woocommerce-payments/in-person-payments/woocommerce-in-person-payments-tap-to-pay-on-iphone-quick-start-guide/"
+  }
+]
