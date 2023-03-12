@@ -1,6 +1,8 @@
 import { HNSWLib } from 'langchain/vectorstores'
 import { OpenAIEmbeddings } from 'langchain/embeddings'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { Document } from 'langchain/document'
+
 import * as dotenv from 'dotenv'
 import Papa from 'papaparse'
 import fs from 'fs'
@@ -57,18 +59,32 @@ async function run() {
     chunkOverlap: 200,
   })
 
-  const postContentArr = posts.map((post) => post.content)
-  const postMetadataArr = posts.map((post) => post.metadata)
+  // Don't split "Fees and eligibility" into chunks
+  const feesAndEligibility = posts.filter((post) =>
+    post.metadata.title?.includes('Fees and eligibility')
+  )
+  const feesAndEligibilityDocs = feesAndEligibility.map((post) => {
+    return new Document({ pageContent: post.content, metadata: post.metadata })
+  })
+
+  const otherPosts = posts.filter(
+    (post) => !post.metadata.title?.includes('Fees and eligibility')
+  )
+  const postContentArr = otherPosts.map((post) => post.content)
+  const postMetadataArr = otherPosts.map((post) => post.metadata)
   const chunks = await textSplitter.createDocuments(
     postContentArr,
     postMetadataArr
   )
+
   console.log(`Split ${posts.length} documents into ${chunks.length} chunks`)
+
+  const allChunks: Document[] = [...feesAndEligibilityDocs, ...chunks]
 
   /* Create the vectorstore */
   console.log('Creating vectorstore')
   const vectorStore = await HNSWLib.fromDocuments(
-    chunks,
+    allChunks,
     new OpenAIEmbeddings()
   )
   vectorStore.save('public/vectorstores/wcpay-docs')
