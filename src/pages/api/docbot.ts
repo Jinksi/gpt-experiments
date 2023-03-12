@@ -23,6 +23,14 @@ function getLanguageFromLocale(locale: string) {
   }
 }
 
+function getCountryFromCode(countryCode: string) {
+  try {
+    return new Intl.Locale('en', { region: countryCode }).region
+  } catch (e) {
+    return 'unknown'
+  }
+}
+
 function getDepositsScheduleString(
   depositsState: WCPayQARequestProps['deposits']
 ) {
@@ -95,13 +103,12 @@ async function generateAnswer({
 
   // Translate the prompt to the user's language
   if (locale && getLanguageFromLocale(locale) !== 'unknown') {
-    question += ` (Respond in language: ${getLanguageFromLocale(
-      locale || ''
-    )}.)`
+    question += ` (Respond in language: ${getLanguageFromLocale(locale || '')})`
   }
 
-  question += ` (Account country code: ${country || 'unknown'}.)`
-  question += ` (Account currency: ${currency || 'unknown'}.)`
+  question += ` (Account country: ${getCountryFromCode(country || '')})`
+  question += ` (Account currency: ${currency || 'unknown'})`
+  console.log(question)
 
   // Initialize the LLM to use to answer the question
   const model = new OpenAIChat({
