@@ -1,0 +1,137 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">How do I respond to card testing attacks?</h1>
+			<div class="entry">
+				
+<div class="wp-block-coblocks-alert has-text-color has-woo-black-color has-background is-style-info" style="background-color:#fcf7d4" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>Under attack? </strong>See <a href="https://woocommerce.com/document/payments/faq/card-testing/#respond-to-an-attack">this section</a> for how to respond to card testing.</p></div>
+
+
+
+<p>Card testing is a type of fraud where the perpetrator first obtains a large amount of stolen credit card information, and then attempts to determine which of those cards are valid. They do this by making many individual purchases, each with a different card. Other terms for this activity include “carding” or “card checking.” </p>
+
+
+
+<p>Though they are usually rare, the potential for a card testing attack is an unavoidable part of running an online business. WooCommerce Payments does have <a href="https://woocommerce.com/document/payments/faq/fraud-prevention/">some built-in measures</a> to prevent or limit the impact of such attacks, but ultimately merchants are responsible for their own fraud prevention.</p>
+
+
+
+<p>Fortunately, there are many ways you can prevent card testing from harming your site. We’ve explained a few of these methods below, as well as provided <a href="https://woocommerce.com/document/payments/faq/card-testing/#respond-to-an-attack">a quick response checklist</a> you can use if your site is attacked in this way.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2592" height="884" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png" alt="" class="wp-image-18734000864248" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png 2592w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=620,211 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=768,262 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=650,222 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=1536,524 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=2048,698 2048w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=300,102 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.44.45-UTC@2x.png?resize=958,327 958w" sizes="(max-width: 2592px) 100vw, 2592px"><figcaption class="wp-element-caption">Transactions table showing a charge with Elevated risk</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="monitor-transactions"><a class="wccom-docs-anchor-links" href="#monitor-transactions">Monitor transactions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>We recommend reviewing your incoming orders regularly and refunding ones that look risky.</p>
+
+
+
+<p>To help detect potentially fraudulent charges, WooCommerce Payments provides a&nbsp;<em>Risk Level</em>&nbsp;column on the&nbsp;<strong>Payments &gt; Transactions</strong>&nbsp;page. This column will display&nbsp;<em>Elevated</em>&nbsp;on transactions that are not considered risky enough to block automatically, but do have some suspicious signals. For&nbsp;<em>Elevated</em>&nbsp;transactions, you should try to contact the customer before fulfilling the order. If you do not receive a response, consider refunding the order.</p>
+
+
+
+<p>Another common sign of card testing is a large increase in the number of orders being assigned the <em>Failed</em> status. These orders may contain multiple notes about cards being declined. This is because it’s common for card testers to attack a site with hundreds (or even thousands!) of stolen card numbers in a short period of time.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png" alt="" class="wp-image-18734000864238" width="416" height="388" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png 1196w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png?resize=620,580 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png?resize=768,718 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png?resize=650,608 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png?resize=300,280 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-31-at-09.41.17-UTC@2x.png?resize=958,896 958w" sizes="(max-width: 416px) 100vw, 416px"><figcaption class="wp-element-caption">Order notes potentially resulting from card testing</figcaption></figure></div>
+
+
+<p>It’s important to note that these orders do not represent missed sales, nor are they caused by issues with your checkout that could prevent legitimate buyers from completing payments. However, card testing can cause other issues for your business, such as an increase in <a href="https://woocommerce.com/document/payments/disputes/">disputes</a> and card decline rates, negatively impacting the reputation of your business.</p>
+
+
+
+<header class="toc-header"><h2 id="prevent-card-testing"><a class="wccom-docs-anchor-links" href="#prevent-card-testing">Prevent card testing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>As noted above, WooCommerce Payments has&nbsp;<a href="https://woocommerce.com/document/payments/faq/fraud-prevention/">built-in measures to prevent fraud</a>. We also work closely with our payments partner to develop new strategies to prevent card testing attacks.</p>
+
+
+
+<p>However, <em>no fraud prevention system is perfect!</em> Because of this, there are some additional measures you can take&nbsp;to protect your store.</p>
+
+
+
+<ul>
+<li>Install a CAPTCHA plugin, such as <a href="https://woocommerce.com/products/recaptcha-for-woocommerce/">reCaptcha for WooCommerce</a> or <a href="https://woocommerce.com/products/google-recaptcha-for-woocommerce/">Google reCaptcha for WooCommerce</a>. Either of these plugins will insert a mandatory bot detection mechanism into your checkout process, which can help prevent automated fraud.</li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-anti-fraud/">WooCommerce Anti-Fraud</a> is a powerful and flexible extension that allows you to configure various rules that, when triggered, will block the offending transactions.</li>
+
+
+
+<li>Avoid pay-what-you-want or donation products with no minimum. Fraudsters often use these to make very small transactions that may not be noticed by the cardholder.</li>
+</ul>
+
+
+
+<p>If you choose to install one or more of the above plugins, be sure to read the documentation for them thoroughly. If the plugins are not configured correctly, they will offer little or no protection!</p>
+
+
+
+<header class="toc-header"><h2 id="respond-to-an-attack"><a class="wccom-docs-anchor-links" href="#respond-to-an-attack">Respond to an attack<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If your site is experiencing a card testing attack, follow the steps below. </p>
+
+
+
+<p>Keep in mind that the most important step is to <strong>refund any orders you suspect to be fraud!</strong> Doing so avoids the possibility of the true cardholder <a href="https://woocommerce.com/document/payments/disputes/">disputing the purchase</a> in the future, which could cost your business money in dispute fees.</p>
+
+
+
+<ol>
+<li>In your site’s dashboard, go to <strong>Payments &gt; Settings</strong>. </li>
+
+
+
+<li>Uncheck the “Enable WooCommerce Payments” box.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1566" height="480" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png" alt="" class="wp-image-18734000849572" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png 1566w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=620,190 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=768,235 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=650,199 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=1536,471 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=300,92 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-19.16.00-UTC@2x.png?resize=958,294 958w" sizes="(max-width: 1566px) 100vw, 1566px"><figcaption class="wp-element-caption">Disabling the WooCommerce Payments gateway to stop incoming payments</figcaption></figure>
+
+
+
+<ol start="3">
+<li>Scroll to the bottom of the page and click <strong>Save Changes</strong>.
+<ul>
+<li>This will prevent further orders from coming in via WooCommerce Payments, while leaving the plugin itself active so that you can complete the next steps.</li>
+</ul>
+</li>
+
+
+
+<li><span style="color: initial">Consider installing some plugins that can help prevent card testing. These are listed in the </span><a href="https://woocommerce.com/document/payments/faq/card-testing/#prevent-card-testing">Prevent Card Testing section</a><span style="color: initial"> above.</span></li>
+
+
+
+<li><a href="https://woocommerce.com/my-account/create-a-ticket/?select=5278104" target="_blank" rel="noreferrer noopener">Contact our support staff</a>. They are trained to assist with card testing incidents, and can provide specialized help.</li>
+
+
+
+<li><strong><a href="https://woocommerce.com/document/woocommerce-refunds/#automatic-refunds">Refund</a> any successful orders you suspect to be fraudulent!</strong>
+<ul>
+<li>If more than 20 or so fraudulent orders were successful, let our support staff know. We can help refund those transactions in bulk.</li>
+
+
+
+<li>Similarly, if the transactions are not linked to WooCommerce orders (making it impossible to refund them), inform us of that in your email as well.</li>
+</ul>
+</li>
+
+
+
+<li>Once the successful transactions have been refunded and the card testing attack has ended, you can re-enable WooCommerce Payments under <strong>Payments &gt; Settings</strong>.</li>
+</ol>
+			</div>
+					

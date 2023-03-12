@@ -1,0 +1,323 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Accepting Google Pay with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>WooCommerce Payments allows you to enable Google Pay on your site, which makes it easier for customers to checkout quickly. This document describes how to set up, test, and troubleshoot the Google Pay feature.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png" alt="" class="wp-image-18734001321470" width="534" height="393" srcset="https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png 1298w, https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png?resize=620,456 620w, https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png?resize=768,564 768w, https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png?resize=650,478 650w, https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png?resize=300,220 300w, https://woocommerce.com/wp-content/uploads/2022/12/dekstop.png?resize=958,704 958w" sizes="(max-width: 534px) 100vw, 534px"><figcaption class="wp-element-caption">Google Pay button in the WooCommerce cart</figcaption></figure></div>
+
+
+<header class="toc-header"><h2 id="enabling"><a class="wccom-docs-anchor-links" href="#enabling">Enabling<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To enable Google Pay:</p>
+
+
+
+<ol>
+<li>Go to&nbsp;<strong>Payments&nbsp;&gt;&nbsp;Settings</strong> in your site’s dashboard.</li>
+
+
+
+<li>In the <em>Express Checkouts</em> section, check the box for&nbsp;<strong>Apple Pay / Google Pay</strong>.</li>
+
+
+
+<li>At the bottom of the page, click&nbsp;<strong>Save Changes</strong>.</li>
+</ol>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong>&nbsp;There is no way to enable only Google Pay without also enabling Apple Pay. The two payment options must be enabled together.</p></div>
+
+
+
+<header class="toc-header"><h2 id="customizing"><a class="wccom-docs-anchor-links" href="#customizing">Customizing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>When Google Pay is enabled, the button can appear in three places:</p>
+
+
+
+<ul>
+<li>The Checkout page</li>
+
+
+
+<li>The Cart page</li>
+
+
+
+<li>Individual product pages</li>
+</ul>
+
+
+
+<p>You can customize which of these locations show the Google Pay button by going to&nbsp;<strong>Payments &gt; Settings</strong>&nbsp;and then clicking the&nbsp;<strong>Customize</strong>&nbsp;link for Apple Pay / Google Pay in the <em>Express Checkouts</em> section.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2268" height="640" src="https://woocommerce.com/wp-content/uploads/2022/12/image-26.png" alt="" class="wp-image-18734001321269" srcset="https://woocommerce.com/wp-content/uploads/2022/12/image-26.png 2268w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=620,175 620w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=768,217 768w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=650,183 650w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=1536,433 1536w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=2048,578 2048w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=300,85 300w, https://woocommerce.com/wp-content/uploads/2022/12/image-26.png?resize=958,270 958w" sizes="(max-width: 2268px) 100vw, 2268px"></figure>
+
+
+
+<p>Once there, you can change where the Google Pay button shows up, the text of the Google Pay button itself, as well as the size and color scheme of the button.</p>
+
+
+
+<header class="toc-header"><h2 id="purchasing"><a class="wccom-docs-anchor-links" href="#purchasing">Purchasing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>By checking out with Google Pay, customers won’t need to go through the regular checkout process and spend time filling in all of their information. Everything is handled using the Google Pay interface, where customers can select their billing and shipping details, as well as which card they want to use.</p>
+
+
+
+<p>Once the order is placed, WooCommerce Payments processes the transaction and redirects the customer to the “Order Received” / “Thank you” page just it would for any other transaction.</p>
+
+
+
+<header class="toc-header"><h2 id="product-compatibility"><a class="wccom-docs-anchor-links" href="#product-compatibility">Product compatibility<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The express checkout methods in WooCommerce Payments, including Google Pay, are compatible with all of these product types:</p>
+
+
+
+<ul>
+<li>Simple products</li>
+
+
+
+<li>Variable products</li>
+
+
+
+<li>Subscription products</li>
+
+
+
+<li>Variable subscriptions</li>
+
+
+
+<li>Bookable products<sup>1</sup></li>
+
+
+
+<li>Pre-order products</li>
+</ul>
+
+
+
+<p><sup>1</sup> For bookable products, the Google Pay button cannot be shown on the product page itself.</p>
+
+
+
+<header class="toc-header"><h2 id="testing"><a class="wccom-docs-anchor-links" href="#testing">Testing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To place test orders using Google Pay:</p>
+
+
+
+<ol>
+<li><a href="https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/testing/#enabling-test-mode">Enable test mode</a>, if it’s not already.</li>
+
+
+
+<li>Add a&nbsp;<a href="https://woocommerce.com/document/woocommerce-payments/testing-and-troubleshooting/testing/#test-cards">test card</a>&nbsp;to your browser’s payment methods.
+<ul>
+<li>In Chrome, this can be done at this URL:&nbsp;<code>chrome://settings/payments</code></li>
+</ul>
+</li>
+
+
+
+<li>Go to a product page, cart, or checkout and use the Google Pay button.</li>
+
+
+
+<li>Select the test card in the payment popup.</li>
+
+
+
+<li>Click&nbsp;<strong>Pay</strong>.</li>
+</ol>
+
+
+
+<p>Your test order will be visible in the dashboard after it completes.</p>
+
+
+
+<header class="toc-header"><h2 id="faq"><a class="wccom-docs-anchor-links" href="#faq">FAQ<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="auth-capture"><a class="wccom-docs-anchor-links" href="#auth-capture">Can I authorize charges with Google Pay and capture later?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Yes. If you have checked the “Issue an authorization on checkout, and capture later” option in&nbsp;<strong>Payments &gt; Settings</strong>, you can&nbsp;<a href="https://woocommerce.com/document/woocommerce-payments/settings-guide/authorize-and-capture/">manually capture authorized charges</a>&nbsp;done with Google Pay, just like other credit card transactions.</p>
+
+
+
+<header class="toc-header"><h3 id="refunding"><a class="wccom-docs-anchor-links" href="#refunding">Can I issue refunds for Google Pay orders?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Yes, you can <a href="https://woocommerce.com/document/woocommerce-payments/managing-money/#section-5">issue refunds</a> for Google Pay transactions just like normal transactions.</p>
+
+
+
+<header class="toc-header"><h3 id="section-9"><a class="wccom-docs-anchor-links" href="#section-9">Why do I see a purple “Pay now” button?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>There are two styles of buttons you might see depending on if you A) allow third-party cookies for the site you’re visiting, and B) have the “Share that you have Google Pay with companies outside Google” setting enabled <a href="https://pay.google.com/gp/w/home/settings">in Google Pay itself</a>. </p>
+
+
+
+<p>If you have both enabled, the button is styled like this:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png?w=650" alt="When 3rd-party cookies are allowed on the site and your Google Pay is set to share that you have Google Pay beyond Google, the button is Google-branded. " class="wp-image-18734000198190" width="485" height="65" srcset="https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png 876w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png?resize=620,84 620w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png?resize=768,103 768w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png?resize=650,88 650w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-a-b.png?resize=300,40 300w" sizes="(max-width: 485px) 100vw, 485px"></figure></div>
+
+
+<p>Otherwise, the button may be styled like this: </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-medium is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-no-a-b.png?w=620" alt="If 3rd-party cookies are not allowed on the site, or your Google Pay is set to not share that you have Google Pay beyond Google, then then the button appears without branding. " class="wp-image-18734000198188" width="310" height="65" srcset="https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-no-a-b.png 638w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-no-a-b.png?resize=620,130 620w, https://woocommerce.com/wp-content/uploads/2022/03/google-pay-button-no-a-b.png?resize=300,63 300w" sizes="(max-width: 310px) 100vw, 310px"></figure></div>
+
+
+<header class="toc-header"><h3 id="available-in-my-country"><a class="wccom-docs-anchor-links" href="#available-in-my-country">Is Google Pay available in my country?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Google Pay is available for all&nbsp;<a href="https://woocommerce.com/document/payments/countries/#section-1">countries supported by WooCommerce Payments</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="troubleshooting"><a class="wccom-docs-anchor-links" href="#troubleshooting">Troubleshooting<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Before troubleshooting Google Pay, firsy ensure that you have&nbsp;<strong>Log Error Messages</strong>&nbsp;enabled under&nbsp;<strong>Payments &gt; Settings &gt; Advanced settings</strong>. This lets you see any error messages from WooCommerce Payments under&nbsp;<strong>WooCommerce &gt; Status &gt; Logs</strong>, which could potentially be useful if you need to contact our support staff.</p>
+
+
+
+<header class="toc-header"><h3 id="button-doesnt-appear-at-all"><a class="wccom-docs-anchor-links" href="#button-doesnt-appear-at-all">Button doesn’t appear at all<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To ensure there isn’t a problem with your browser and device combination, try using the Google Pay button on another website. You can try <a href="https://developers.google.com/pay/api/web/guides/resources/demos">Google’s demo page</a>, for example.</p>
+
+
+
+<p>If Google Pay does not appear there either, there likely isn’t an issue with WooCommerce Payments itself, bur rather something about your device or browser is not configured correctly.</p>
+
+
+
+<p>If Google Pay does appear on that demo, but not on your WooCommerce Payments store, this can happen for several reasons. To try to remedy the issue, please make sure:</p>
+
+
+
+<ul>
+<li>The&nbsp;<strong>Apple Pay / Google Pay</strong>&nbsp;setting is enabled under&nbsp;<strong>Payments &gt; Settings</strong>.</li>
+
+
+
+<li>Your site is not in&nbsp;<a href="https://docs.woocommerce.com/document/payments/testing/dev-mode/">Dev Mode</a>.</li>
+
+
+
+<li>Your site is served over HTTPS.</li>
+
+
+
+<li>Your browser <a href="https://support.google.com/chrome/answer/142893?visit_id=636857416902558798-696405304">contains a payment method</a>.</li>
+
+
+
+<li>You have the “Share that you have Google Pay with companies outside Google” setting enabled in the <a href="https://pay.google.com/gp/w/u/0/home/settings">Google Pay settings</a>.</li>
+
+
+
+<li>“Allow customers to place orders without an account” is enabled under&nbsp;<strong>WooCommerce &gt; Settings &gt; Accounts &amp; Privacy</strong>, OR “Allow customers to create an account during checkout” and “When creating an account, send the new user a link to set their password” are enabled.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="button-missing-from-specific-location"><a class="wccom-docs-anchor-links" href="#button-missing-from-specific-location">Button doesn’t appear in a specific location<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If the Google Pay button is missing from only some locations, but not others (e.g. it appears on the checkout page but not on the product page), this can happen for a few reasons:</p>
+
+
+
+<ul>
+<li>The product&nbsp;<a href="#product-compatibility">may not be compatible</a>&nbsp;with express checkouts.</li>
+
+
+
+<li>Your theme may not support the necessary WooCommerce hooks, which are needed for Google Pay to show up.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="apple-pay-appears-instead"><a class="wccom-docs-anchor-links" href="#apple-pay-appears-instead">Apple Pay appears instead<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you were expecting Google Pay to appear on your mobile device, but see an Apple Pay button instead, this may be due to <a href="https://www.theverge.com/2022/7/30/23284992/apple-pay-compatible-edge-chrome-firefox-ios-16-beta-browsers-safari">a recent change on Apple’s part</a>.</p>
+
+
+
+<p>In short, if you are running iOS 16 or later, Apple Pay can now be used in browsers other than Safari. As such, you might see Apple Pay appear in some places where Google Pay would’ve previously be shown. (For example, in the Chrome browser app on iOS.)</p>
+
+
+
+<p>Unfortunately, there’s no way to revert to the old behavior.</p>
+
+
+
+<header class="toc-header"><h3 id="other-issues"><a class="wccom-docs-anchor-links" href="#other-issues">Other issues<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you experience any other issues with Google Pay, please take the following steps:</p>
+
+
+
+<ol>
+<li>Enable test mode and logging under&nbsp;<strong>Payments&nbsp;&gt;&nbsp;Settings&nbsp;&gt;&nbsp;Advanced settings</strong>.</li>
+
+
+
+<li>Place a test Google Pay transaction.</li>
+
+
+
+<li>Under&nbsp;<strong>WooCommerce &gt; Status &gt; Logs</strong>, review the WooCommerce Payments logs.</li>
+
+
+
+<li>If you see any errors, please&nbsp;<a href="https://woocommerce.com/my-account/create-a-ticket/">get in touch with support</a>&nbsp;and provide the logs for review.</li>
+</ol>
+			</div>
+							<div class="wccom-docs-recommended-products" id="similar-products">
+							<div class="wccom-comp-algolia-recommendations wccom-component wccom-component--not-rendered" data-props="{&quot;objectID&quot;:&quot;5278104&quot;,&quot;collection&quot;:&quot;product&quot;,&quot;title&quot;:&quot;Similar in Payments&quot;,&quot;rowItemCount&quot;:2,&quot;maxRecommendations&quot;:2}">
+		</div>
+						</div>
+					

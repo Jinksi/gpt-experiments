@@ -1,0 +1,1024 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Managing Disputes with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>A dispute is when a customer contests a payment made with their card. Handling disputes from customers can be one of the most unpleasant parts of running a business, especially when you need to challenge a dispute. However, not responding to your disputes can be problematic, because it can lead to fines and the possibility of being prohibited to do business by the card networks.</p>
+
+
+
+<p>This guide provides you with guidance on how to respond to existing disputes. For more information on how to prevent disputes in the first place, please see <a href="https://woocommerce.com/document/payments/preventing-disputes-with-woocommerce-payments/">this document</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-1"><a class="wccom-docs-anchor-links" href="#section-1">Overview<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce Payments guides you through the process of responding to a dispute via the <a href="https://docs.woocommerce.com/document/payments/#section-7"><b>Payments &gt; Disputes</b> page</a>. This document expands on information provided within those pages, and provides advice about the types of responses recommended for different types of disputes.</p>
+
+
+
+<p>For each dispute type, it also provides the information required to overturn the dispute, and where to include that evidence in the fields presented by the <b>Challenge Dispute</b> form. When responding to a dispute, it’s always best to provide more information. If you have any information you think the card issuer might want to see, submit it as dispute evidence.&nbsp;Some example dispute evidence includes web logs, email communications, shipment tracking numbers, delivery confirmations, proof of prior refunds, replacement shipments, and so on.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2020/07/woocommerce-payments-challenge-dispute.png?w=950" alt="" class="wp-image-2550116"><figcaption class="wp-element-caption"><strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> Evidence Submission Screen</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="section-2"><a class="wccom-docs-anchor-links" href="#section-2">Responding to a dispute<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>After your store receives a dispute, you can respond in one or three ways:</p>
+
+
+
+<ul>
+<li><b>Do nothing</b>: in which case, the dispute will be marked <i>Lost</i> after the due date is reached.</li>
+
+
+
+<li><b>Accept dispute</b>: accepting the dispute immediately marks it as <i>Lost</i>. The funds withdrawn from your account to cover the transaction and <a href="https://docs.woocommerce.com/document/payments/faq/fees/">dispute fee</a> will not be reimbursed.</li>
+
+
+
+<li><b>Challenge dispute</b>: submit evidence to card issuer proving that the dispute is not valid. The evidence will be reviewed by the card issuer and you will receive their determination at a later date, which can be a number of months in future.</li>
+</ul>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> One thing you should <strong>not</strong> do is refund the customer for their disputed order using some other method besides WooCommerce Payments. This is because, if you lose the dispute later on, the amount of the order will automatically be refunded to them from your WooCommerce Payments account. Thus, you will then have lost <strong>two times</strong> the amount of the order, plus the $15 dispute fee.</p></div>
+
+
+
+<p>The first two responses are the most efficient way to resolve a dispute. If you think the dispute is valid, or do not have the required evidence to challenge the dispute, you should accept the dispute. The card networks do not take into account the number of disputes you lose when determining the risk of your business. They look at the number of disputes your business receives.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2020/07/woocommerce-payments-dispute-details.png?w=736" alt="" class="wp-image-2550115"></figure>
+
+
+
+<p class="woo-sc-box note"><strong>NOTE:</strong> If you decide to challenge a dispute, evidence can only be submitted one time. For that reason, be sure to carefully review any evidence you plan to submit! Once the evidence has been submitted, it’s not possible (even for WooCommerce Payments support staff) to correct any mistakes.</p>
+
+
+
+<header class="toc-header"><h3 id="section-3"><a class="wccom-docs-anchor-links" href="#section-3">Contact your customer<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>With any dispute, we recommend that you contact your customer to discuss the claim. Sometimes, customers may mistakenly dispute a charge and once reminded of the transaction, they can withdraw the dispute with their card issuer.</p>
+
+
+
+<p>Importantly, even if your customer does withdraw the dispute, you still need to challenge the dispute in order for the transaction to be refunded and dispute fee returned. It will also still take approximately 75 days to be closed by the card issuer.</p>
+
+
+
+<header class="toc-header"><h2 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Dispute types<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Card issuers categorize disputes in one of the following ways, base on the claim by the card holder:</p>
+
+
+
+<ul>
+<li><strong><a href="#credit-not-processed">Credit not processed</a></strong>: card holder claims they are owed a refund or other credit that has not been received. For example, if your customer returns a product, but the charge has not been refunded to the card.</li>
+
+
+
+<li><strong><a href="#duplicate">Duplicate</a></strong>: customer claims multiple charges were placed on their card for the same product or service. For example, if your customer paid for a service when booking via your website, as well as in person after receiving the service.</li>
+
+
+
+<li><strong><a href="#fraudulent">Fraudulent</a></strong>: card holder, not necessarily the customer with your store, claims they did not authorize the payment with your store. For example, if your customer used a stolen credit card number to place an order, the holder of that card may later see the transaction and dispute it as it is not recognized.</li>
+
+
+
+<li><strong><a href="#general">General</a> or <a href="#unrecognized">Unrecognized</a>:</strong> the card holder notifies their card issuer that they do not recognize the charge on their card statement.</li>
+
+
+
+<li><strong><a href="#product-not-received">Product not received</a></strong>: the good or service for which the charge was processed has not been received by the customer. For example, a shipment from your business has not been received by your customer.</li>
+
+
+
+<li><strong><a href="#product-unacceptable">Product unacceptable</a></strong>: the card holder claims the product or service they received in return for the payment was defective, damaged, or not as described. For example, your customer was shipped a different item to the one purchased.</li>
+
+
+
+<li><strong><a href="#subscription-cancelled">Subscription cancelled</a></strong>: after cancelling a subscription plan, the customer was charged a recurring payment for that subscription. For example, if a customer calls your business to request cancellation, but the subscription is not cancelled within WooCommerce.</li>
+</ul>
+
+
+
+<p>Because each type of dispute represents a different claim by the customer, each requires different evidence to be submitted when challenging the dispute. The rest of this document outlines the different types of disputes, and evidence required to challenge each. This information is based on guidance from Stripe, our <a href="https://docs.woocommerce.com/document/payments/powered-by-stripe/">payments partner</a>, on <a href="https://stripe.com/docs/disputes/categories">dispute evidence for each category</a>.</p>
+
+
+
+<div id="credit-not-processed" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-5"><a class="wccom-docs-anchor-links" href="#section-5">Credit Not Processed<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To overturn a <strong>credit not processed</strong> dispute, you need to demonstrate either that:</p>
+
+
+
+<ol>
+<li>Your customer is not entitled to a refund based on your store’s refund policy; or</li>
+
+
+
+<li>You have refunded your customer outside of the card network, e.g., via store credit.</li>
+</ol>
+
+
+
+<h4 id="h-additional-details-text">Additional details text</h4>
+
+
+
+<p>In the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include the following information:</p>
+
+
+
+<ul>
+<li><strong>Disclosure of refund policy</strong>: explain how and when your refund policy was disclosed to the customer prior to purchase.</li>
+
+
+
+<li><strong>Reason for refund refusal</strong>: if you have refused to refund the customer, explain to the bank why the customer is not entitled to a refund. Reference terms in your refund policy, uploaded in the <strong>additional details file</strong> field.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file">Additional details file</h4>
+
+
+
+<p>In the <strong>Additional Details</strong> file upload field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a PDF of your refund policy, as presented to the customer. Do not link to the refund policy within your response, as links will not be visited by the card issuer evaluating the dispute.</p>
+
+
+
+<div id="duplicate" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-6"><a class="wccom-docs-anchor-links" href="#section-6">Duplicate<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To overturn a <strong>duplicate</strong> charge dispute, you need to demonstrate that each payment was for a separate product or service.</p>
+
+
+
+<h4 id="h-additional-details-text-1">Additional details text</h4>
+
+
+
+<p>In the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Duplicate charge ID:</strong> the charge ID for the previous payment that appears to be a duplicate of the one that is disputed —the charge ID will look like this: <code>ch_xxxxxxxxxxxxxxxxxxxxxxx</code>, notice it starts with <code>ch_</code>. This ID is available on the transaction from the <strong>WooCommerce &gt; Edit Order</strong> screen, or the <strong>Payments &gt; Transactions</strong> screen.</li>
+
+
+
+<li><strong>Duplicate charge explanation</strong>: explain to the bank the difference between the disputed payment and the prior one that appears to be a duplicate, referencing documentation uploaded in the <strong>additional details file</strong> field.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-1">Additional details file</h4>
+
+
+
+<p>In the <strong>Additional Details</strong> file upload field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a document for the prior payment that can uniquely identify it, such as a separate receipt. This document should be paired with a similar document from the disputed payment that proves the two are separate.</p>
+
+
+
+<p>If the dispute is on a charge for a <strong>physical product</strong>, this should also include a separate shipping label for both this charge and the other payment. If multiple products were shipped together, provide a packing list that shows each purchase.</p>
+
+
+
+<p>If the dispute is on a charge for an <strong>offline service</strong>, provide a copy of the service agreement.</p>
+
+
+
+<div id="fraudulent" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-7"><a class="wccom-docs-anchor-links" href="#section-7">Fraudulent<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To overturn a <strong>fraudulent</strong> charge dispute, you need to prove to the card issuer that the cardholder authorized the transaction. The cardholder may not be the same person as the customer with your store.</p>
+
+
+
+<p>When challenging a Fraudulent charge dispute, you must include <a href="#compelling-evidence">compelling evidence</a> in order for Visa to consider the dispute if the transaction was processed on the Visa network. We recommend you always include compelling evidence, regardless of card network.</p>
+
+
+
+<p>For this dispute type, you also need to include different information depending on the type of product associated with the disputed transaction.</p>
+
+
+
+<header class="toc-header"><h3 id="section-8"><a class="wccom-docs-anchor-links" href="#section-8">Compelling Evidence<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For Fraudulent disputes, you must include at least one piece of <a href="#compelling-evidence">compelling evidence</a> in order for Visa to consider your response.</p>
+
+
+
+<p>Compelling evidence for fraudulent disputes on <strong>physical products and offline services</strong> includes:</p>
+
+
+
+<ul>
+<li><strong>Customer signature:</strong> Upload a file to prove the person who signed for the products upon delivery was the cardholder, is known to the cardholder or authorized by the cardholder to sign. If the products are collected from a physical location, you must provide:
+<ul>
+<li>Cardholder signature on the pickup form</li>
+
+
+
+<li>A copy of identification presented by the cardholder</li>
+
+
+
+<li>Details of identification presented by the cardholder </li>
+</ul>
+</li>
+
+
+
+<li><strong>Customer communication:</strong> Evidence such as photographs or emails to prove a link between the person receiving products and the cardholder, or proving that the cardholder disputing the transaction is in possession of the products. Its advised to not to block any of your business information, and provide a clear picture for the networks to review. </li>
+</ul>
+
+
+
+<p><strong>For all product types</strong>, the information listed below in the <strong>Additional details file</strong> section is also compelling evidence and you should submit any available.</p>
+
+
+
+<header class="toc-header"><h3 id="section-9"><a class="wccom-docs-anchor-links" href="#section-9">Physical products<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-text-2">Additional details text</h4>
+
+
+
+<p>For a dispute on a transaction involving a physical product, the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Shipping date</strong>: the date on which the package began its route to the shipping address, in a clear human-readable format.</li>
+
+
+
+<li><strong>Shipping carrier</strong>: include the name of the delivery service that shipped the package, such as Fedex, UPS, USPS, etc. If multiple carriers were used for this purchase, include the names of all carriers.</li>
+
+
+
+<li><strong>Shipment tracking number</strong>: include the tracking number for a physical product, obtained from the shipping carrier or delivery service. Please include all tracking numbers for all packages associated with this transaction.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-2">Additional details file</h4>
+
+
+
+<p>For a dispute involving a physical product, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Shipping documentation: </strong>upload a PDF showing:
+<ul>
+<li>The address to which a physical product was shipped. The shipping address must match a billing address verified with AVS. (A signature is not required as evidence of delivery).</li>
+
+
+
+<li>Proof that the package was shipped to the cardholder at the same address the cardholder provided to you. This could include a copy of the shipment receipt or label, and show the full shipping address of the cardholder, if possible.</li>
+
+
+
+<li>Detailed delivery information from the carrier, like confirmation of delivery.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Other evidence</strong>: in the following situations, you should also include additional documentary evidence:
+<ul>
+<li>If the customer has purchased the same products from you previously without lodging a dispute on those transactions, provide details of those transactions.</li>
+
+
+
+<li>If the package was shipped to a business address, provide evidence that the customer works there.</li>
+
+
+
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-10"><a class="wccom-docs-anchor-links" href="#section-10">Digital product or service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-file-3">Additional details file</h4>
+
+
+
+<p>For a dispute involving a digital product or service, the file uploaded with the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, must contain at least two of the following pieces of information in order to fulfill <a href="#compelling-evidence">compelling evidence</a> requirements:</p>
+
+
+
+<ul>
+<li>Customer’s IP address and their device’s geographical location at the time of purchase.</li>
+
+
+
+<li>Device ID and name of the device used to complete the transaction.</li>
+
+
+
+<li>Customer name and email address linked to their customer profile.</li>
+
+
+
+<li>Evidence that the customer logged into their account for your business before the transaction date.</li>
+
+
+
+<li>Evidence that your website or app was accessed by the cardholder for purchase or services on or after the transaction date.</li>
+
+
+
+<li>Evidence that the same device and card used in the disputed payment was used in a previous payment that was not disputed.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-11"><a class="wccom-docs-anchor-links" href="#section-11">Offline service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-file-4">Additional details file</h4>
+
+
+
+<p>For a dispute involving an offline service, using the <strong>Additional Details</strong> file field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Service date:</strong> evidence of the date on which the cardholder received or began receiving the purchased service, which should be before the dispute date.</li>
+
+
+
+<li><strong>Service documentation: </strong>Documentation showing proof that a service was provided to the cardholder. This could include a copy of a signed contract, work order, or other form of written agreement.</li>
+
+
+
+<li><strong>Other evidence:</strong><ul>
+<li>If the customer has purchased the same service from you previously without lodging a dispute, provide details of those transactions.</li>
+</ul>
+<ul>
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div id="product-not-received" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-12"><a class="wccom-docs-anchor-links" href="#section-12">Product Not Received<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To overturn a <strong>product not received</strong> dispute, you need to prove a customer received a physical product or offline service, or made use of a digital product or online service prior to the date of the dispute.</p>
+
+
+
+<p>When challenging a <strong>product not received</strong> dispute, you must include <a href="#compelling-evidence">compelling evidence</a> in order for Visa to consider the dispute.</p>
+
+
+
+<p>For this dispute type, you also need to include different information depending on the type of product associated with the disputed transaction.</p>
+
+
+
+<header class="toc-header"><h3 id="section-13"><a class="wccom-docs-anchor-links" href="#section-13">Compelling Evidence<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For <strong>product not received</strong> disputes, you must include at least one piece of <a href="#compelling-evidence">compelling evidence</a>. Compelling evidence for disputes involving <strong>physical products</strong>, and <strong>offline services</strong> includes:</p>
+
+
+
+<ul>
+<li><strong>Customer signature:</strong> upload a file to prove the person who signed for the products upon delivery was the cardholder, is known to the cardholder or authorized by the cardholder to sign. If the products are collected from a physical location, you must provide:
+<ul>
+<li>Cardholder signature on the pickup form</li>
+
+
+
+<li>A copy of identification presented by the cardholder</li>
+
+
+
+<li>Details of identification presented by the cardholder</li>
+</ul>
+</li>
+
+
+
+<li><strong>Customer communication:</strong> Evidence such as photographs or emails to prove a link between the person receiving products and the cardholder, or proving that the cardholder disputing the transaction is in possession of the products.</li>
+</ul>
+
+
+
+<p>For all product types, the information listed below in the <strong>Additional Details</strong> file section is also compelling evidence. You should submit any such file evidence available.</p>
+
+
+
+<header class="toc-header"><h3 id="section-14"><a class="wccom-docs-anchor-links" href="#section-14">Physical product<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-text-3">Additional details text</h4>
+
+
+
+<p>For a dispute on a transaction involving a physical product, the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Shipping date</strong>: the date on which the package began its route to the shipping address, in a clear human-readable format.</li>
+
+
+
+<li><strong>Shipping carrier</strong>: include the name of the delivery service that shipped the package, such as Fedex, UPS, USPS, etc. If multiple carriers were used for this purchase, include the names of all carriers.</li>
+
+
+
+<li><strong>Shipment tracking number</strong>: include the tracking number for a physical product, obtained from the shipping carrier or delivery service. Please include all tracking numbers for all packages associated with this transaction.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-5">Additional details file</h4>
+
+
+
+<p>For a dispute involving a physical product, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Shipping documentation: </strong>upload a PDF showing:
+<ul>
+<li>The address to which a physical product was shipped. The shipping address must match a billing address verified with AVS. (A signature is not required as evidence of delivery).</li>
+
+
+
+<li>Proof that the package was shipped to the cardholder at the same address the cardholder provided to you. This could include a copy of the shipment receipt or label, and show the full shipping address of the cardholder, if possible.</li>
+
+
+
+<li>Detailed delivery information from the carrier, like confirmation of delivery.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Other evidence</strong>: in the following situations, you should also include additional documentary evidence:If the customer has purchased the same products from you previously without lodging a dispute on those transactions, provide details of those transactions.
+<ul>
+<li>If the package was shipped to a business address, provide evidence that the customer works there.</li>
+
+
+
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-15"><a class="wccom-docs-anchor-links" href="#section-15">Digital product or service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-file-6">Additional details file</h4>
+
+
+
+<p>For a dispute involving a digital product or service, the file uploaded with the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, must contain at least two of the following pieces of information in order to fulfill <a href="#compelling-evidence">compelling evidence</a> requirements:</p>
+
+
+
+<ul>
+<li>Customer’s IP address and their device’s geographical location at the time of purchase.</li>
+
+
+
+<li>Device ID and name of the device used to complete the transaction.</li>
+
+
+
+<li>Customer name and email address linked to their customer profile.</li>
+
+
+
+<li>Evidence that the customer logged into their account for your business before the transaction date.</li>
+
+
+
+<li>Evidence that your website or app was accessed by the cardholder for purchase or services on or after the transaction date.</li>
+
+
+
+<li>Evidence that the same device and card used in the disputed payment was used in a previous payment that was not disputed.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-16"><a class="wccom-docs-anchor-links" href="#section-16">Offline service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-file-7">Additional details file</h4>
+
+
+
+<p>For a dispute involving an offline service, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Service date:</strong> evidence of the date on which the cardholder received or began receiving the purchased service, which should be before the dispute date.</li>
+
+
+
+<li><strong>Service documentation: </strong>Documentation showing proof that a service was provided to the cardholder. This could include a copy of a signed contract, work order, or other form of written agreement.</li>
+
+
+
+<li><strong>Other evidence:</strong>
+<ul>
+<li>If the customer has purchased the same service from you previously without lodging a dispute, provide details of those transactions.</li>
+
+
+
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div id="product-unacceptable" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-17"><a class="wccom-docs-anchor-links" href="#section-17">Product Unacceptable<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To overturn a <strong>product unacceptable</strong> dispute, you need to demonstrate that the product or service was provided to the customer as advertised to the customer at the time of purchase.</p>
+
+
+
+<p>For this dispute type, you should include different information depending on the type of product associated with the disputed transaction.</p>
+
+
+
+<p>For all product types:</p>
+
+
+
+<ul>
+<li>If the product or service was delivered as described to the cardholder, provide evidence of that, e.g., a contract, service agreement, or screenshot of the product page at the time of purchase as part of the <strong>Additional Details</strong> file upload field.</li>
+
+
+
+<li>If you have processed a credit or reversal for this transaction, provide a document evidencing this as part of the <strong>Additional Details</strong> file upload field.</li>
+
+
+
+<li>If your customer made no attempt to return the product or cancel the service, or if you provided a replacement product or service, make sure to note that as well.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-18"><a class="wccom-docs-anchor-links" href="#section-18">Physical product<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For disputes on products that have been repaired or replaced, as part of the <strong>Customer Communication</strong> file upload, provide evidence that:</p>
+
+
+
+<ul>
+<li>The cardholder agreed to a repair or replacement;</li>
+
+
+
+<li>It has been received by the customer, and</li>
+
+
+
+<li>The repair or replacement has not since been disputed.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-text-4">Additional details text</h4>
+
+
+
+<p>For a dispute on a transaction involving a physical product, the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Shipping date</strong>: the date on which the package began its route to the shipping address, in a clear human-readable format.</li>
+
+
+
+<li><strong>Shipping carrier</strong>: include the name of the delivery service that shipped the package, such as Fedex, UPS, USPS, etc. If multiple carriers were used for this purchase, include the names of all carriers.</li>
+
+
+
+<li><strong>Shipment tracking number</strong>: include the tracking number for a physical product, obtained from the shipping carrier or delivery service. Please include all tracking numbers for all packages associated with this transaction.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-8">Additional details file</h4>
+
+
+
+<p>For a dispute involving a physical product, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Shipping documentation: </strong>upload a PDF showing:
+<ul>
+<li>The address to which a physical product was shipped. The shipping address must match a billing address verified with AVS. (A signature is not required as evidence of delivery).</li>
+
+
+
+<li>Proof that the package was shipped to the cardholder at the same address the cardholder provided to you. This could include a copy of the shipment receipt or label, and show the full shipping address of the cardholder, if possible.</li>
+
+
+
+<li>Detailed delivery information from the carrier, like confirmation of delivery.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Other evidence</strong>: in the following situations, you should also include additional documentary evidence:If the customer has purchased the same products from you previously without lodging a dispute on those transactions, provide details of those transactions.
+<ul>
+<li>If the package was shipped to a business address, provide evidence that the customer works there.</li>
+
+
+
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-19"><a class="wccom-docs-anchor-links" href="#section-19">Digital product or service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For a dispute involving a digital product or service, the file uploaded with the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, should include access or activity logs.</p>
+
+
+
+<p>This should include IP addresses, corresponding timestamps, and any detailed recorded activity.</p>
+
+
+
+<p>The file needs to prove that the cardholder accessed or downloaded the digital product or service after the purchase.</p>
+
+
+
+<header class="toc-header"><h3 id="section-20"><a class="wccom-docs-anchor-links" href="#section-20">Offline service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For a dispute involving an offline service, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Service date:</strong> Evidence of the date on which the cardholder received or began receiving the purchased service, which should be before the dispute date.</li>
+
+
+
+<li><strong>Service documentation: </strong>Documentation showing proof that a service was provided to the cardholder. This could include a copy of a signed contract, work order, or other form of written agreement.</li>
+</ul>
+
+
+
+<div id="subscription-canceled" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-21"><a class="wccom-docs-anchor-links" href="#section-21">Subscription Canceled<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>With this type of dispute, the customer is claiming that you continued to charge them recurring payments after they had cancelled the associated subscription agreement.</p>
+
+
+
+<p>To overturn a <strong>subscription canceled</strong> dispute, you need to prove to the bank that the subscription was still active as the customer had not followed your cancellation procedure.</p>
+
+
+
+<p>You should also prove that the customer was aware of your cancellation policies and procedure. For example, demonstrate that the customer accepted the cancellation terms at the time of sign-up.</p>
+
+
+
+<header class="toc-header"><h3 id="section-22"><a class="wccom-docs-anchor-links" href="#section-22">Customer communication<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Using the <strong>Customer Communication</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, provide the bank with a file showing:</p>
+
+
+
+<ul>
+<li>Any notifications sent to the customer of a renewal or continuation of the subscription, for example, pre-renewal email notifications, or</li>
+
+
+
+<li>Acknowledgement from the customer of their continued use of the product or service after the date they claim they canceled the subscription (if available).</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-text-5">Additional details text</h4>
+
+
+
+<p>In the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Disclosure of cancelation policy</strong>: explain how and when your cancelation policy was disclosed to the customer prior to purchase.</li>
+
+
+
+<li><strong>Reason for cancelation refusal</strong>: if you have refused to cancel the customer’s subscription, explain to the bank why why the customer’s subscription was not canceled. Reference terms in your cancelation policy, uploaded in the <strong>Additional Details</strong> file upload field.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-9">Additional details file</h4>
+
+
+
+<p>Using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a PDF of your cancellation policy, as presented to the customer.</p>
+
+
+
+<p>Do not link to the cancellation policy in your response, as links will not be visited by the card issuer evaluating the dispute.</p>
+
+
+
+<p>For <strong>digital products or services</strong>, the file uploaded in the additional details field should also provide server or other activity logs showing proof that the cardholder accessed or downloaded the digital product or service after the disputed cancelation date. This information should include IP addresses, corresponding timestamps, and any detailed recorded activity.</p>
+
+
+
+<p>For <strong>offline services</strong>, you should also include in the file:</p>
+
+
+
+<ul>
+<li><strong>Service date:</strong> evidence of the date on which the cardholder received or began receiving the purchased service, which should be before the dispute date.</li>
+
+
+
+<li><strong>Service documentation: </strong>Documentation showing proof that a service was provided to the cardholder. This could include a copy of a signed contract, work order, or other form of written agreement.</li>
+</ul>
+
+
+
+<div id="general" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<div id="unrecognized" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-23"><a class="wccom-docs-anchor-links" href="#section-23">General and Unrecognized<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>In a <strong>General</strong> or an <strong>Unrecognized</strong> dispute, the customer doesn’t recognize the payment appearing on their card statement. To overturn the dispute, you need your customer to withdraw the dispute. You can achieve this by helping them identify the payment.</p>
+
+
+
+<p>When challenging a dispute of this type, you should also include different information depending on the type of product associated with the disputed transaction.</p>
+
+
+
+<header class="toc-header"><h3 id="section-24"><a class="wccom-docs-anchor-links" href="#section-24">Physical product<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<h4 id="h-additional-details-text-6">Additional details text</h4>
+
+
+
+<p>For a dispute on a transaction involving a physical product, the <strong>Additional Details</strong> text field of the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, your response should include:</p>
+
+
+
+<ul>
+<li><strong>Shipping date</strong>: the date on which the package began its route to the shipping address, in a clear human-readable format.</li>
+
+
+
+<li><strong>Shipping carrier</strong>: include the name of the delivery service that shipped the package, such as Fedex, UPS, USPS, etc. If multiple carriers were used for this purchase, include the names of all carriers.</li>
+
+
+
+<li><strong>Shipment tracking number</strong>: include the tracking number for a physical product, obtained from the shipping carrier or delivery service. Please include all tracking numbers for all packages associated with this transaction.</li>
+</ul>
+
+
+
+<h4 id="h-additional-details-file-10">Additional details file</h4>
+
+
+
+<p>For a dispute involving a physical product, using the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, upload a file with the following:</p>
+
+
+
+<ul>
+<li><strong>Shipping documentation: </strong>upload a PDF showing:
+<ul>
+<li>The address to which a physical product was shipped. The shipping address must match a billing address verified with AVS. (A signature is not required as evidence of delivery).</li>
+
+
+
+<li>Proof that the package was shipped to the cardholder at the same address the cardholder provided to you. This could include a copy of the shipment receipt or label, and show the full shipping address of the cardholder, if possible.</li>
+
+
+
+<li>Detailed delivery information from the carrier, like confirmation of delivery.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Other evidence</strong>: in the following situations, you should also include additional documentary evidence:If the customer has purchased the same products from you previously without lodging a dispute on those transactions, provide details of those transactions.
+<ul>
+<li>If the package was shipped to a business address, provide evidence that the customer works there.</li>
+
+
+
+<li>If the transaction was completed by a member of the cardholder’s family or household, provide evidence of the connection between the two.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-25"><a class="wccom-docs-anchor-links" href="#section-25">Digital product or service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>For a dispute involving a digital product or service, the file uploaded with the <strong>Additional Details</strong> file upload field on the <strong>Payments &gt; Disputes &gt; Challenge Dispute</strong> screen, must contain at least two of the following pieces of information in order to fulfill <a href="#compelling-evidence">compelling evidence</a> requirements:</p>
+
+
+
+<ul>
+<li>Customer’s IP address and their device’s geographical location at the time of purchase.</li>
+
+
+
+<li>Device ID and name of the device used to complete the transaction.</li>
+
+
+
+<li>Customer name and email address linked to their customer profile.</li>
+
+
+
+<li>Evidence that the customer logged into their account for your business before the transaction date.</li>
+
+
+
+<li>Evidence that your website or app was accessed by the cardholder for purchase or services on or after the transaction date.</li>
+
+
+
+<li>Evidence that the same device and card used in the disputed payment was used in a previous payment that was not disputed.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="section-26"><a class="wccom-docs-anchor-links" href="#section-26">Offline service<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In the <strong>additional details</strong> file, your response should include a file with:</p>
+
+
+
+<ul>
+<li><strong>Service date:</strong> evidence of the date on which the cardholder received or began receiving the purchased service, which should be before the dispute date.</li>
+
+
+
+<li><strong>Service documentation: </strong>Documentation showing proof that a service was provided to the cardholder. This could include a copy of a signed contract, work order, or other form of written agreement.</li>
+</ul>
+
+
+
+<div id="compelling-evidence" class="hidden-div-for-anchor">&nbsp;</div>
+
+
+
+<header class="toc-header"><h2 id="section-27"><a class="wccom-docs-anchor-links" href="#section-27">Compelling Evidence<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Visa has special evidence requirements for overturning Fraudulent and Product Not Received disputes. These requirements are referred to as <em>compelling evidence</em>.</p>
+
+
+
+<p>In order for Visa to consider a response for a <strong>fraudulent</strong> or <strong>product not received</strong> dispute, you must provide at least one piece of compelling evidence. This evidence proves that the cardholder participated in the transaction, received any goods or services, or benefited from the transaction.</p>
+
+
+
+<p>While compelling evidence is only required by Visa, we recommended you collect and submit this evidence regardless of the card brand used in the transaction.</p>
+
+
+
+<p>You can learn more about Visa’s compelling evidence requirements in <a href="https://www.visauniversity.com/en/catalog/liveonline/introduction-to-dispute-resolution">their online courses</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-28"><a class="wccom-docs-anchor-links" href="#section-28">Dispute Decisions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Although WooCommerce Payments is used to submit evidence and challenge the dispute, the dispute outcome is determined exclusively by the bank. Neither Automattic nor our financial service providers influence the decision outside of submitting the evidence to them. Unfortunately once decided, these decisions can not be overturned.</p>
+
+
+
+<p>On average, banks take 2 to 3 months after evidence has been submitted to determine the outcome of a dispute.</p>
+
+
+
+<header class="toc-header"><h2 id="section-29"><a class="wccom-docs-anchor-links" href="#section-29">SEPA Disputes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Like other payment methods, SEPA provides a dispute process for customers to dispute payments. However, their dispute process works differently than that of other payment methods.</p>
+
+
+
+<p>After paying with SEPA, customers can dispute a payment through their bank on a “no questions asked” basis up to eight weeks after their account is debited. <strong>The customer will automatically win any dispute filed within this time period.</strong></p>
+
+
+
+<p>After eight weeks and up to 13 months, a customer can only dispute a payment with their bank if the debit is considered unauthorized. If this occurs, WooCommerce Payments automatically provides the bank with the mandate that the customer approved. This does not guarantee cancellation of the dispute however: the bank can still decide that the debit was unauthorized and the customer is entitled to a refund.</p>
+			</div>
+					

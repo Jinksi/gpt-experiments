@@ -1,0 +1,101 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">What happens to my subscriptions if I deactivate the WooCommerce Payments plugin?</h1>
+			<div class="entry">
+				
+<p>With WooCommerce Payments, you have two options to sell subscription products:</p>
+
+
+
+<ul>
+<li>The&nbsp;<a href="https://woocommerce.com/document/payments/subscriptions/">built-in subscriptions functionality</a>.</li>
+
+
+
+<li>The&nbsp;<a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a>&nbsp;extension.</li>
+</ul>
+
+
+
+<p>See&nbsp;<a href="https://woocommerce.com/document/payments/subscriptions/comparison/">this document</a>&nbsp;for a comparison between the two.</p>
+
+
+
+<p>This document explains what happens to subscriptions if you deactivate the WooCommerce Payments plugin under <strong>Plugins &gt; Installed Plugins</strong>. Because you could potentially be using WooCommerce Payments by itself or in combination with the Subscriptions extension, this document covers both scenarios.</p>
+
+
+
+<p>This document does not cover what happens if you simply <a href="https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/disable-gateway/">disable WooCommerce Payments as an active gateway</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="existing-subscriptions"><a class="wccom-docs-anchor-links" href="#existing-subscriptions">Existing subscriptions <span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="existing-subscriptions-using-woocommerce-payments"><a class="wccom-docs-anchor-links" href="#existing-subscriptions-using-woocommerce-payments">Using WooCommerce Payments <span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you attempt to deactivate the WooCommerce Payments plugin while your site has active subscriptions, a popup warning will be shown asking for confirmation:</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1420" height="650" src="https://woocommerce.com/wp-content/uploads/2022/12/image-65.png" alt="" class="wp-image-18734001340313" srcset="https://woocommerce.com/wp-content/uploads/2022/12/image-65.png 1420w, https://woocommerce.com/wp-content/uploads/2022/12/image-65.png?resize=620,284 620w, https://woocommerce.com/wp-content/uploads/2022/12/image-65.png?resize=768,352 768w, https://woocommerce.com/wp-content/uploads/2022/12/image-65.png?resize=650,298 650w, https://woocommerce.com/wp-content/uploads/2022/12/image-65.png?resize=300,137 300w, https://woocommerce.com/wp-content/uploads/2022/12/image-65.png?resize=958,439 958w" sizes="(max-width: 1420px) 100vw, 1420px"></figure>
+
+
+
+<p>If you deactivate, any subscriptions purchased with WooCommerce Payments that were not cancelled prior to the plugin being deactivated <em>will continue to collect payments from customers</em>. This is due to the the <a href="https://woocommerce.com/document/payments/subscriptions/comparison/#billing-engine">off-site billing engine</a> that WooCommerce Payments uses.</p>
+
+
+
+<p>Furthermore, because WooCommerce Payments is disabled, your site will no longer generate the corresponding WooCommerce orders or send the associated emails to customers. As you can imagine, <strong>this situation is almost never advisable.</strong> </p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>If you do not want renewal payments to continue to be processed, you should cancel all subscriptions before deactivating WooCommerce Payments.</strong></p></div>
+
+
+
+<p>If you’ve taken your site down or otherwise cannot simply reactivate WooCommerce Payments and cancel existing subscriptions, please <a href="https://woocommerce.com/my-account/create-a-ticket/">contact our support staff</a>.</p>
+
+
+
+<header class="toc-header"><h3 id="existing-subscriptions-using-subscriptions-extension"><a class="wccom-docs-anchor-links" href="#existing-subscriptions-using-subscriptions-extension">Using Subscriptions extension<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you deactivate the WooCommerce Payments plugin while using the Subscriptions extension, subscriptions that used WooCommerce Payments as their payment method will transition to using <a href="https://woocommerce.com/document/subscriptions/renewal-process/#section-2">manual renewals</a> instead. </p>
+
+
+
+<p>Renewal orders will be created once payment is due. Those orders will require <a href="https://woocommerce.com/document/subscriptions/renewal-process/#section-4">subscribers to login and pay for renewal</a> to resume the subscription, even if the subscription had automatic renewal payments prior to deactivating WooCommerce Payments.</p>
+
+
+
+<header class="toc-header"><h2 id="new-subscriptions"><a class="wccom-docs-anchor-links" href="#new-subscriptions">New subscriptions <span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="new-subscriptions-using-woocommerce-payments"><a class="wccom-docs-anchor-links" href="#new-subscriptions-using-woocommerce-payments">Using WooCommerce Payments<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>When using the subscriptions functionality built-in to WooCommerce Payments, subscription purchases can only be processed via WooCommerce Payments. Other payment gateways will not be available during checkout when a subscription product is in the cart.</p>
+
+
+
+<p>For this reason, if WooCommerce Payments is installed and active, but disabled as a gateway, customers with subscription products in their cart will see a notice saying that there are no available payment methods which support subscriptions.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png" alt="" class="wp-image-18734001269339" width="471" height="399" srcset="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png 1094w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png?resize=620,526 620w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png?resize=768,651 768w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png?resize=650,551 650w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png?resize=300,254 300w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-02-at-16.15.36-UTC@2x.png?resize=958,813 958w" sizes="(max-width: 471px) 100vw, 471px"></figure></div>
+
+
+<header class="toc-header"><h3 id="new-subscriptions-using-the-subscriptions-extension"><a class="wccom-docs-anchor-links" href="#new-subscriptions-using-the-subscriptions-extension">Using the Subscriptions extension<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you use the Subscriptions extension, purchases of subscription products will work as normal, so long as you have at least one other <a href="https://woocommerce.com/document/subscriptions/payment-gateways/">gateway that supports Subscriptions</a>.</p>
+			</div>
+					

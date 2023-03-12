@@ -1,0 +1,290 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Multi-Currency with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p><a href="https://woocommerce.com/payments/"><strong>WooCommerce Payments</strong></a> allow merchants to set up their store to receive payments in one of many currencies, giving the shopper a list of currencies to choose from. The list of currency options can be tailored subject to the store’s registered business location. This document explains the setup, options, the various places where multiple currencies can be used, and frequently asked questions around the multi-currency feature.</p>
+
+
+
+<h2 id="h-supported-currencies">Supported Currencies&nbsp;</h2>
+
+
+
+<p>The Multi-Currency feature supports all currencies in the <a href="https://woocommerce.com/document/payments/faq/available-currencies/">WooCommerce Payments accepted currencies list</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-2"><a class="wccom-docs-anchor-links" href="#section-2">Settings<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The functionality is enabled as part of WooCommerce Payments. You should see the Multi-Currency tab after visiting <strong>Payments &gt; Setting</strong>.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-12.08.30.png?w=950" alt="" class="wp-image-3378365"></figure>
+
+
+
+<p>After clicking on the Multi-Currency tab you should see a screen showing only the store’s default currency, with a button to add more currencies.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/2LcdccFCjadAjsFe-lWz2xlpLMoRdgPyzJxzHBqmZD7hImOmh0rq_QeyjgDcHpAeG5BrxlEDYDuHilni0v1zLuqUyoQBqa4R3W6BKDWttS468LEJBVWnVIQ_foeKl6pQ22TusPUF" alt="This image has an empty alt attribute; its file name is 2LcdccFCjadAjsFe-lWz2xlpLMoRdgPyzJxzHBqmZD7hImOmh0rq_QeyjgDcHpAeG5BrxlEDYDuHilni0v1zLuqUyoQBqa4R3W6BKDWttS468LEJBVWnVIQ_foeKl6pQ22TusPUF"></figure>
+
+
+
+<p>From this screen, you can add all the currencies that you’d like to accept on your store. To add a currency, see the next section.</p>
+
+
+
+<header class="toc-header"><h2 id="section-3"><a class="wccom-docs-anchor-links" href="#section-3">Adding Customer Currencies<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>After <a href="#section-2">navigating to the settings</a> you will see a button for adding currencies. Clicking the “Add currencies” button will bring up a modal with a list of available currencies that are supported by WooCommerce Payments.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/08/add_enabled.png?w=766" alt="" class="wp-image-3378373" width="425" height="527"></figure></div>
+
+
+<p>From this list, you can enable currencies that you want to allow your users to view the store prices converted into and selecting the desired currencies before clicking the “Update selected” button.&nbsp; After clicking this button, you will see a list of the currencies enabled on your store.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/08/currency_list.png?w=950" alt="" class="wp-image-3378376" width="713" height="364"></figure>
+
+
+
+<p>By default, the rates are retrieved automatically. Additional details are available in the <a href="#section-4">Rates section</a>. Each currency has its own management screen where you can configure exchange rates and more, for more information about this, please see the <a href="#section-5">manage a currency section</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Exchange Rates<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Rates are retrieved from the WooCommerce Payments server on a daily basis. You also have the option of setting a manual rate when <a href="#section-5">managing a currency</a>, which will override the automatic rate.</p>
+
+
+<div class="woo-sc-box note   ">Disclaimer: Exchange rates are not accurate to the minute and may differ from what you’ll find when looking at historical exchange rates. The exchange rates will also vary slightly from the rate used at the time of transaction.</div>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h2 id="section-5"><a class="wccom-docs-anchor-links" href="#section-5">Managing a Customer Currency<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Clicking on the manage link in a currency row takes you to a new settings screen for that specific customer currency.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-15.34.29.png?w=950" alt="" class="wp-image-3378386"></figure>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/08/pasted-image.png?w=950" alt="" class="wp-image-3378385" width="748" height="503"></figure></div>
+
+
+<header class="toc-header"><h3 id="section-6"><a class="wccom-docs-anchor-links" href="#section-6">Exchange Rate<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Use the exchange rate setting to choose between a manual and an automated rate. Automatic rate fetching is selected by default.&nbsp;</p>
+
+
+
+<p>Manual rate allows you to specify your own fixed rate of exchange, which will take priority over the automatic rate if it is set.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-15.38.10.png?w=950" alt="" class="wp-image-3378388"></figure>
+
+
+
+<header class="toc-header"><h3 id="section-7"><a class="wccom-docs-anchor-links" href="#section-7">Formatting rules<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Formatting rules create consistency in your converted product prices, without having to adjust prices individually on each product.&nbsp;</p>
+
+
+
+<h4 id="h-price-rounding"><strong>Price rounding</strong></h4>
+
+
+
+<p>Price rounding always rounds the converted price <strong>up</strong> to the nearest amount selected. For example, if a converted price product price is 5.32, and price rounding is set to 0.50, it will round the converted price up to 5.50. If price rounding is set to 1.00, it will round the converted price up to 6.00, and so on. For decimal currencies, price rounding is set to 1.00 by default. For non-decimal currencies, price rounding is set to 100 by default.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/rounding.png?w=950" alt="" class="wp-image-3378389"></figure>
+
+
+
+<h4 id="h-price-charm"><strong>Price charm</strong></h4>
+
+
+
+<p>‘Price charming’, also known as ‘psychological pricing’, reduces the converted price by a specific amount.&nbsp; It is a pricing strategy that reduces the price by either 0.01 or 0.05 as prices slightly less than a whole round number (e.g. $1.99 instead of $2) are perceived as more attractive to a consumer. Price charm is set to None by default.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/price_chamrming_wcpay.png?w=950" alt="" class="wp-image-3378392"></figure>
+
+
+
+<header class="toc-header"><h3 id="section-8"><a class="wccom-docs-anchor-links" href="#section-8">Previewing converted prices<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Enter a hypothetical product price using your store’s default currency to view the amount converted to the customer currency using the selections from the formatting section above.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/preview_conversion.png?w=950" alt="" class="wp-image-3378393"></figure>
+
+
+
+<header class="toc-header"><h2 id="section-9"><a class="wccom-docs-anchor-links" href="#section-9">Currency switching<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you would like your customers to be able to choose their currency from the front-end of your site, and you are not using a theme that supports this by default, you will need to make use of the currency switcher block or widget.</p>
+
+
+
+<header class="toc-header"><h3 id="section-10"><a class="wccom-docs-anchor-links" href="#section-10">Block<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To add the block, edit any post, page, or (more commonly) widget area. Insert the block wherever it works best for your theme. It’s likely that this will be in a widget area such as a sidebar, header, or footer.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png" alt="" class="wp-image-18734001608903" width="647" height="382" srcset="https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png 1552w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=620,367 620w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=768,454 768w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=650,384 650w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=1536,909 1536w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=300,177 300w, https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.17.36-UTC@2x.png?resize=958,567 958w" sizes="(max-width: 647px) 100vw, 647px"><figcaption class="wp-element-caption">Inserting the Currency Switcher block</figcaption></figure></div>
+
+
+<p>Once the block has been added, your customers can use it to <a href="https://woocommerce.com/document/woocommerce-payments/currencies/multi-currency-setup/#section-18">switch the currency on their account</a> quickly and easily.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/03/Screenshot-taken-on-2023-03-01-at-19.21.57-UTC.gif" alt="" class="wp-image-18734001608928" width="800" height="778"><figcaption class="wp-element-caption">Using the Currency Switcher block on a test site</figcaption></figure></div>
+
+
+<header class="toc-header"><h3 id="section-11"><a class="wccom-docs-anchor-links" href="#section-11">Widget<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To add the widget, go to <strong>Appearance &gt; Widgets</strong> and look for the “Currency Switcher” widget and add it to the best location in your theme. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/08/widget_area_wcpay_mc.png" alt="" class="wp-image-3378398" width="248" height="465"></figure></div>
+
+
+<p>In the widget setting, choose if you want the widget to display currency symbols and flags next to the currency name.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-16.17.06.png" alt="" class="wp-image-3378399" width="303" height="197"></figure></div>
+
+
+<header class="toc-header"><h2 id="section-12"><a class="wccom-docs-anchor-links" href="#section-12">Geolocation<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you have enabled the “Automatically switch customers to their local currency if it has been enabled” setting, WooCommerce Payments will attempt to determine which country each customer is in, and then show them the appropriate currency. This geolocation happens regardless of any “Default customer location” setting you may have under <strong>WooCommerce &gt; Settings &gt; General</strong>.</p>
+
+
+
+<p>Note, however, that this geolocation is not always 100% accurate, and can sometimes be incorrect due to customer use of VPNs and other such factors.</p>
+
+
+
+<header class="toc-header"><h2 id="section-13"><a class="wccom-docs-anchor-links" href="#section-13">Storefront Support<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you’re using the Storefront theme or one of the many child themes based on it, the currency widget can be added to the breadcrumbs section.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-17.37.21.png?w=950" alt="" class="wp-image-3378403"></figure>
+
+
+
+<p>To enable this, visit the Payments &gt; Settings and then click on the “Multi-Currency” tab at the top. Next scroll down to “Store settings” and check the box next to the setting “Add a currency switcher to Storefront…”.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/Screenshot-2021-07-24-at-17.49.03.png?w=950" alt="" class="wp-image-3378404"></figure>
+
+
+
+<header class="toc-header"><h2 id="section-14"><a class="wccom-docs-anchor-links" href="#section-14">Support for other themes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+<div class="woo-sc-box note   ">Note: This is a <strong>Developer level</strong> section. If you are unfamiliar with code/templates and resolving potential conflicts, select a <a href="https://woocommerce.com/search/?collections=service">WooExpert or Developer</a> for assistance. We are unable to provide support for customizations under our <a href="https://woocommerce.com/support-policy/">Support Policy</a>.</div>
+
+
+
+<p>If you are not using the Storefront theme, or one of the many child themes based on it, you can add the currency switcher into your theme using the next snippet:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php 
+	if ( function_exists( 'wc_get_currency_switcher_markup' ) ) {
+		$instance = [
+			'symbol' =&gt; true,
+			'flag'   =&gt; false,
+		];
+		$args = [];
+		echo wc_get_currency_switcher_markup( $instance, $args );
+
+	}
+?&gt;</code></pre>
+
+
+
+<p>Where <code>$instance</code> array allows you to enable/disable the symbol and flags in the switcher, and <code>$args</code> accepts the same arguments as <a href="https://developer.wordpress.org/reference/functions/the_widget/">the_widget</a> to configure the display of the widget.</p>
+
+
+
+<header class="toc-header"><h2 id="section-15"><a class="wccom-docs-anchor-links" href="#section-15">Analytics<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>All data within analytics will be converted back to the store’s base currency. There should be no changes to the reports or any of the other analytics screens. This means you will not be able to see individual breakdowns of orders made in different currencies. A column has been added to the <strong>Orders</strong> analytics report to show which currency a customer used to complete the order.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/08/analytics.png?w=950" alt="" class="wp-image-3378407"></figure>
+
+
+
+<header class="toc-header"><h2 id="section-16"><a class="wccom-docs-anchor-links" href="#section-16">Merchant account currency and shopper payments currency<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>When a customer selects a different currency than the store’s default currency, the updated prices shown will be based on the exchange rate set in the <a href="#section-2">multi-currency settings</a>. At checkout, a payment will be created with the customer-selected currency and the resulting converted price shown to the customer. Once the order has been paid, that payment will be converted into your store’s default currency (unless you have <a href="https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/">added a second bank account or card</a> for deposits in the currency the customer paid with).</p>
+
+
+
+<header class="toc-header"><h2 id="section-17"><a class="wccom-docs-anchor-links" href="#section-17">Customer Preferred Currency<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Your customers can choose their preferred currency for shopping and payments from their “<a href="https://woocommerce.com/document/the-my-account-page/">My Account</a>” page by going to <strong>My Account &gt; Account details</strong></p>
+
+
+
+<figure class="wp-block-image size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png" alt="Set the preferred currency in the My Account page" class="wp-image-9036325" width="1040" height="503" srcset="https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png 1040w, https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png?resize=620,300 620w, https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png?resize=768,371 768w, https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png?resize=650,314 650w, https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png?resize=300,145 300w, https://woocommerce.com/wp-content/uploads/2021/12/default-currency.png?resize=958,463 958w" sizes="(max-width: 1040px) 100vw, 1040px"><figcaption class="wp-element-caption">Setting the preferred currency on the My Account page</figcaption></figure>
+			</div>
+					

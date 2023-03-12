@@ -1,0 +1,815 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Getting started with In-Person Payments with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p><span style="font-weight: 400">With the launch of </span><b>WooCommerce In-Person Payments</b><span style="font-weight: 400">, we’re excited to have you join us on this journey as we bring tap, swipe, chip card, and mobile wallet payments to your store!</span></p>
+
+
+
+<p><b>WooCommerce In-Person Payments</b><span style="font-weight: 400"> is available to qualified U.S. and Canadian merchants using iPhone, iPad, or Android devices for non-subscription-based products. Support for subscriptions and other countries is coming soon.</span></p>
+
+
+
+<header class="toc-header"><h2 id="meet-your-card-reader"><a class="wccom-docs-anchor-links" href="#meet-your-card-reader">Introducing Your Card Reader<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">Both the M2 reader and the WisePad 3 ship with a partial charge. We recommend that it be charged fully before the first use. To charge your reader, use the included USB-C cable to connect the reader to any USB charger. A full charge will take a few hours.</span></p>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> Do <strong>not</strong> pair the card reader via your phone or tablet’s built-in settings. The <a href="https://woocommerce.com/mobile/">WooCommerce mobile app</a> will communicate with the reader automatically.</p></div>
+
+
+
+<header class="toc-header"><h2 id="meet-your-card-reader"><a class="wccom-docs-anchor-links" href="#meet-your-card-reader">Requirements<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>All In-Person Payments require the following:</p>
+
+
+
+<ul>
+<li>A connection to the Internet via WiFi or cellular data.</li>
+
+
+
+<li>The latest version of <strong><a href="https://woocommerce.com/products/woocommerce-payments/">WooCommerce Payments</a></strong> must be active. </li>
+
+
+
+<li>Your WooCommerce Payments account is in good standing.</li>
+
+
+
+<li>A device running iOS 15+ or Android 5+.</li>
+</ul>
+
+
+
+<p>If you’d like to collect In-Person Payments using <strong>Tap to Pay on iPhone</strong>, you will need an iPhone which meets the following requirements:</p>
+
+
+
+<ul>
+<li>iPhone XS or newer.</li>
+
+
+
+<li>iOS 16.0 or above.</li>
+
+
+
+<li>The device must be signed in to an iCloud account.</li>
+
+
+
+<li>The device must have a passcode set.</li>
+
+
+
+<li>The NFC (near field communication) chip must not be disabled.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="testing-reader-connection"><a class="wccom-docs-anchor-links" href="#testing-reader-connection">Getting Started: Testing Your Reader Connection<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">First, allow your reader to fully charge. To do that, use the supplied cable to connect the USB-C on the reader to a USB charger. With a full charge, the reader should be able to process </span>600 to 800 contactless transactions<span style="font-weight: 400"> before needing a recharge</span>. </p>
+
+
+
+<p><span style="font-weight: 400">The next step is to connect your card reader to your mobile device for the first time. To do so, in the <span style="font-weight: 400">WooCommerce Mobile App</span>, go to <strong>Menu  &gt; Payments</strong>:</span></p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" width="384" height="255" src="https://lh3.googleusercontent.com/8ld_zXJgOdFzoQKs14l1NTXfLRHxBncE9qSYw9lnShRPOT8NHa6j3aMpJh9O4eXhwziIdi0ggUeOP_EsOnDcoieRLmfOIT2CLTivCDxk-XyCooAMk08uG6y2Habl8btLX8A4AM_ke3Pr1O3lWhVgQKI"></p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" src="https://lh5.googleusercontent.com/z6c5uPfG5kWQDezqHuqVb6zwW9NLmY4rf_3hUxF7kuqG1d3AJ-hHVKYukasWc4MRzLLCTaRsBl04jJRwjX6ajA-oJQZKHzxDFVsEZCYTIvb6qrHpXsv9V5fTk6VrVpBt6SVQUO-mmB8CQfxxpttJRII" width="386" height="459"></p>
+
+
+
+<p><span style="font-weight: 400">Then, on the <strong>In-Person Payments</strong> screen, look for <strong>Manage card reader </strong>and tap on it</span>. (Keep in mind that menu options are country-dependent. Canadian merchants may see the WisePad 3 as an option instead of the Chipper and/or M2.)</p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" src="https://lh4.googleusercontent.com/tFpJdHZNAd1zchWDcYzaZbgoWkK7ahyIZ5E4Ws-TTEimEO0tuJT8ct7BT1HFkrsZ5BoGUYnHh3v9ByBN3Eg76BiINhBPcLS63OxJ0Npd6owAye0QlnAsBEgavPF3ER5bM8CNuXhXwO3HCtM07SfoTZA" width="403" height="315"></p>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title">If the <strong>Manage card reader</strong> item is disabled, please contact support so that we can help! To reach out to us, tap on the <strong>Menu</strong> tab in the app, then go to <strong>Settings (gear icon) &gt; Help &amp; Support &gt; Contact Support</strong>.</p></div>
+
+
+
+<p><span style="font-weight: 400">When you see the <strong>Connect your card reader</strong> screen, tap on <strong>Connect Card Reader</strong>:</span></p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" src="https://lh4.googleusercontent.com/jZGOeoh13NOjCL07fGz6dJI6hQ9CyL_1xVDGdqjVD4OcCG1Y_7MsJ8oVgriRYEcPr_gwiHANN2TRuIzGAhLz5DWhLcQSOCp5f9aAx1GfDm0nVMwx_wAgaqHz1ltAhSbJc_hGUdWHIKfIYOf1JFhXXGk" width="393" height="652"></p>
+
+
+
+<p><span style="font-weight: 400">You should be prompted that <strong>Woo Would Like to Use Bluetooth</strong>. Tap <strong>OK</strong> to allow this.</span> <span style="font-weight: 400">Scanning will begin:</span></p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" src="https://lh5.googleusercontent.com/6xwZnlmyUhFv5wauhlB2BFaBK8w0yM2a9u32m2U8wT-RSEHS_cl5WeyjrzGFIpLeaj0KLKiKkIWJv1leYFCViyxO5DIQksISKj4qn5htvYCTzgRvx7QMwVhuEo8xS2sEtCNSBpu_xry33my_WxIHrBo" width="398" height="516"></p>
+
+
+
+<p><br><span style="font-weight: 400">Press and briefly hold the power button on your reader to turn it on. Keep it near the mobile device.</span></p>
+
+
+
+<p><span style="font-weight: 400">After a few seconds, you’ll see the <strong>Do you want to connect…</strong> prompt with your reader’s serial number. Tap <strong>Connect to Reader</strong> to begin the connection process</span>.</p>
+
+
+
+<p><span style="font-weight: 400">You should see the <strong>Allow Woo to Use Your Location</strong> prompt. Tap to <strong>Allow While Using App</strong>.</span></p>
+
+
+
+<p><span style="font-weight: 400">That’s it: your reader is now connected and ready to accept payments</span>!</p>
+
+
+
+<header class="toc-header"><h2 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Collect Fast Payment<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To collect a payment, navigate to the Menu tab in your WooCommerce mobile app. Tap on the:</p>
+
+
+
+<ul>
+<li><strong>Menu</strong></li>
+
+
+
+<li><strong>Payments&nbsp;</strong></li>
+
+
+
+<li><strong>Collect payment</strong></li>
+
+
+
+<li><strong>Enter in the amount to collect</strong></li>
+
+
+
+<li><strong>Add an order note (optional)</strong></li>
+
+
+
+<li><strong>Tap on collect payment</strong></li>
+</ul>
+
+
+
+<div class="is-layout-flex wp-container-5 wp-block-columns">
+<div class="is-layout-flow wp-block-column">
+<p class="has-text-align-center"><img decoding="async" loading="lazy" width="384" height="255" src="https://lh3.googleusercontent.com/8ld_zXJgOdFzoQKs14l1NTXfLRHxBncE9qSYw9lnShRPOT8NHa6j3aMpJh9O4eXhwziIdi0ggUeOP_EsOnDcoieRLmfOIT2CLTivCDxk-XyCooAMk08uG6y2Habl8btLX8A4AM_ke3Pr1O3lWhVgQKI"></p>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column">
+<p class="has-text-align-center"><img decoding="async" style="width: 270px" src="https://lh5.googleusercontent.com/z6c5uPfG5kWQDezqHuqVb6zwW9NLmY4rf_3hUxF7kuqG1d3AJ-hHVKYukasWc4MRzLLCTaRsBl04jJRwjX6ajA-oJQZKHzxDFVsEZCYTIvb6qrHpXsv9V5fTk6VrVpBt6SVQUO-mmB8CQfxxpttJRII"></p>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column">
+<p class="has-text-align-center"><img decoding="async" loading="lazy" width="392" height="288" src="https://lh6.googleusercontent.com/v6oyFXEqdh5RRjWEhshOwHfGc6raF035Cc_Z5SOOAUOn5m3RElvyaC7TpynmYCuhpvjDc4ijmYKLRiaq7RGydT4ozoy2S-s5AQa7PW1E-_DXm-cbTavhYAngSloaLetmRe4-6n5Z4__LzciTfed_U24"></p>
+</div>
+</div>
+
+
+
+<div class="is-layout-flex wp-container-9 wp-block-columns">
+<div class="is-layout-flow wp-block-column">
+<p><img decoding="async" loading="lazy" src="https://lh5.googleusercontent.com/4f1pNbPgsczGyLOhg86fBsQUVBcx7GPtaitDdMVw_kHStFjBN-SfcKEGzm5yN5DxBJuOh_yW-y7-s7XOWl5wOpo_xloXeBVMRb5asWXmlF8aY-9U42MDITW8n1dzX5dXo9pKqCJS8J9qzlCO70gWM4g" width="403" height="442"></p>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column">
+<p class="has-text-align-center"><img decoding="async" loading="lazy" src="https://lh5.googleusercontent.com/Ccv9ZVyXOpnweYB6z2uMUxVOTNjMXHiT0_kakWXPfwP92kgPx53MfarawIKg7mkVDs-5GrA9gFpkDwk33i3ILqd9OrTeh4ITlpsVd6YCKvzCDm68lQVQ8RyPzdGQKnP-xx9VQBH39ahXvhvz2J1YqfU" width="402" height="346"></p>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column"></div>
+</div>
+
+
+
+<p>The app supports the following payment methods:&nbsp;</p>
+
+
+
+<ul>
+<li><strong>Cash</strong></li>
+
+
+
+<li><strong>Card</strong></li>
+
+
+
+<li><strong>Shareable payment link</strong>. This link can be shared with a customer and used to pay for the order online</li>
+</ul>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" width="407" height="342" src="https://lh4.googleusercontent.com/6_GU6v66Fz-FFF65Gn8rApsVc5D3sAHuw_c7UYu9mZ2qLWs75mHDyhp-RBSKmTQU9Hg8U7_MAlpQYZYUC29znMDWbf0V1BUYJFXjNgZip4O0CcNJ8rumsYD9oQ5EcHIebBl8j95YV6-O2NaOR8uHdQM"></p>
+
+
+
+<div class="is-layout-flex wp-container-11 wp-block-columns are-vertically-aligned-center">
+<div class="is-layout-flow wp-block-column is-vertically-aligned-center" style="flex-basis:100%">
+<p>When payment will be received, an order will be automatically created.</p>
+</div>
+</div>
+
+
+
+<header class="toc-header"><h2 id="section-5"><a class="wccom-docs-anchor-links" href="#section-5">Buy Online, Pay at Pickup<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">If you offer local pickup or curbside pickup options, you’ll need to decide if you want to deliver to your customers, or if they will be picking up their orders, or both. You’ll then set up </span><b>Shipping Methods</b><span style="font-weight: 400"> that your customers can choose during checkout.</span></p>
+
+
+
+<header class="toc-header"><h3 id="option-1-delivery"><a class="wccom-docs-anchor-links" href="#option-1-delivery">Option 1: Delivery<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><b>If you already have shipping set up for delivery, feel free to review or skip this section without making changes.</b></p>
+
+
+
+<p><span style="font-weight: 400">First, go to </span><b>WP Admin</b><span style="font-weight: 400"> for your store and click </span><b>WooCommerce</b><span style="font-weight: 400"> &gt; </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>Shipping</b><span style="font-weight: 400">.</span></p>
+
+
+
+<p><span style="font-weight: 400">If you don’t already have a </span><b>Shipping Zone</b><span style="font-weight: 400"> that includes delivery, add a new </span><b>Shipping Zone</b><span style="font-weight: 400">, and give it a </span><b>Zone name</b><span style="font-weight: 400">, e.g. “North End Seattle Metro”:</span></p>
+
+
+
+<p><span style="font-weight: 400">In </span><b>Zone regions</b><span style="font-weight: 400"> pick the state you deliver to and then the&nbsp;specific ZIP Codes:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image10-1.png?w=550" alt="A screenshot of the Shipping Zone screen showing options for Zone name, Zone regions (that can be more specific via postal codes), and Shipping Methods. " class="wp-image-3348012"></figure></div>
+
+
+<p><span style="font-weight: 400">While on this </span><b>Shipping Zone</b><span style="font-weight: 400"> screen, add a </span><b>Shipping Method</b><span style="font-weight: 400"> for delivery using the </span><b>Flat rate</b><span style="font-weight: 400"> method. In this example, we called it “Seattle Metro North End Delivery.</span>“</p>
+
+
+
+<p><span style="font-weight: 400">And if you want to support traditional shipping for these nearby customers, don’t forget to add a </span><b>Shipping Method</b><span style="font-weight: 400"> for that too (see </span><b>USPS</b><span style="font-weight: 400"> above as an example.) Remember, for customers whose shipping address falls within the shipping zone, only the shipping methods specified for that zone will be visible.&nbsp;</span></p>
+
+
+
+<p><span style="font-weight: 400">Don’t forget to click the </span><b>Save changes</b><span style="font-weight: 400"> button when you are finished</span></p>
+
+
+
+<header class="toc-header"><h3 id="option-2-local-pickup"><a class="wccom-docs-anchor-links" href="#option-2-local-pickup">Option 2: Local Pickup<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><b>If you already have shipping set up for local delivery, feel free to review or skip this section without making changes.</b></p>
+
+
+
+<p><span style="font-weight: 400">First, go to </span><b>WP Admin</b><span style="font-weight: 400"> for your store and click on </span><b>WooCommerce</b><span style="font-weight: 400"> &gt; </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>Shipping</b><span style="font-weight: 400">.</span></p>
+
+
+
+<p><span style="font-weight: 400">If you don’t already have a </span><b>Shipping Zone</b><span style="font-weight: 400"> that includes local pickup, add a new </span><b>Shipping Zone</b><span style="font-weight: 400">, and give it a </span><b>Zone name</b><span style="font-weight: 400">, e.g. “Washington State”:</span></p>
+
+
+
+<p><span style="font-weight: 400">In </span><b>Zone regions</b><span style="font-weight: 400"> pick the state that you want to offer local pickup for and then, optionally, the specific ZIP Codes (or allow any ZIP code in your state if you prefer):</span></p>
+
+
+
+<p><span style="font-weight: 400">While on this </span><b>Shipping Zone</b><span style="font-weight: 400"> screen, add a </span><b>Shipping Method</b><span style="font-weight: 400"> for local pickup using the </span><b>Local pickup </b><span style="font-weight: 400">method. In this example, we called it “Local Pickup (Free!)”</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image17.png?w=550" alt="An additional screenshot of the Shipping Zones screen. Two Shipping Methods are shown: Pickup in store (Free), and USPS. " class="wp-image-3348015"></figure></div>
+
+
+<p><span style="font-weight: 400">And if you want to support traditional shipping for these nearby customers, don’t forget to add a </span><b>Shipping Method</b><span style="font-weight: 400"> for that too (see </span><b>USPS</b><span style="font-weight: 400"> above as an example.) Remember, for customers whose shipping address falls within the shipping zone, only the shipping methods specified for that zone will be visible.&nbsp;</span></p>
+
+
+
+<p><span style="font-weight: 400">Don’t forget to click </span><b>Save changes</b><span style="font-weight: 400"> when you are finished</span></p>
+
+
+
+<header class="toc-header"><h3 id="option-3-delivery-and-pickup"><a class="wccom-docs-anchor-links" href="#option-3-delivery-and-pickup">Option 3: Both Delivery and Local Pickup<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><b>If you already have shipping set up for delivery and local pickup, feel free to review or skip this section without making changes.</b></p>
+
+
+
+<p><span style="font-weight: 400">First, go to </span><b>WP Admin </b><span style="font-weight: 400">for your store and click on </span><b>WooCommerce</b><span style="font-weight: 400"> &gt; </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>Shipping</b><span style="font-weight: 400">.</span></p>
+
+
+
+<p><span style="font-weight: 400">If you don’t already have a </span><b>Shipping Zone</b><span style="font-weight: 400"> that includes delivery and local pickup, add a new </span><b>Shipping Zone</b><span style="font-weight: 400">, and give it a </span><b>Zone name</b><span style="font-weight: 400">, e.g. “North End Seattle Metro”:</span></p>
+
+
+
+<p><span style="font-weight: 400">In </span><b>Zone regions</b><span style="font-weight: 400"> pick the state that you want to offer local pickup for (in this example, Washington State) and then the specific ZIP Codes to which you deliver.</span></p>
+
+
+
+<p><span style="font-weight: 400">While on this </span><b>Shipping Zone</b><span style="font-weight: 400"> screen, add a </span><b>Shipping Method</b><span style="font-weight: 400"> for delivery using the </span><b>Flat rate</b><span style="font-weight: 400"> method. In this example, we called it “Seattle Metro North End Delivery.”</span></p>
+
+
+
+<p><span style="font-weight: 400">And then add another </span><b>Shipping Method</b><span style="font-weight: 400"> for local pickup using the </span><b>Local pickup </b><span style="font-weight: 400">method. In this example, we called it “Local Pickup (Free!)”</span></p>
+
+
+
+<p><span style="font-weight: 400">And if you want to support traditional shipping for these nearby customers, don’t forget to add a </span><b>Shipping Method</b><span style="font-weight: 400"> for that too (see </span><b>USPS</b><span style="font-weight: 400"> below as an example.) Remember, for customers whose shipping address falls within the shipping zone, only the shipping methods specified for that zone will be visible.&nbsp;</span></p>
+
+
+
+<p><span style="font-weight: 400">When you’re done it should look something like this:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image5-1.png?w=550" alt="A third screenshot of the Shipping Zone screen, showing yet another Shipping method has been added, this time the Seattle Metro North End Delivery. " class="wp-image-3348016"></figure></div>
+
+
+<p><span style="font-weight: 400">Don’t forget to click </span><b>Save changes</b><span style="font-weight: 400"> when you are finished</span></p>
+
+
+
+<p><span style="font-weight: 400">For more information on setting up </span><b>Shipping Zones</b><span style="font-weight: 400"> see </span><a href="https://woocommerce.com/document/setting-up-shipping-zones"><span style="font-weight: 400">https://woocommerce.com/document/setting-up-shipping-zones</span></a><span style="font-weight: 400">&nbsp;</span></p>
+
+
+
+<header class="toc-header"><h2 id="add-cod-payment-method"><a class="wccom-docs-anchor-links" href="#add-cod-payment-method">Next, Add a Cash on Delivery Payment Method<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">You’ve already got the </span><b>WooCommerce Payments</b> <b>Payment Method</b><span style="font-weight: 400"> setup on your store to allow your customers to enter their card information on your website to complete checkout. But for </span><b>In-Person Payments</b><span style="font-weight: 400">, you’ll also need to add another payment method: </span><b>Cash on Delivery</b><span style="font-weight: 400">.</span></p>
+
+
+
+<p><span style="font-weight: 400">Don’t worry about the word “Cash” there – we’ll fix that in the next few steps.</span></p>
+
+
+
+<p><span style="font-weight: 400">To do so, go to </span><b>WP Admin</b><span style="font-weight: 400"> for your store and click on </span><b>WooCommerce</b><span style="font-weight: 400"> &gt; </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>Payments&nbsp;</b>&gt;&nbsp;<strong>All Payment Methods</strong>:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/payment-methods.png?w=550" alt="Showing the Payments tab that is accessible via WooCommerce > Settings > Payments > All payment methods. " class="wp-image-3490554"></figure></div>
+
+
+<p><span style="font-weight: 400">Next, enable </span><b>Cash on delivery</b><span style="font-weight: 400">:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image12.png?w=550" alt="Highlighting the Cash on delivery payment method under the Payments tab in WooCommerce Settings. " class="wp-image-3332311"></figure></div>
+
+
+<p><span style="font-weight: 400">Then click on </span><b>Manage</b><span style="font-weight: 400"> to access the settings for Cash on delivery. We recommend changing the name to something like “Pay on Delivery” or “Pay in Person” depending on your business, e.g.:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image10.png?w=550" alt="A detailed view of the Cash on delivery payment method. Sowing the Enable/Disable checkbox setting, and title, description, instruction, Enable for shipping methods text fields, and the Accept for virtual orders checkbox setting. " class="wp-image-3332313"></figure></div>
+
+
+<p><span style="font-weight: 400">Note that you can limit </span><b>Cash on delivery</b><span style="font-weight: 400"> to selected </span><b>Shipping Methods</b><span style="font-weight: 400"> like those we set up earlier. This way your customers will only see the </span><b>Cash on delivery</b> <b>Payment Method</b><span style="font-weight: 400"> only if they qualify for those </span><b>Shipping Methods</b><span style="font-weight: 400">. Just select those </span><b>Shipping Methods</b><span style="font-weight: 400"> in the </span><b>Enable for shipping methods</b><span style="font-weight: 400"> box (see above.)</span></p>
+
+
+
+<header class="toc-header"><h2 id="collect-order-payment"><a class="wccom-docs-anchor-links" href="#collect-order-payment">Collect Payment for an Order Placed Online<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">Enter Orders and browse orders in the </span><b>Processing</b><span style="font-weight: 400"> state. Orders created with the </span><b>Cash on Delivery Payment Method</b><span style="font-weight: 400"> are initially in the </span><b>Processing</b><span style="font-weight: 400"> state.</span></p>
+
+
+
+<p><span style="font-weight: 400">Tap on an order from the list, for example:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image8.png?w=550" alt="" class="wp-image-3332322"></figure></div>
+
+
+<p class="has-text-align-left"><br><span style="font-weight: 400">Scroll down to the <strong>Payment</strong> section and tap on the <strong>Collect Payment</strong> button:</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image13.png?w=550" alt="" class="wp-image-3332326"></figure></div>
+
+
+<p>You will be prompted to select a payment method. Select <strong>Card</strong> for any type of card-present payment, using either a Bluetooth card reader, or Tap to Pay on iPhone. </p>
+
+
+
+<p>Alternatively, the <strong>Cash</strong> option marks the order as paid and updates your inventory for a cash payment, or the <strong>Share payment link</strong> option will bring up the share sheet to send a link that the customer can use to check out on your website, using any payment methods you have configured for web orders.</p>
+
+
+
+<p class="has-text-align-center"><img decoding="async" loading="lazy" width="407" height="342" src="https://lh4.googleusercontent.com/6_GU6v66Fz-FFF65Gn8rApsVc5D3sAHuw_c7UYu9mZ2qLWs75mHDyhp-RBSKmTQU9Hg8U7_MAlpQYZYUC29znMDWbf0V1BUYJFXjNgZip4O0CcNJ8rumsYD9oQ5EcHIebBl8j95YV6-O2NaOR8uHdQM"></p>
+
+
+
+<p><br>If you’re using a supported iPhone, you’ll be given the option to connect a hardware card reader or use Tap to Pay on iPhone to collect the payment.</p>
+
+
+
+<header class="toc-header"><h3 id="section-11"><a class="wccom-docs-anchor-links" href="#section-11">Collecting Payment with M2 or WisePad 3<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Y<span style="font-weight: 400">ou’ll be prompted to connect your card reader if it isn’t already connected. Tap on <strong>Connect Card Reader</strong>, wait for the reader to be found, and then tap on <strong>Connect to Reader</strong> to complete the connection.</span></p>
+
+
+
+<p class="woo-sc-box info"><span style="font-weight: 400">Now, you should be prompted to&nbsp;<strong>Collect payment from</strong>&nbsp;your customer. Have your customer insert their chip card, (or swipe their older non-chip card if your device supports it). Newer cards that support tap-and-pay can be tapped to the reader. Customers may be required to enter their PIN.</span> <span style="font-weight: 400">The reader also supports NFC wallets for mobile devices including, for example, wallets on Apple and Google mobile devices.</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image1.png?w=511" alt="" class="wp-image-3332330"></figure></div>
+
+
+<p class="has-text-align-left"><br><span style="font-weight: 400">If a chip card was inserted, remove the card from the reader when prompted.</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image9.png?w=500" alt="" class="wp-image-3332333"></figure></div>
+
+
+<p><span style="font-weight: 400">Wait for the payment to be processed. This can sometimes take 10 seconds or more.</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image5.png?w=482" alt="" class="wp-image-3332334"></figure></div>
+
+
+<p><span style="font-weight: 400">On success, iPhone users should hear a sound and feel a vibration. On an iPad and Android devices, you will hear a sound.</span></p>
+
+
+
+<p><span style="font-weight: 400">Now, you should be prompted to print or email a receipt (or <strong>No thanks</strong> to doing neither). You can also print a receipt later.</span></p>
+
+
+
+<header class="toc-header"><h3 id="section-12"><a class="wccom-docs-anchor-links" href="#section-12">Collecting Payment with Tap to Pay on iPhone<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p></p>
+
+
+
+<p>After selecting <strong>Tap to Pay on iPhone</strong>, if this is the first time using the feature, the app will check that your device is ready to use Tap to Pay on iPhone and display a prompt to accept the terms and conditions.</p>
+
+
+
+<p>You will have the option to continue with your device’s Apple ID or another Apple ID. The Apple ID you use will be associated with a merchant account for merchant account management and fraud prevention and compliance purposes through Apple.</p>
+
+
+
+<p>You can unlink your Apple ID from a merchant account by contacting Apple Support or using the instructions that are sent by email after setup.</p>
+
+
+
+<p>Once that one-time setup process is complete, the built-in reader will prepare to take the payment and then display the payment screen.</p>
+
+
+
+<p>The card or phone used as the payment method can be tapped on the area indicated on your device. The app will then process the payment and, once completed, adjust your inventory automatically.</p>
+
+
+
+<p><span style="font-weight: 400">Now, you should be prompted to print or email a receipt (or <strong>No thanks</strong> to doing neither). You can also print a receipt later.</span></p>
+
+
+
+<header class="toc-header"><h2 id="receipt-printing"><a class="wccom-docs-anchor-links" href="#receipt-printing">Receipts<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">An email receipt is sent automatically upon payment collection as long as a customer email address is set on the order. You can also send the email receipt manually after the payment. However,</span> a<span style="font-weight: 400">s an In-Person Payments merchant, you are obligated to provide your customers the option of a printed receipt for any payment.</span></p>
+
+
+
+<header class="toc-header"><h3 id="receipt-printer-on-wifi"><a class="wccom-docs-anchor-links" href="#receipt-printer-on-wifi">Printing Receipts to a Printer Accessible via the Same WiFi Network<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">If your mobile device has access to a WiFi Network, e.g. for curbside payments or point-of-sale type payments, you should be able to use any printer accessible via that WiFi network using AirPrint (iOS) or Mopria (Android).&nbsp;</span></p>
+
+
+
+<p><span style="font-weight: 400">Android users should note that for some printers (including the Brother RJ-4250WB-L and many others), you may need to install additional software such as the <a href="https://play.google.com/store/apps/details?id=com.brother.printservice&amp;hl=en&amp;gl=US" target="_blank" rel="noreferrer noopener">Brother Print Service Plugin</a>.</span></p>
+
+
+
+<header class="toc-header"><h3 id="portable-wifi-printer"><a class="wccom-docs-anchor-links" href="#portable-wifi-printer">Printing Receipts to a Portable WiFi Direct Printer (e.g. Brother RJ-4250WB-L or similar)<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">WiFi Direct printers like the<a href="https://brothermobilesolutions.com/products/mobile-printers/ruggedjet-series/ruggedjet-4-series/brother-ruggedjet-rj4250wbl/"> Brother RJ-4250WB-L </a>have their own internal WiFi access point/hotspot that a mobile device can connect to directly for printing receipts.</span></p>
+
+
+
+<p><span style="font-weight: 400">If you have access to a WiFi Direct Printer like the Brother RJ-4250, ensure your mobile device has access to cellular data and then connect to the printer WiFi using your device’s WiFi settings. In the case of a RJ-4250WB, the printer will have 4250WB in its SSID and the password is 425, followed by the last five digits of the serial number, e.g. 42533007.</span></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2021/07/image3-e1634314803167.png?w=739" alt="" class="wp-image-3332336" width="370" height="475"></figure></div>
+
+
+<p><span style="font-weight: 400">You can then accept payments (over cellular data) and print receipts (over WiFi Direct). This can be especially useful for in-person delivery at a customer’s home.</span></p>
+
+
+
+<header class="toc-header"><h3 id="print-to-both"><a class="wccom-docs-anchor-links" href="#print-to-both">Why Not Both?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">Some printers, like the Brother RJ-4250WB-L can be used both with a traditional WiFi network <em>and</em> with WiFi Direct. This is great for maximizing the use of a somewhat expensive printer like the Brother RuggedJet. Android users may also be able to connect to printers, like the Brother RJ-4250WB-L, using Bluetooth as a third option.</span></p>
+
+
+
+<p><span style="font-weight: 400">The idea is that, when you have your printer at their place of business, it can be accessed like any other printer on their WiFi network.&nbsp; But when you take the printer somewhere else, like a customer’s home or trade show, the WiFi Direct mode takes precedence.</span></p>
+
+
+
+<p><span style="font-weight: 400">For the Brother RJ-4250WB-L, a special Windows-based </span><b>Printer Setting Tool</b><span style="font-weight: 400"> is needed to set up the WiFi network SSID and password. To get this tool</span></p>
+
+
+
+<ul>
+<li><span style="font-weight: 400">Visit the <a href="https://support.brother.com/g/b/downloadtop.aspx?c=eu_ot&amp;lang=en&amp;prod=rj4250wbeuk" target="_blank" rel="noreferrer noopener">Brother website</a></span></li>
+
+
+
+<li><span style="font-weight: 400">Click on Windows for OS Family and then choose your OS (e.g. Windows 10 (64-bit))</span></li>
+
+
+
+<li><span style="font-weight: 400">To the right of “Software/Document Installer” click on “Click to choose” and choose your preferred language.</span></li>
+
+
+
+<li><span style="font-weight: 400">Agree to the EULA, download and run the installer</span></li>
+
+
+
+<li><span style="font-weight: 400">Connect the RJ-4250WB-L to your computer using a USB Mini-B cable. The port is near the paper opening button:</span></li>
+</ul>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image15.png?w=496" alt="" class="wp-image-3332338"></figure></div>
+
+
+<ul>
+<li><span style="font-weight: 400">After installation completes, launch the Printer Setting Tool, connect to your RJ-4250 over USB, and click on Communication Settings</span></li>
+</ul>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image6.png?w=523" alt="" class="wp-image-3332340"></figure></div>
+
+
+<ul>
+<li><span style="font-weight: 400">Switch to the Wireless LAN tab, then pick Wireless Settings. Enter (or search for) your wireless network and give its passphrase. Hit Apply to send the settings to the printer.</span></li>
+</ul>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/07/image14.png?w=550" alt="" class="wp-image-3332353"></figure></div>
+
+
+<ul>
+<li><span style="font-weight: 400">Lastly, on the printer itself:</span>
+<ul>
+<li><span style="font-weight: 400">Press the Menu (down arrow) button until you see WLAN</span></li>
+
+
+
+<li><span style="font-weight: 400">Press the OK button</span></li>
+
+
+
+<li><span style="font-weight: 400">Press the Menu (down arrow) button until you see Mode</span></li>
+
+
+
+<li><span style="font-weight: 400">Press the OK button</span></li>
+
+
+
+<li><span style="font-weight: 400">The Menu (down arrow) button until you see Direct/Infra</span></li>
+
+
+
+<li><span style="font-weight: 400">Press the OK button</span></li>
+</ul>
+</li>
+
+
+
+<li><span style="font-weight: 400">Your printer should now be able to function both on your WiFi network (Infra) and off network (Direct).</span></li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="viewing-transactions-in-wp-admin"><a class="wccom-docs-anchor-links" href="#viewing-transactions-in-wp-admin">Viewing Transactions in WP Admin<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">Payments collected using In-Person Payments appear in your </span><b>Dashboard</b><span style="font-weight: 400"> just like payments collected using </span><b>WooCommerce Payments</b><span style="font-weight: 400"> online. You can find them in </span><b>WP Admin</b><span style="font-weight: 400"> under </span><b>Payments</b><span style="font-weight: 400"> &gt; </span><b>Transactions</b><span style="font-weight: 400">.</span></p>
+
+
+
+<header class="toc-header"><h2 id="update-privacy-policy"><a class="wccom-docs-anchor-links" href="#update-privacy-policy">Update Your Privacy Policy<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">Like any Payment Method, customers using </span><b>In-Person Payments</b><span style="font-weight: 400"> should be aware of what data is shared about them and their transactions with others. Customers using </span><b>card-present-payments</b><span style="font-weight: 400"> can expect to have the following personal data shared with our partner Stripe:</span></p>
+
+
+
+<ul>
+<li><span style="font-weight: 400">their location at the time and date of purchase</span></li>
+
+
+
+<li><span style="font-weight: 400">their email address</span></li>
+
+
+
+<li><span style="font-weight: 400">their name</span></li>
+
+
+
+<li><span style="font-weight: 400">a Stripe assigned customer ID if the buyer has prior payments for this store</span></li>
+
+
+
+<li><span style="font-weight: 400">the buyer’s address and phone number</span></li>
+
+
+
+<li><span style="font-weight: 400">the quantity, price, and description of items in the order</span></li>
+</ul>
+
+
+
+<p><span style="font-weight: 400">All data is used to support fraud detection during payment collection.</span></p>
+
+
+
+<p><span style="font-weight: 400"><a href="https://automattic.com/privacy/" target="_blank" rel="noreferrer noopener">More details on privacy and our products</a></span>.<span style="font-weight: 400">&nbsp;</span></p>
+
+
+
+<p><span style="font-weight: 400">To manage your store’s privacy policy, go to </span><b>WP Admin</b><span style="font-weight: 400"> for your store and click on </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>Privacy</b><span style="font-weight: 400">.</span></p>
+
+
+
+<header class="toc-header"><h2 id="powering-off-your-reader"><a class="wccom-docs-anchor-links" href="#powering-off-your-reader">Powering Off Your Reader<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you want to power off the M2 or WisePad 3 to save battery life, hold down the power button for about 4 seconds. </p>
+
+
+
+<p>Depending on the device, either the light will go off and stay off, or the LED will display a prompt “Power off?”, which you can confirm with the green enter button on the PIN pad.</p>
+
+
+
+<header class="toc-header"><h2 id="refunds"><a class="wccom-docs-anchor-links" href="#refunds">Refunds<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p><span style="font-weight: 400">You can refund your customers’ In-Person Payment just as you would any other WooCommerce Payments payment. Simply follow the refund flow on their order in the app or on your site via WP Admin. When refunding orders via WP Admin, be sure to select </span><b>Refund $x.xx via WooCommerce Payments</b><span style="font-weight: 400"> (avoid using the </span><b>Refund $x.xx Manually</b><span style="font-weight: 400"> button as this button does NOT refund the customer’s money automatically through WooCommerce Payments – see </span><a href="https://woocommerce.com/document/woocommerce-refunds/#manual-refunds"><span style="font-weight: 400">Manual Refunds</span></a><span style="font-weight: 400"> for more information.)</span></p>
+
+
+
+<p>If an order was paid with Interac, the refund must be initiated from the app, and the original card used for the purchase must be presented. </p>
+
+
+
+<figure class="is-layout-flex wp-block-gallery-12 wp-block-gallery has-nested-images columns-default is-cropped has-lightbox">
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507649" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?w=150&amp;h=150&amp;crop=1" alt="Initiate the refund from the order view screen by tapping &quot;Issue Refund&quot;" class="wp-image-18734000507649" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-01-order-view.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+
+
+
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507648" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?w=150&amp;h=150&amp;crop=1" alt="" class="wp-image-18734000507648" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-02-issue-refund-view.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+
+
+
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507647" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?w=150&amp;h=150&amp;crop=1" alt="" class="wp-image-18734000507647" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-03-refund-overview.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+
+
+
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507653" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?w=150&amp;h=150&amp;crop=1" alt="" class="wp-image-18734000507653" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-04-refund-confirmation.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+
+
+
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507650" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?w=150&amp;h=150&amp;crop=1" alt="" class="wp-image-18734000507650" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-05-refund-interac-card-present.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+
+
+
+<figure class="wp-block-image size-thumbnail"><a href="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png"><img decoding="async" loading="lazy" width="1125" height="2436" data-id="18734000507651" src="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?w=150&amp;h=150&amp;crop=1" alt="" class="wp-image-18734000507651" srcset="https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png 1125w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=416,900 416w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=768,1663 768w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=554,1200 554w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=709,1536 709w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=946,2048 946w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=300,650 300w, https://woocommerce.com/wp-content/uploads/2022/05/refund-step-06-refund-processing.png?resize=958,2074 958w" sizes="(max-width: 1125px) 100vw, 1125px"></a></figure>
+</figure>
+
+
+
+<header class="toc-header"><h2 id="faq"><a class="wccom-docs-anchor-links" href="#faq">FAQ<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="does-in-person-payments-work-with-test-mode-enabled-on-woocommerce-payments"><a class="wccom-docs-anchor-links" href="#does-in-person-payments-work-with-test-mode-enabled-on-woocommerce-payments">Does In-Person Payments work with Test Mode enabled on WooCommerce Payments?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">No. In-Person Payments is not compatible with Test Mode. You should ensure that Test Mode is </span><b>NOT</b><span style="font-weight: 400"> enabled in WP ADMIN under </span><b>WooCommerce</b><span style="font-weight: 400"> &gt; </span><b>Settings</b><span style="font-weight: 400"> &gt; </span><b>WooCommerce</b> <b>Payments</b><span style="font-weight: 400">.</span></p>
+
+
+
+<header class="toc-header"><h3 id="does-my-mobile-device-need-an-internet-connection-in-order-to-collect-payments"><a class="wccom-docs-anchor-links" href="#does-my-mobile-device-need-an-internet-connection-in-order-to-collect-payments">Does my mobile device need an Internet connection in order to collect payments?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">Yes. Your mobile device needs to be connected to the Internet to collect payments. If using cellular (e.g. for delivery), be sure </span><b>Cellular Data</b><span style="font-weight: 400"> is enabled for the </span><b>“Woo</b><span style="font-weight: 400">” application in your iPhone or iPad’s </span><b>Cellular</b> <b>Settings</b>.</p>
+
+
+
+<header class="toc-header"><h3 id="what-cards-and-digital-wallets-are-supported"><a class="wccom-docs-anchor-links" href="#what-cards-and-digital-wallets-are-supported">Which cards and Digital Wallets are supported?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In addition to <strong>most credit and debit cards</strong>, we also support in-person payments using <strong>Apple Wallet, Google Wallet, Samsung Pay, VISA payWave, MasterCard PayPass, AMEX ExpressPay, Interac, </strong>and<strong> Discover D-PAS</strong>.</p>
+
+
+
+<header class="toc-header"><h3 id="can-i-use-in-person-payments-for-my-subscription-based-products"><a class="wccom-docs-anchor-links" href="#can-i-use-in-person-payments-for-my-subscription-based-products">Can I use In-Person Payments for my subscription-based products?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><span style="font-weight: 400">No, not at this time. Support for subscriptions products will be coming in a future release.</span></p>
+
+
+
+<header class="toc-header"><h3 id="can-i-bring-my-own-card-reader"><a class="wccom-docs-anchor-links" href="#can-i-bring-my-own-card-reader">Can I bring my own card reader?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Yes, <span style="font-weight: 400"><a href="https://woocommerce.com/products/m2-card-reader/">M2</a> and <a href="https://woocommerce.com/products/wisepad3-card-reader/">WisePad 3</a></span> card readers purchased from a different site work as expected with the WooCommerce mobile apps. If you have a supported iPhone, you can also get started collecting contactless payments with <a href="https://woocommerce.com/document/woocommerce-payments/in-person-payments/woocommerce-in-person-payments-tap-to-pay-on-iphone-quick-start-guide/">Tap to Pay on iPhone</a> without any additional hardware.</p>
+
+
+
+<header class="toc-header"><h3 id="what-is-the-minimum-version-of-the-woocommerce-mobile-app-i-need-on-my-mobile-device-for-in-person-payments"><a class="wccom-docs-anchor-links" href="#what-is-the-minimum-version-of-the-woocommerce-mobile-app-i-need-on-my-mobile-device-for-in-person-payments">What is the minimum version of the WooCommerce Mobile App I need on my mobile device for In-Person Payments?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The latest versions of the app are required for both iOS and Android devices. </p>
+
+
+
+<header class="toc-header"><h3 id="what-is-the-card-reader-return-policy"><a class="wccom-docs-anchor-links" href="#what-is-the-card-reader-return-policy">What is the Card Reader Return Policy? <span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Refer to the <a href="https://woocommerce.com/document/woocommerce-payments-card-reader-return-policy/">WooCommerce Payments Card Reader Return Policy</a> for more information.</p>
+
+
+
+<header class="toc-header"><h3 id="what-is-the-card-reader-return-policy"><a class="wccom-docs-anchor-links" href="#what-is-the-card-reader-return-policy">What is the estimated shipping time for the reader? <span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Our orders typically arrive within six (6) business days, but orders placed after 1 pm Pacific Time will ship the following business day.</p>
+			</div>
+					

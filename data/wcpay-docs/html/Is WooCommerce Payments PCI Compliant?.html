@@ -1,0 +1,44 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Is WooCommerce Payments PCI Compliant?</h1>
+			<div class="entry">
+				
+<p>Yes, WooCommerce Payments itself is PCI compliant, but merchants still need to be aware of the core PCI-DSS core requirements. For more general information, please see our <a href="https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/">PCI-DSS Compliance and WooCommerce</a> documentation.</p>
+
+
+
+<header class="toc-header"><h2 id="what-makes-woocommerce-payments-pci-compliant"><a class="wccom-docs-anchor-links" href="#what-makes-woocommerce-payments-pci-compliant">What makes WooCommerce Payments PCI Compliant?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce Payments uses a hosted payment field for handling all payment card data, so the cardholder enters all sensitive payment information in a payment field that originates directly from our partner’s PCI-DSS validated servers. This means the information is not directly stored on your site.</p>
+
+
+
+<header class="toc-header"><h2 id="what-data-is-stored-on-my-site"><a class="wccom-docs-anchor-links" href="#what-data-is-stored-on-my-site">What data is stored on my site?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce stores the data entered in the other checkout fields, such as name, address, country, and so on. This data is separate from the billing field data, such as the card number and CVC code.</p>
+
+
+
+<header class="toc-header"><h2 id="what-about-saved-cards-and-subscriptions"><a class="wccom-docs-anchor-links" href="#what-about-saved-cards-and-subscriptions">What about saved cards and subscriptions?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>When a customer completes a purchase on your site and chooses to save their payment method for future use, or when they purchase a subscription product, your site needs to “remember” the customer’s payment details in order to use them again in the future.</p>
+
+
+
+<p>WooCommerce Payments uses a token and API-based method to do this. In short, this means your site will communicate with our payments system using <a href="https://woocommerce.com/document/payments/connection/">the WordPress.com connection</a> and request the card details using a payment token. Payment method details such as the card number and CVC code are not stored directly on your site.</p>
+
+
+
+<header class="toc-header"><h2 id="futher-reading"><a class="wccom-docs-anchor-links" href="#futher-reading">Further reading<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce Payments is <a href="https://woocommerce.com/document/payments/built-in-partnership-with-stripe/">built in partnership with Stripe</a>. Along with <a href="https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/">our own general documentation</a>, the Stripe team has written <a href="https://stripe.com/guides/pci-compliance">their own in-depth article</a>.</p>
+			</div>
+					

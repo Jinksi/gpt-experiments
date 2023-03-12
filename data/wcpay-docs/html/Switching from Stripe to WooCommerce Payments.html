@@ -1,0 +1,448 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Switching from Stripe to WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>If you would like to stop using the Stripe extension and switch to WooCommerce Payments instead, this document describes how to do that with as little disruption as possible to your site and your customers.</p>
+
+
+
+<p>Because the process is a little different depending on whether or not your store utilizes our <a href="https://woocommerce.com/products/woocommerce-subscriptions/">Subscriptions extension</a>, and whether or not you plan to keep using it after switching off of Stripe, we’ve split this guide into three sections: </p>
+
+
+
+<ul>
+<li><a href="#no-subscriptions-products">No subscription products in the store</a></li>
+
+
+
+<li><a href="#continue-using-subscriptions-extension">Continue using the Subscriptions extension</a></li>
+
+
+
+<li><a href="#move-to-wcpay-subscriptions">Move to WooCommerce Payments subscriptions</a></li>
+</ul>
+
+
+
+<p>Please consult <a href="https://woocommerce.com/document/payments/subscriptions/comparison/">our comparison of the two</a> subscriptions options if you’re unsure about which one is best for your store.</p>
+
+
+
+<header class="toc-header"><h2 id="no-subscriptions-products"><a class="wccom-docs-anchor-links" href="#no-subscriptions-products">No subscriptions products<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The following instructions are for stores that do not sell subscription products. Because such stores are less complex than those that do sell subscriptions, the switching process is simpler. </p>
+
+
+
+<p>If you do sell subscription products, please see one of the other two sections of this document.</p>
+
+
+
+<header class="toc-header"><h3 id="install-and-sign-up"><a class="wccom-docs-anchor-links" href="#install-and-sign-up">Install and sign up<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>First, install and sign up for WooCommerce Payments as shown in <a href="https://woocommerce.com/document/payments/#installation">our Startup Guide</a>. </p>
+
+
+
+<p>After you finish signing up, WooCommerce Payments will be active and able to take payments right alongside the Stripe extension. This may <a href="https://woocommerce.com/document/can-i-use-woocommerce-payments-and-the-stripe-plugin-at-the-same-time/">cause some issues</a>, so it’s best to move on to the next section of this document quickly.</p>
+
+
+
+<header class="toc-header"><h3 id="disable-stripe"><a class="wccom-docs-anchor-links" href="#disable-stripe">Disable Stripe payments<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The next step is to disable Stripe as an active payment method. Do <strong>NOT</strong> simply disable the Stripe plugin itself! The plugin needs to be active, otherwise you will not be able to issue refunds and perform other actions on orders that were originally placed via Stripe.</p>
+
+
+
+<p>To disable Stripe as an active payment method:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Settings &gt; Payments</strong> tab.</li>
+
+
+
+<li>Click the <strong>All payment methods</strong> section at the top, like so:</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2090" height="1112" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png" alt="" class="wp-image-18734001146116" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png 2090w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=620,330 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=768,409 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=650,346 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=1536,817 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=2048,1090 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=300,160 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=958,510 958w" sizes="(max-width: 2090px) 100vw, 2090px"><figcaption class="wp-element-caption">Viewing the list of all payment methods.</figcaption></figure>
+
+
+
+<ol start="4">
+<li>Find the Stripe gateway in the list.</li>
+
+
+
+<li>In the <em>Enabled</em> column, toggle it off.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2076" height="944" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png" alt="" class="wp-image-18734001146131" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png 2076w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=620,282 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=768,349 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=650,296 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=1536,698 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=2048,931 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=300,136 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=958,436 958w" sizes="(max-width: 2076px) 100vw, 2076px"><figcaption class="wp-element-caption">Stripe payment method disabled.</figcaption></figure>
+
+
+
+<p>Now that Stripe payments are disabled, all new orders will use WooCommerce Payments (or potentially any other payment gateways you still have enabled, such as PayPal).</p>
+
+
+
+<header class="toc-header"><h3 id="waiting-period"><a class="wccom-docs-anchor-links" href="#waiting-period">Waiting period<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Next, we advise leaving things as they are for at least a couple of months. This is because, as mentioned above, if you deactivated the Stripe plugin immediately, you would not be able to issue refunds and such for orders that were placed with Stripe.</p>
+
+
+
+<p>Thus, it’s best to keep the Stripe plugin active for few months even after you’ve disabled it as a payment method, just to lower the chance that you will need to refund any customers who did pay with Stripe.</p>
+
+
+
+<header class="toc-header"><h3 id="deactivate-stripe"><a class="wccom-docs-anchor-links" href="#deactivate-stripe">Deactivate Stripe<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>After some time has passed, and refunds for orders that were originally placed via Stripe are unlikely, you can go ahead and deactivate it under <strong>Plugins &gt; Installed Plugins</strong>.</p>
+
+
+
+<header class="toc-header"><h2 id="continue-using-subscriptions-extension"><a class="wccom-docs-anchor-links" href="#continue-using-subscriptions-extension">Continue using Subscriptions extension<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you sell subscription products on your site using Stripe and the <a href="https://woocommerce.com/products/woocommerce-subscriptions/">Subscriptions extension</a>, and you want to switch to WooCommerce Payments and the Subscriptions extension, this section explains how to do that.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-install-and-sign-up"><a class="wccom-docs-anchor-links" href="#keep-subs-install-and-sign-up">Install and sign up<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>First, install and sign up for WooCommerce Payments as shown in <a href="https://woocommerce.com/document/payments/#installation">our Startup Guide</a>. </p>
+
+
+
+<p>After you finish signing up, WooCommerce Payments will be active and able to take payments right alongside the Stripe extension. This may <a href="https://woocommerce.com/document/can-i-use-woocommerce-payments-and-the-stripe-plugin-at-the-same-time/">cause some issues</a>, so it’s best to move on to the next section of this document quickly.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-disable-stripe"><a class="wccom-docs-anchor-links" href="#keep-subs-disable-stripe">Disable Stripe payments<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The next step is to disable Stripe as an active payment method. Do <strong>NOT</strong> simply disable the Stripe plugin itself! The plugin needs to be active so that you can, if needed, refund any orders that were placed via Stripe, and so that current subscribers who pay with Stripe don’t experience any unnecessary disruption.</p>
+
+
+
+<p>To disable Stripe as an active payment method:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Settings &gt; Payments</strong> tab.</li>
+
+
+
+<li>Click the <strong>All payment methods</strong> section at the top, like so:</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2090" height="1112" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png" alt="" class="wp-image-18734001146116" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png 2090w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=620,330 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=768,409 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=650,346 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=1536,817 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=2048,1090 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=300,160 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=958,510 958w" sizes="(max-width: 2090px) 100vw, 2090px"><figcaption class="wp-element-caption">Viewing the list of all payment methods.</figcaption></figure>
+
+
+
+<ol start="4">
+<li>Find the Stripe gateway in the list.</li>
+
+
+
+<li>In the <em>Enabled</em> column, toggle it off.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2076" height="944" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png" alt="" class="wp-image-18734001146131" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png 2076w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=620,282 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=768,349 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=650,296 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=1536,698 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=2048,931 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=300,136 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=958,436 958w" sizes="(max-width: 2076px) 100vw, 2076px"><figcaption class="wp-element-caption">Stripe payment method disabled.</figcaption></figure>
+
+
+
+<p>Now that Stripe payments are disabled, all new orders will use WooCommerce Payments (or potentially any other payment gateways you still have enabled, such as PayPal).</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-prep-email"><a class="wccom-docs-anchor-links" href="#keep-subs-prep-email">Prepare email to subscription customers<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Moving subscribers from one payment gateway to another can’t be done without some action on their part. As such, it’s important to be proactive and communicate with your customers ahead of time. If you have a small number of subscribers, you may be able to email them by hand. If your subscriber base is large, we suggest using <a href="https://woocommerce.com/products/automatewoo/">AutomateWoo</a> to email them all at once.</p>
+
+
+
+<p>Essentially, you should warn them that their subscriptions will soon be set to <a href="https://woocommerce.com/document/subscriptions/renewal-process/#section-4">renew manually</a> as a part of the switching process. To switch back to automatic renewals, your email should instruct customers to log into the site immediately after receiving the message and update their payment method. This will resume automatic payments going forward with minimal disruption.</p>
+
+
+
+<p>For convenience, your email should include a link to the <strong>My Account &gt; Subscriptions</strong> page, which is at this URL by default:</p>
+
+
+
+<p><code>https://www.example.com/my-account/subscriptions/</code> </p>
+
+
+
+<p>This will help customers go directly to their dashboard and update the payment methods on their subscriptions. By clicking into each subscription, they can see which ones are on manual renewal, and thus which ones they need to add payments methods to.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2248" height="842" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png" alt="" class="wp-image-18734001174618" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png 2248w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=620,232 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=768,288 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=650,243 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=1536,575 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=2048,767 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=300,112 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-16-at-14.53.46-UTC@2x.png?resize=958,359 958w" sizes="(max-width: 2248px) 100vw, 2248px"><figcaption class="wp-element-caption">A subscription on manual renewal and in need of a payment method.</figcaption></figure>
+
+
+
+<p>If you elect to use AutomateWoo to email your subscribers, the workflow would look very similar to the one for <a href="https://automatewoo.com/docs/examples/subscription-workflows/onboard-woocommerce-subscriptions-to-automatic-renewals/">onboarding subscribers without a payment method</a>. The only difference would be that your workflow should be run manually, immediately after the next section.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-set-manual-renewal"><a class="wccom-docs-anchor-links" href="#keep-subs-set-manual-renewal">Set subscriptions to manual renewal<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Now that you have your email prepared and ready to send to subscribers, it’s time to set their subscriptions to manual renewal. To do this:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Subscriptions</strong> in your dashboard.</li>
+
+
+
+<li>Find a subscription that uses the Stripe payment method, like so:</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1602" height="752" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png" alt="" class="wp-image-18734001155696" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png 1602w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=620,291 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=768,361 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=650,305 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=1536,721 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=300,141 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.26.39-UTC@2x.png?resize=958,450 958w" sizes="(max-width: 1602px) 100vw, 1602px"><figcaption class="wp-element-caption">A subscription that uses Stripe for renewal payments.</figcaption></figure>
+
+
+
+<ol start="3">
+<li>Click the subscription ID number to edit the subscription.</li>
+
+
+
+<li>In the <em>Billing</em> section, click the pencil icon.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1600" height="896" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png" alt="" class="wp-image-18734001155698" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png 1600w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=620,347 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=768,430 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=650,364 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=1536,860 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=300,168 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.28.04-UTC@2x.png?resize=958,536 958w" sizes="(max-width: 1600px) 100vw, 1600px"><figcaption class="wp-element-caption">Editing the Billing section of a subscription.</figcaption></figure>
+
+
+
+<ol start="5">
+<li>In the <em>Payment Method</em> dropdown, select <strong>Manual Renewal</strong>.</li>
+
+
+
+<li>Click the <strong>Update</strong> button to save the subscription.</li>
+
+
+
+<li>Repeat those steps for every subscription that uses Stripe for renewals.</li>
+</ol>
+
+
+
+<p>If you have a small number of subscribers using Stripe, this method might be feasible. If you have a large number of subscribers, however, we again suggest using <a href="https://woocommerce.com/products/automatewoo/">AutomateWoo</a> to set them all to manual renewal at once. The workflow might look like the one below, although that is not guaranteed to work for every use case.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2706" height="1570" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png" alt="" class="wp-image-18734001155784" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png 2706w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=620,360 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=768,446 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=650,377 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=1536,891 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=2048,1188 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=300,174 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-11-at-20.47.14-UTC@2x.png?resize=958,556 958w" sizes="(max-width: 2706px) 100vw, 2706px"><figcaption class="wp-element-caption">AutomateWoo workflow to set all Stripe subscriptions to Manual Renewal.</figcaption></figure>
+
+
+
+<p>If you need help creating an equivalent AutomateWoo workflow, please <a href="https://woocommerce.com/my-account/create-a-ticket/">contact support</a>.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-send-email"><a class="wccom-docs-anchor-links" href="#keep-subs-send-email">Send email to subscription customers<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Now that you’ve actually set all the Stripe subscriptions to renew manually, you can send the email (or run the AutomateWoo workflow) you prepared in <a href="#keep-subs-prep-email">the previous section</a>. </p>
+
+
+
+<p>This will prompt all your subscribers to log in and quickly update their payment method in order to avoid the hassle of renewing manually in the future.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-wait-for-renewals"><a class="wccom-docs-anchor-links" href="#keep-subs-wait-for-renewals">Waiting period<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Once the email is sent, you may get questions from some subscribers about the switch, how to renew, etc. It’s best to watch your email inbox carefully to avoid losing customers. It will take some time for all of them to add payment methods to WooCommerce Payments, but over time their subscriptions should be switched over.</p>
+
+
+
+<p>We also advise keeping the Stripe plugin enabled for at least a couple of months, even though it’s currently disabled as a payment method. This is because, if you deactivated the Stripe plugin immediately, you would not be able to issue refunds for orders that were placed with Stripe.</p>
+
+
+
+<p>As such, it’s best to keep the Stripe plugin active for few months before deactivating it.</p>
+
+
+
+<header class="toc-header"><h3 id="keep-subs-deactivate-stripe"><a class="wccom-docs-anchor-links" href="#keep-subs-deactivate-stripe">Deactivate Stripe<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>After some time has passed, and refunds for orders that were originally placed via Stripe are unlikely, you can go ahead and deactivate it under&nbsp;<strong>Plugins &gt; Installed Plugins</strong>.</p>
+
+
+
+<header class="toc-header"><h2 id="move-to-wcpay-subscriptions"><a class="wccom-docs-anchor-links" href="#move-to-wcpay-subscriptions">Move to WooCommerce Payments subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you sell subscription products on your site using Stripe and the <a href="https://woocommerce.com/products/woocommerce-subscriptions/">Subscriptions extension</a>, and you want to switch to WooCommerce Payments and its built-in subscriptions functionality, this section explains how to do that.</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-install-and-sign-up"><a class="wccom-docs-anchor-links" href="#stop-subs-install-and-sign-up">Install and sign up<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>First, install and sign up for WooCommerce Payments as shown in <a href="https://woocommerce.com/document/payments/#installation">our Startup Guide</a>. </p>
+
+
+
+<p>After you finish signing up, WooCommerce Payments will be active and able to take payments right alongside the Stripe extension. This may <a href="https://woocommerce.com/document/can-i-use-woocommerce-payments-and-the-stripe-plugin-at-the-same-time/">cause some issues</a>, so it’s best to move on to the next section of this document quickly.</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-disable-stripe"><a class="wccom-docs-anchor-links" href="#stop-subs-disable-stripe">Disable Stripe payments<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The next step is to disable Stripe as an active payment method. Do <strong>NOT</strong> simply disable the Stripe plugin itself! The plugin needs to be active so that you can, if needed, refund any orders that were placed via Stripe, and so that current subscribers who pay with Stripe don’t experience any disruption.</p>
+
+
+
+<p>To disable Stripe as an active payment method:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Settings &gt; Payments</strong> tab.</li>
+
+
+
+<li>Click the <strong>All payment methods</strong> section at the top, like so:</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2090" height="1112" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png" alt="" class="wp-image-18734001146116" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png 2090w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=620,330 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=768,409 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=650,346 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=1536,817 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=2048,1090 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=300,160 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.44.35-UTC@2x.png?resize=958,510 958w" sizes="(max-width: 2090px) 100vw, 2090px"><figcaption class="wp-element-caption">Viewing the list of all payment methods.</figcaption></figure>
+
+
+
+<ol start="4">
+<li>Find the Stripe gateway in the list.</li>
+
+
+
+<li>In the <em>Enabled</em> column, toggle it off.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2076" height="944" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png" alt="" class="wp-image-18734001146131" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png 2076w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=620,282 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=768,349 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=650,296 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=1536,698 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=2048,931 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=300,136 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-09-at-20.46.47-UTC@2x.png?resize=958,436 958w" sizes="(max-width: 2076px) 100vw, 2076px"><figcaption class="wp-element-caption">Stripe payment method disabled.</figcaption></figure>
+
+
+
+<p>Now that Stripe payments are disabled, all new orders will use WooCommerce Payments (or potentially any other payment gateways you still have enabled, such as PayPal).</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-email-customers"><a class="wccom-docs-anchor-links" href="#stop-subs-email-customers">Email subscription customers<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Switching subscribers from one payment gateway to another can’t be done without customer involvement. Specifically, your current subscribers will need to log into the site at least once to add a payment method to WooCommerce Payments. This is what allows future renewals to take place automatically.</p>
+
+
+
+<p>As such, it’s important to be proactive and communicate with your customers about this ahead of time. If you have a small number of subscribers, you may be able to email them by hand. If your subscriber base is large, we suggest using <a href="https://woocommerce.com/products/automatewoo/">AutomateWoo</a> to email them all at once.</p>
+
+
+
+<p>Essentially, you should warn them that their subscriptions will soon be set to renew manually. What will happen is that, on their next renewal date, WooCommerce will automatically email them an invoice. That invoice will contain a link they can click to pay for their renewal order.</p>
+
+
+
+<p>By clicking the link and paying for their renewal via WooCommerce Payments, that payment method will be saved to their subscription and used in the future for automatic renewals. In other words, they will only need to manually renew one time.</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-deactivate"><a class="wccom-docs-anchor-links" href="#stop-subs-deactivate">Disable Subscriptions extension<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Now that you’ve warned your customers about what’s happening, it’s time to set their subscriptions to manual renewal. Since you plan on switching from the Subscription extension to the WooCommerce Payments built-in subscriptions functionality, you can do this by simply deactivating the Subscriptions extension under <strong>Plugins &gt; Installed Plugins</strong>.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1736" height="744" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png" alt="" class="wp-image-18734001165733" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png 1736w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=620,266 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=768,329 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=650,279 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=1536,658 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=300,129 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.30.49-UTC@2x.png?resize=958,411 958w" sizes="(max-width: 1736px) 100vw, 1736px"><figcaption class="wp-element-caption">Deactivating the Subscriptions extension</figcaption></figure>
+
+
+
+<p>You will see a modal warning you about deactivating Subscriptions, like so:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1576" height="598" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png" alt="" class="wp-image-18734001165776" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png 1576w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=620,235 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=768,291 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=650,247 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=1536,583 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=300,114 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-14-at-19.39.16-UTC@2x.png?resize=958,364 958w" sizes="(max-width: 1576px) 100vw, 1576px"><figcaption class="wp-element-caption">Modal warning seen when deactivating WooCommerce Subscriptions extension</figcaption></figure>
+
+
+
+<p>Click <strong>Yes, deactivate WooCommerce Subscriptions</strong> to deactivate the plugin. This will set all of your Subscriptions (not just those paid with Stripe) to manual renewal.</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-wait-for-renewals"><a class="wccom-docs-anchor-links" href="#stop-subs-wait-for-renewals">Waiting period<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Now that all of your subscribers are set to renew manually, all you need to do is wait for their next renewal dates. At that point, they will each get an email with instructions on how to log into the site to pay for their subscription renewal.</p>
+
+
+
+<p>Once they renew manually and pay via WooCommerce Payments, a subscription will be created for them using the built-in subscriptions functionality in WooCommerce Payments.</p>
+
+
+
+<p>We also advise keeping the Stripe plugin enabled for at least a couple of months, even though it’s currently disabled as a payment method. This is because, if you deactivated the Stripe plugin immediately, you would not be able to issue refunds for orders that were placed with Stripe.</p>
+
+
+
+<p>As such, it’s best to keep the Stripe plugin active for few months before deactivating it.</p>
+
+
+
+<header class="toc-header"><h3 id="stop-subs-deactivate-stripe"><a class="wccom-docs-anchor-links" href="#stop-subs-deactivate-stripe">Deactivate Stripe<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>After some time has passed, and refunds for orders that were originally placed via Stripe are unlikely, you can go ahead and deactivate it under&nbsp;<strong>Plugins &gt; Installed Plugins</strong>.</p>
+			</div>
+					

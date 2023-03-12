@@ -1,0 +1,90 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Croatian Kuna (HRK) transition to Euro (EUR)</h1>
+			<div class="entry">
+				
+<p>On January 1, 2023, Croatia will join <a href="https://en.wikipedia.org/wiki/Eurozone">the Eurozone</a>. This means that the Croatian Kuna (HRK) will be phased out in favor of the Euro (EUR). Depending on how you use WooCommerce Payments, you might need to make changes to your store. Please see the sections below to understand how this transition may affect you.</p>
+
+
+
+<header class="toc-header"><h2 id="store-and-customer-currencies"><a class="wccom-docs-anchor-links" href="#store-and-customer-currencies">Store and customer currencies<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you have HRK set as your store currency under <strong>WooCommerce &gt; Settings &gt; General</strong>, we strongly suggest that you change your store currency to EUR before January 1, 2023. If you don’t change it, customers could experience payment problems after the transition date.</p>
+
+
+
+<p>If you have your store currency set to something else, but accept HRK using the WooCommerce Payments <a href="https://woocommerce.com/document/woocommerce-payments/currencies/">multi-currency feature</a>, we suggest removing it from the enabled currencies list before Jan 1. You can do this under <strong>WooCommerce &gt; Settings &gt; Multi-currency</strong>.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2174" height="832" src="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png" alt="" class="wp-image-18734001307418" srcset="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png 2174w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=620,237 620w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=768,294 768w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=650,249 650w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=1536,588 1536w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=2048,784 2048w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=300,115 300w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-12-at-15.50.11-UTC@2x.png?resize=958,367 958w" sizes="(max-width: 2174px) 100vw, 2174px"><figcaption class="wp-element-caption">Removing HRK as an enabled currency</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="refunds-and-disputes"><a class="wccom-docs-anchor-links" href="#refunds-and-disputes">Refunds and disputes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce Payments will attempt to refund a transaction using the same currency as the original transaction. Thus, if you refund an HRK transaction after Jan 1, 2023, that will fail. Please <a href="https://woocommerce.com/my-account/create-a-ticket/">contact support</a> if this happens to you.</p>
+
+
+
+<p>If you took payment for an order in HRK before Jan 1, but it’s disputed after Jan 1, the refund to the customer and the dispute fee will both be processed in EUR (assuming the dispute is lost).</p>
+
+
+
+<header class="toc-header"><h2 id="authorize-and-capture"><a class="wccom-docs-anchor-links" href="#authorize-and-capture">Authorize and capture<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Payments authorized in HRK before Jan 1 may be captured until Feb 1, 2023. Funds from these captures will be settled in EUR.</p>
+
+
+
+<p>Payments authorized in HRK cannot be&nbsp;<em>partially</em>&nbsp;captured after Dec 27, 2022. If you need to partially capture a charge authorized in HRK after that deadline, you should either:</p>
+
+
+
+<ul>
+<li>Capture the full amount of the authorization and then issue a partial refund in EUR. </li>
+
+
+
+<li>Cancel the authorization and create a new one in EUR using the correct amount.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="subscriptions"><a class="wccom-docs-anchor-links" href="#subscriptions">Subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="new-subscriptions"><a class="wccom-docs-anchor-links" href="#new-subscriptions">New subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>On or before Jan 1, 2023, you should switch your store currency to EUR as well as remove HRK from the list of accepted currencies (if you use the multi-currency feature). This will prevent new subscriptions from being paid for in HRK.</p>
+
+
+
+<header class="toc-header"><h3 id="existing-subscriptions"><a class="wccom-docs-anchor-links" href="#existing-subscriptions">Existing subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>After Jan 1, 2023, subscription renewal payments in HRK will fail. The best solution for existing subscribers who pay in HRK is for you to cancel their subscriptions, let the remaining time run out, and then have the customer purchase a new subscription in EUR.</p>
+
+
+
+<header class="toc-header"><h2 id="account-balances"><a class="wccom-docs-anchor-links" href="#account-balances">Account balances<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>On Dec 27, 2022, your HRK balance (if you have one) will be converted to EUR using the official fixed rate of 7.53450 HRK to 1 EUR. Pending HRK payments will be converted to EUR as they become available for deposit. Foreign exchange fees will not be charged for this.</p>
+
+
+
+<p>Your bank account number (IBAN) will remain the same. However, it will now be denominated in EUR. After the transition, we’ll continue using the bank account we previously used to send HRK payouts. If you currently have both EUR and HRK bank accounts, we’ll deactivate your HRK account and use your EUR account instead.</p>
+			</div>
+					

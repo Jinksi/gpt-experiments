@@ -1,0 +1,138 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Which add-ons are compatible with subscriptions built-in to WooCommerce Payments?</h1>
+			<div class="entry">
+				
+<p>If you’re using&nbsp;<a href="https://woocommerce.com/document/payments/">WooCommerce Payments</a>, you have two options to sell subscription products:</p>
+
+
+
+<ul>
+<li>The subscriptions functionality built into WooCommerce Payments, or…</li>
+
+
+
+<li>The separate&nbsp;<a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a>&nbsp;extension.</li>
+</ul>
+
+
+
+<p>These two offerings are both powered by <a href="https://github.com/Automattic/woocommerce-subscriptions-core/">much of the same code</a>. This makes it possible for most <a href="https://woocommerce.com/product-category/woocommerce-extensions/merchandising/subscriptions-merchandising/">extensions that add features to WooCommerce Subscriptions</a> to also add those same features to WooCommerce Payments’ built-in subscriptions.</p>
+
+
+
+<p>The following extensions are confirmed to be compatible with WooCommerce Payments:</p>
+
+
+
+<ul>
+<li><a href="https://woocommerce.com/products/all-products-for-woocommerce-subscriptions/">All Products for WooCommerce Subscriptions</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/automatewoo/">AutomateWoo</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/automatewoo-refer-a-friend/">AutomateWoo – Refer A Friend add-on</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-subscription-downloads/">WooCommerce Subscriptions Downloads</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-subscriptions-gifting/">Gifting for WooCommerce Subscriptions</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/product-bundles/">Product Bundles</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/composite-products/">Composite Products</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/conditional-shipping-and-payments/">Conditional Shipping and Payments</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/follow-up-emails/">Follow-Ups</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/eu-vat-number/">EU VAT Number</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/stripe/">Stripe</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-paypal-payments/">PayPal Payments</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-gateway-paypal-powered-by-braintree/">Braintree for WooCommerce</a></li>
+
+
+
+<li><a href="https://senseilms.com/">Sensei products</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/shipment-tracking/">Shipment Tracking</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/gift-cards/">Gift Cards</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/woocommerce-points-and-rewards/">WooCommerce Points and Rewards</a></li>
+
+
+
+<li><a href="https://woocommerce.com/products/back-in-stock-notifications/">Back In Stock Notifications</a></li>
+</ul>
+
+
+
+<p>That said, some other extensions perform a check to see if the WooCommerce Subscriptions plugin is active. Of course, if you’re using the subscriptions functionality built into WooCommerce Payments, the WooCommerce Subscriptions plugin will not be active, and this check will fail. In these cases, the extension may need to be updated to support WooCommerce Payments.</p>
+
+
+
+<header class="toc-header"><h2 id="section-1"><a class="wccom-docs-anchor-links" href="#section-1">Developer updates<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> This section provides example code intended for use by developers.</p></div>
+
+
+
+<p>If you’ve tested your extension with both WooCommerce Subscriptions and the WooCommerce Payments subscriptions functionality, it can be updated to load when either one is available.</p>
+
+
+
+<p>The recommended approach is shown here:</p>
+
+
+
+<pre class="wp-block-preformatted">if ( class_exists( 'WC_Subscriptions' ) || class_exists( 'WC_Subscriptions_Core_Plugin' ) ) {
+   // Load any subscriptions functionality
+}
+</pre>
+
+
+
+<p>If you need to check for a specific version of the subscriptions code:</p>
+
+
+
+<pre class="wp-block-preformatted">if ( class_exists( 'WC_Subscriptions_Core_Plugin' ) &amp;&amp; version_compare( WC_subscriptions_Core_Plugin::instance()-&gt;get_plugin_version(), '3.1.0', '&gt;=' ) ) {
+   // Load any subscriptions functionality for version 3.1.0 or later
+}
+</pre>
+			</div>
+					

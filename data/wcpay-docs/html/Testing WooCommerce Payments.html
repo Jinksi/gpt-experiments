@@ -1,0 +1,356 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Testing WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>This document provides instructions for testing payments, refunds, disputes, and the other functions of WooCommerce Payments. To learn more about WooCommerce Payments, including how to set it up on your store, see our <a href="https://woocommerce.com/document/woocommerce-payments/">main documentation page</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="enabling-test-mode"><a class="wccom-docs-anchor-links" href="#enabling-test-mode">Enabling test mode<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>By default, WooCommerce Payments will accept real payment methods, such as cards, and actually charge your customers. To test payments, refunds, disputes, and other such processes, you need to switch WooCommerce Payments into test mode.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>NOTE #1:</strong> If you are working on a staging or development site, such as one installed on a separate domain from the real site, you may wish to use&nbsp;<a href="https://woocommerce.com/document/payments/testing/dev-mode/">dev mode</a> instead.</p><p class="wp-block-coblocks-alert__text"><strong>NOTE #2</strong>: If you are testing while third party integrations are active, please note that depending on the integrations you are using, some will still accept the order as a live one. We suggest discussing with the third party integration before you start testing for accurate guidance or disable the third party integrations to avoid any issues. <br>The WooCommerce <a href="https://woocommerce.com/support-policy/#what-our-support-service-does-not-cover">support policy</a> does not cover issues in relation to third party software.</p></div>
+
+
+
+<p>To enable test mode:</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Settings</strong> in your site’s dashboard.</li>
+
+
+
+<li>Check the <strong>Enable test mode</strong> box.</li>
+
+
+
+<li>Click <strong>Save changes</strong> at the bottom of the page.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2170" height="758" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png" alt="" class="wp-image-18734001169600" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png 2170w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=620,217 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=768,268 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=650,227 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=1536,537 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=2048,715 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=300,105 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-15.56.30-UTC@2x.png?resize=958,335 958w" sizes="(max-width: 2170px) 100vw, 2170px"><figcaption class="wp-element-caption">Test mode enabled in the WooCommerce Payments settings.</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="test-mode-data"><a class="wccom-docs-anchor-links" href="#test-mode-data">Test mode data<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>While test mode is enabled, the pages under the <strong>Payments</strong> menu item will only show test mode data. This includes data shown under <strong>Deposits</strong>, <strong>Transactions</strong>, and <strong>Disputes</strong>.</p>
+
+
+
+<p>To remind store owners that test mode is currently enabled, a notice is also displayed at the top of any page under the <strong>Payments</strong> menu item.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2762" height="1124" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png" alt="" class="wp-image-18734001169628" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png 2762w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=620,252 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=768,313 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=650,265 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=1536,625 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=2048,833 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=300,122 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-15-at-16.01.18-UTC@2x.png?resize=958,390 958w" sizes="(max-width: 2762px) 100vw, 2762px"><figcaption class="wp-element-caption">An alert showing that test mode is enabled.</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="testing-card-payments"><a class="wccom-docs-anchor-links" href="#testing-card-payments">Testing card payments<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To place a test order in test mode:</p>
+
+
+
+<ol>
+<li>Enable test mode as shown above.</li>
+
+
+
+<li>Go to your site’s shop and add a product to your cart.</li>
+
+
+
+<li>Proceed to the checkout page and fill out the form.</li>
+
+
+
+<li>Enter a <a href="#test-cards">test card number</a>, expiry date, and CVC code.
+<ul>
+<li>Real card details will not work in test mode.</li>
+</ul>
+</li>
+
+
+
+<li>Place your order.</li>
+</ol>
+
+
+
+<p>The order will be processed just as if you had used a real card.</p>
+
+
+
+<p>After you are redirected to the <em>Order received</em> page, you can go back into the admin dashboard of your site and find the test transaction in all the usual places, including under <strong>WooCommerce &gt; Orders</strong> and <strong>Payments &gt; Transactions</strong>.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png" alt="" class="wp-image-18734001325327" width="434" height="486" srcset="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png 1106w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png?resize=620,696 620w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png?resize=768,862 768w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png?resize=650,730 650w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png?resize=300,337 300w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.50.09-UTC@2x.png?resize=958,1076 958w" sizes="(max-width: 434px) 100vw, 434px"><figcaption class="wp-element-caption">The payment form in test mode.</figcaption></figure></div>
+
+
+<header class="toc-header"><h3 id="test-cards"><a class="wccom-docs-anchor-links" href="#test-cards">Test cards<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To test payments, the following test card numbers should be used:</p>
+
+
+
+<figure class="wp-block-table is-style-regular"><table><thead><tr><th>Number</th><th>Brand</th><th>Exp. Date</th><th>CVC Code</th></tr></thead><tbody><tr><td>4242 4242 4242 4242</td><td>Visa</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0566 5566 5556</td><td>Visa (debit)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>5555 5555 5555 4444</td><td>Mastercard</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>5105 1051 0510 5100</td><td>Mastercard (prepaid)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>3782 8224 6310 005</td><td>American Express</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>6011 1111 1111 1117</td><td>Discover</td><td>Any future date</td><td>Any three digits</td></tr></tbody></table></figure>
+
+
+
+<header class="toc-header"><h3 id="country-test-cards"><a class="wccom-docs-anchor-links" href="#country-test-cards">Country-specific test cards<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Cards issued outside the country or region of your WooCommerce Payments account can incur <a href="https://woocommerce.com/document/woocommerce-payments/fees-and-debits/fees/">additional fees</a> in live mode. To test an international payment, use the following info.</p>
+
+
+
+<figure class="wp-block-table is-style-regular"><table><thead><tr><th>Number</th><th>Country</th><th>Exp. Date</th><th>CVC Code</th></tr></thead><tbody><tr><td>4000 0003 6000 0006</td><td>Australia (AU)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0004 0000 0008</td><td>Austria (AT)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0005 6000 0004</td><td>Belgium (BE)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0007 6000 0002</td><td>Brazil (BR)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0012 4000 0000</td><td>Canada (CA)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0025 0000 0003</td><td>France (FR)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0027 6000 0016</td><td>Germany (DE)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0037 2000 0005</td><td>Ireland (IE)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0038 0000 0008</td><td>Italy (IT)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0048 4000 8001</td><td>Mexico (MX)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0052 8000 0002</td><td>Netherlands (NL)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0055 4000 0008</td><td>New Zealand (NZ)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0061 6000 0005</td><td>Poland (PL)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0062 0000 0007</td><td>Portugal (PT)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0072 4000 0007</td><td>Spain (ES)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0075 6000 0009</td><td>Switzerland (CH)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4000 0082 6000 0000</td><td>United Kingdom (UK)</td><td>Any future date</td><td>Any three digits</td></tr><tr><td>4242 4242 4242 4242</td><td>United States (US)</td><td>Any future date</td><td>Any three digits</td></tr></tbody></table></figure>
+
+
+
+<header class="toc-header"><h3 id="3ds-test-cards"><a class="wccom-docs-anchor-links" href="#3ds-test-cards">3D Secure test cards<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The following card numbers can be used to test payments requiring 3D Secure Authentication.</p>
+
+
+
+<style>
+/* Style the table below so that the card numbers don't wrap */
+#page > div.content.wccom-docs-content > div.primary > article > div.entry > figure.custom-column-adjustment-3ds > table > tbody > tr > td:nth-child(3) {
+	width: 40%;
+}
+</style>
+
+
+
+<figure class="wp-block-table is-style-regular custom-column-adjustment-3ds"><table><thead><tr><th>Description</th><th>Number</th><th>Details</th></tr></thead><tbody><tr><td>Authenticate unless set up</td><td>4000 0025 0000 3155</td><td>This card requires authentication for off-session payments unless you set it up for future payments. After you set it up, off-session payments no longer require authentication.</td></tr><tr><td>Always authenticate</td><td>4000 0027 6000 3184</td><td>This card requires authentication on all transactions, regardless of how the card is set up.</td></tr><tr><td>Already set up</td><td>4000 0038 0000 0446</td><td>This card is already set up for off-session use. It requires authentication for one-time and other on-session payments. However, all off-session payments succeed as if the card has been previously set up.</td></tr><tr><td>Insufficient funds</td><td>4000 0082 6000 3178</td><td>This card requires authentication for one-time payments. All payments are declined for insufficient funds even after being successfully authenticated or previously set up.</td></tr></tbody></table></figure>
+
+
+
+<header class="toc-header"><h3 id="declined-test-cards"><a class="wccom-docs-anchor-links" href="#declined-test-cards">Declined cards<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The following card numbers can be used to test what happens when the payment is declined by the customer’s bank for various reasons.</p>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th>Description</th><th>Number</th></tr></thead><tbody><tr><td>Generic decline</td><td>4000 0000 0000 0002</td></tr><tr><td>Insufficient funds</td><td>4000 0000 0000 9995</td></tr><tr><td>Lost card</td><td>4000 0000 0000 9987</td></tr><tr><td>Stolen card</td><td>4000 0000 0000 9979</td></tr><tr><td>Expired card</td><td>4000 0000 0000 0069</td></tr><tr><td>Incorrect CVC</td><td>4000 0000 0000 0127</td></tr><tr><td>Processing error</td><td>4000 0000 0000 0119</td></tr><tr><td>Incorrect number</td><td>4242 4242 4242 4241</td></tr></tbody></table></figure>
+
+
+
+<header class="toc-header"><h3 id="manual-capture"><a class="wccom-docs-anchor-links" href="#manual-capture">Manual capture<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To test a card payment authorization with manual capture:</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Settings</strong> in your site’s dashboard.</li>
+
+
+
+<li>Enable test mode and the separate <a href="https://woocommerce.com/document/woocommerce-payments/settings-guide/authorize-and-capture/#enabling-auth-and-capture">auth and capture setting</a>.</li>
+
+
+
+<li>Place a test order <a href="#testing-card-payments">as explained above</a>.</li>
+
+
+
+<li>Go to <strong>WooCommerce &gt; Orders</strong> and open the order you just placed.</li>
+
+
+
+<li>Confirm the order has a note in the sidebar stating: “A payment of $XX.XX was authorized using WooCommerce Payments.”</li>
+
+
+
+<li><a href="https://woocommerce.com/document/woocommerce-payments/settings-guide/authorize-and-capture/#capture-using-woocommerce-orders">Capture the charge</a>.</li>
+
+
+
+<li>Confirm the order now has a note in the sidebar like so: “A payment of $XX.XX was successfully captured using WooCommerce Payments.”</li>
+
+
+
+<li>Go to <strong>Payments &gt; Transactions.</strong></li>
+
+
+
+<li>Confirm that a corresponding transaction with the type <em>Charge</em> is listed.</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="express-checkouts"><a class="wccom-docs-anchor-links" href="#express-checkouts">Testing express checkouts<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>How to test each specific express checkout method varies depending on which one you’d like to test. Please see the links below, which go to the dedicated documents for those payment methods, for instructions on how to test them.</p>
+
+
+
+<ul>
+<li><a href="https://woocommerce.com/document/woocommerce-payments/payment-methods/apple-pay/#testing-apple-pay">Apple Pay</a></li>
+
+
+
+<li><a href="https://woocommerce.com/document/woocommerce-payments/payment-methods/google-pay/#testing">Google Pay</a></li>
+
+
+
+<li><a href="https://woocommerce.com/document/woocommerce-payments/payment-methods/link-by-stripe/#testing">Link by Stripe</a></li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="section-10"><a class="wccom-docs-anchor-links" href="#section-10">Testing non-card payments<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Test most non-card payment methods (e.g. Sofort, iDeal, and so on) is as simple as placing a test order while that payment method is selected. You will be taken to a page hosted by Stripe where you can choose whether to authorize or fail the test payment.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2110" height="1356" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png" alt="" class="wp-image-18734001469629" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png 2110w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=620,398 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=768,494 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=650,418 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=1536,987 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=2048,1316 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=300,193 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-26-at-16.38.03-UTC@2x.png?resize=958,616 958w" sizes="(max-width: 2110px) 100vw, 2110px"><figcaption class="wp-element-caption">An example of the Sofort text payment page hosted by Stripe</figcaption></figure>
+
+
+
+<p>After you choose whether to authorize the test payment or fail it, you will automatically be redirected back to your site, and the relevant result shown.</p>
+
+
+
+<header class="toc-header"><h3 id="section-11"><a class="wccom-docs-anchor-links" href="#section-11">SEPA<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In order to test a SEPA transaction, you will need to use one of the following IBANs. These use Austria as the country, since the country does not matter much for testing purposes.</p>
+
+
+
+<figure class="wp-block-table"><table><thead><tr><th class="has-text-align-center" data-align="center">Test IBAN</th><th>Result</th></tr></thead><tbody><tr><td class="has-text-align-center" data-align="center">AT611904300234573201</td><td>Payment succeeds.</td></tr><tr><td class="has-text-align-center" data-align="center">AT861904300235473202</td><td>Payment fails.</td></tr><tr><td class="has-text-align-center" data-align="center">AT591904300235473203</td><td>Payment succeeds, but is <a href="https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/managing-disputes-with-woocommerce-payments/#section-29">disputed</a>.</td></tr></tbody></table></figure>
+
+
+
+<header class="toc-header"><h2 id="refunds"><a class="wccom-docs-anchor-links" href="#refunds">Testing refunds<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To test refunding an order:</p>
+
+
+
+<ol>
+<li>Place a test order as shown above.</li>
+
+
+
+<li>Go to <strong>WooCommerce &gt; Orders</strong>.</li>
+
+
+
+<li>Click the order ID of the test order.</li>
+
+
+
+<li>Follow <a href="https://woocommerce.com/document/woocommerce-payments/managing-money/#section-5">the refund process</a> as usual.</li>
+</ol>
+
+
+
+<p>The order status should change to Refunded, and your test balance will be reduced.</p>
+
+
+
+<header class="toc-header"><h2 id="disputes"><a class="wccom-docs-anchor-links" href="#disputes">Testing disputes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To simulate a dispute with WooCommerce Payments, place a test order as shown above using one of the cards from this table:</p>
+
+
+
+<style>
+/* Style the table below so that the card numbers don't wrap */
+#page > div.content.wccom-docs-content > div.primary > article > div.entry > figure.custom-column-adjustment-disputes > table > tbody > tr > td:nth-child(3) {
+	width: 40%;
+}
+</style>
+
+
+
+<figure class="wp-block-table custom-column-adjustment-disputes"><table><thead><tr><th>Description</th><th>Number</th><th>Details</th></tr></thead><tbody><tr><td>Fraudulent</td><td>4000 0000 0000 0259</td><td>The charge will be disputed as fraudulent. This type of dispute is protected after 3D Secure authentication.</td></tr><tr><td>Product not received</td><td>4000 0000 0000 2685</td><td>With default account settings, charge succeeds, only to be disputed as product not received. This type of dispute isn’t protected after 3D Secure authentication.</td></tr></tbody></table></figure>
+
+
+
+<p>The order will be processed, but the payment will be disputed immediately. You can then view and respond to the dispute by going to <strong>Payments &gt; Disputes</strong> in your site’s dashboard.</p>
+
+
+
+<header class="toc-header"><h3 id="dispute-responses"><a class="wccom-docs-anchor-links" href="#dispute-responses">Dispute responses<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>After creating a dispute with a dispute test card above, you can also test the dispute response process.</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Disputes</strong> in your site’s dashboard.</li>
+
+
+
+<li>Click the dispute in the list to open it up.</li>
+
+
+
+<li>Click <strong>Challenge Dispute</strong>.</li>
+
+
+
+<li>In the <em>Additional Details</em> field, do one of the following:
+<ul>
+<li>Enter <code>winning_evidence</code> to win the dispute.</li>
+
+
+
+<li>Enter <code>losing_evidence</code> to lose the dispute.</li>
+</ul>
+</li>
+
+
+
+<li>At the bottom, click <strong>Submit Evidence</strong>.</li>
+</ol>
+
+
+
+<p>You can also accept the dispute in Step 3 instead of challenging it to test that scenario.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png" alt="" class="wp-image-18734001325339" width="593" height="316" srcset="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png 1416w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png?resize=620,331 620w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png?resize=768,410 768w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png?resize=650,347 650w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png?resize=300,160 300w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-16-at-18.56.02-UTC@2x.png?resize=958,511 958w" sizes="(max-width: 593px) 100vw, 593px"><figcaption class="wp-element-caption">Testing a winning dispute response.</figcaption></figure></div>			</div>
+					

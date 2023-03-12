@@ -1,0 +1,309 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">How do I transfer a site that uses WooCommerce Payments to a new owner?</h1>
+			<div class="entry">
+				
+<p>This document explains how to transfer ownership of a website using WooCommerce Payments from one person to another. Doing so may be called for if, for example, you’ve sold the business to someone else and you need to transfer the website to be under their control.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> Please read this guide carefully, as the potential for error is high! It also may be best to have both the old owner and new owner complete these steps while in the same room, or on a conference call. This is because WooCommerce Payments will be unable to accept payments during one step of this process. (There will be another warning like this one before this happens.) As such, completing this guide quickly is important, especially if you don’t have alternative payment methods.</p></div>
+
+
+
+<header class="toc-header"><h2 id="wpcom-account-for-new-owner"><a class="wccom-docs-anchor-links" href="#wpcom-account-for-new-owner">WordPress.com account for new owner<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The first step is to have the new owner <a href="https://wordpress.com/start/user">create a WordPress.com account</a> for themselves, being sure to note their username and password. This is necessary because all websites that use WooCommerce Payments are <a href="https://woocommerce.com/document/woocommerce-payments/our-policies/#wpcom-account">required to be connected</a> to WordPress.com.</p>
+
+
+
+<p>To be clear, the new owner does not need to create a new WordPress.com <em>site</em>. They only need to create an <em>account</em>, which they can do by using the link above.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1747" height="1132" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png" alt="" class="wp-image-18734001443006" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png 1747w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=620,402 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=768,498 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=650,421 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=1536,995 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=300,194 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.08.43-UTC@2x.png?resize=958,621 958w" sizes="(max-width: 1747px) 100vw, 1747px"><figcaption class="wp-element-caption">Creating a user account on WordPress.com </figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="site-admin-account-for-new-owner"><a class="wccom-docs-anchor-links" href="#site-admin-account-for-new-owner">Site admin account for new owner<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Next, the existing owner can give the new owner administrator access to the site itself by making an account for them in the WordPress dashboard, under <strong>Users &gt; Add New</strong>. The WordPress.org documentation has <a href="https://wordpress.org/support/article/users-add-new-screen/">instructions on how to use that page</a>.</p>
+
+
+
+<p>Ensure that the <strong>Role</strong> field is set to “Administrator” in order to give the new owner full access!</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1352" height="1422" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png" alt="" class="wp-image-18734001443031" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png 1352w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png?resize=620,652 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png?resize=768,808 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png?resize=650,684 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png?resize=300,316 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-19.13.41-UTC@2x.png?resize=958,1008 958w" sizes="(max-width: 1352px) 100vw, 1352px"><figcaption class="wp-element-caption">Granting administrator access to a new user account</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="stripe-express-account-for-new-owner"><a class="wccom-docs-anchor-links" href="#stripe-express-account-for-new-owner">Stripe Express account for new owner<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The last account that the new owner will need to create is a <a href="https://woocommerce.com/document/woocommerce-payments/account-management/partnership-with-stripe/">Stripe Express account</a>, which is what WooCommerce Payments uses to process payments. The old owner will need to invite the new owner to create an account like so:</p>
+
+
+
+<ol>
+<li>The old owner should log into their Stripe Express account as detailed <a href="https://woocommerce.com/document/woocommerce-payments/account-management/access-stripe-account/">here</a>.</li>
+
+
+
+<li>Scroll down, and under <em>Platform Settings</em>, click your site name.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png" alt="" class="wp-image-18734001443299" width="523" height="390" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png 1556w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=620,463 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=768,574 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=650,485 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=1536,1147 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=300,224 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=958,715 958w" sizes="(max-width: 523px) 100vw, 523px"></figure></div>
+
+
+<ol start="3">
+<li>In the <em>Team Members</em> section, click the <strong>Invite and remove</strong> box.</li>
+
+
+
+<li>Click the <strong>Add team member</strong> button.</li>
+
+
+
+<li>Enter the email address of the new owner.
+<ul>
+<li>Preferably this is the same email they used for their WordPress.com account and their admin account on the actual website.</li>
+</ul>
+</li>
+
+
+
+<li>Click the <strong>Invite</strong> button.</li>
+
+
+
+<li>The new owner will receive an invite link from Stripe in their email. </li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png" alt="" class="wp-image-18734001443327" width="502" height="494" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png 1254w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png?resize=620,610 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png?resize=768,756 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png?resize=650,640 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png?resize=300,295 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.27.42-UTC@2x.png?resize=958,943 958w" sizes="(max-width: 502px) 100vw, 502px"></figure></div>
+
+
+<ol start="8">
+<li>On their device, have the new owner click the <strong>Accept invite</strong> button.
+<ul>
+<li>They will be taken to a Stripe Express account signup page on Stripe’s website.</li>
+</ul>
+</li>
+
+
+
+<li>The new owner should enter their phone number and click <strong>Next</strong>.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1964" height="926" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png" alt="" class="wp-image-18734001443415" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png 1964w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=620,292 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=768,362 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=650,306 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=1536,724 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=300,141 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.52.42-UTC@2x.png?resize=958,452 958w" sizes="(max-width: 1964px) 100vw, 1964px"></figure>
+
+
+
+<ol start="10">
+<li>After validating their phone number by entering a short verification code, the new owner will be able to log into the Stripe Express dashboard and manage the Stripe Express account in the same way that the original owner can.</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="change-business-info-in-stripe"><a class="wccom-docs-anchor-links" href="#change-business-info-in-stripe">Change business information in Stripe<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Now that the new owner has access to the site’s Stripe Express dashboard, they should change all the relevant information to reflect the new ownership. For example, the new owner will want to <a href="https://woocommerce.com/document/woocommerce-payments/account-management/update-my-contact-details/">update the contact details</a> on file as well as <a href="https://woocommerce.com/document/woocommerce-payments/deposits/change-deposit-account-info/">change the connected bank account(s)</a>.</p>
+
+
+
+<p>Essentially, have the new owner click into each section of the Stripe Express dashboard:</p>
+
+
+
+<ul>
+<li>Payout Details</li>
+
+
+
+<li>Linked External Accounts</li>
+
+
+
+<li>Platform Settings</li>
+</ul>
+
+
+
+<p>… and update any outdated information that they find.</p>
+
+
+
+<header class="toc-header"><h2 id="change-stripe-account-ownership"><a class="wccom-docs-anchor-links" href="#change-stripe-account-ownership">Have Stripe change the owner<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Next comes the only part of the process that requires a third party: transferring ownership of the Stripe Express account. (The previous sections only resulted in the new owner co-managing the account.) Transferring ownership can only be done by Stripe support.</p>
+
+
+
+<p>To actually transfer ownership of the account, you will need to contact Stripe support by logging in the Express dashboard and clicking the question mark / help icon at the top.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png" alt="" class="wp-image-18734001446073" width="601" height="333" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png 1360w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png?resize=620,344 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png?resize=768,426 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png?resize=650,360 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png?resize=300,166 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-14.49.05-UTC@2x.png?resize=958,531 958w" sizes="(max-width: 601px) 100vw, 601px"></figure></div>
+
+
+<p>You’ll land on Stripe’s Help &amp; Support page, and you can contact them by clicking the <strong>Contact Stripe Express support</strong> link.</p>
+
+
+
+<p>Stripe has advised us that you will need the following information in order to transfer ownership of an Express account:</p>
+
+
+
+<ul>
+<li>The phone number of the new owner of Express account.</li>
+
+
+
+<li>The email address of the new owner of Express account.</li>
+
+
+
+<li>A form of verification:
+
+
+<ul>
+<li>If a company representative is available, they will set up a call to confirm.</li>
+
+
+
+<li>If a company representative is not available, they will need a verification letter.</li>
+
+
+
+<li>If both the company representative and the old owner/administrator have left the company, they will need a verification letter from a company signatory which confirms and details the change of company representative and the transfer of ownership of the Stripe Express account. A company signatory is someone entitled to sign or execute business contracts on behalf of the organization, such as department directors, VPs, CTO, CFO, CEO, or board members.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p>Once Stripe has assisted you in changing the owner of the Stripe Express account, proceed to the next section.</p>
+
+
+
+<header class="toc-header"><h2 id="wpcom-connection-transfer"><a class="wccom-docs-anchor-links" href="#wpcom-connection-transfer">WordPress.com connection transfer<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Now that the new owner has all of the required accounts and information in place, it’s time to transfer ownership of <a href="https://woocommerce.com/document/woocommerce-payments/our-policies/#wpcom-account">the WordPress.com connection</a> to them.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> It is during this next part of the process that WooCommerce Payments will be unable to take payments. We suggest that you transfer the WordPress.com connection to the new owner as quickly as possible. If you are at all unsure of how to proceed, please <a href="https://woocommerce.com/my-account/create-a-ticket/">contact our support</a> for guidance.</p></div>
+
+
+
+<p>To transfer the connection, follow <a href="https://woocommerce.com/document/woocommerce-payments/our-policies/connection/#changing-the-account-you're-connected-to">this process</a>. It can differ based on whether you’re using our <a href="https://jetpack.com/">Jetpack plugin</a> or not, but the result is the same: the new owner’s WordPress.com account should end up being the one to which the site is connected in our systems.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1974" height="1148" src="https://woocommerce.com/wp-content/uploads/2023/01/image-4.png" alt="" class="wp-image-18734001443061" srcset="https://woocommerce.com/wp-content/uploads/2023/01/image-4.png 1974w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=620,361 620w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=768,447 768w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=650,378 650w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=1536,893 1536w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=300,174 300w, https://woocommerce.com/wp-content/uploads/2023/01/image-4.png?resize=958,557 958w" sizes="(max-width: 1974px) 100vw, 1974px"><figcaption class="wp-element-caption">Disconnecting Jetpack in order to reset the WordPress.com account connection</figcaption></figure>
+
+
+
+<div class="wp-block-coblocks-alert is-style-success" aria-label="Alert section of type success"><p class="wp-block-coblocks-alert__title">Once the new owner has connected the site to WordPress.com using their account, WooCommerce Payments will be able to take payments again!</p></div>
+
+
+
+<header class="toc-header"><h2 id="remove-old-owner-access"><a class="wccom-docs-anchor-links" href="#remove-old-owner-access">Remove old owner access<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The last step of the process is to remove the old owner’s various accounts.</p>
+
+
+
+<p>The new owner can delete the old owner’s administrator account on the site, under <strong>Users &gt; All Users</strong>. <a href="https://wordpress.org/documentation/article/users-screen/#delete-users">WordPress.org has documentation</a> on how this is done.</p>
+
+
+
+<p>The new owner should also remove the old owner from Stripe Express. To do so:</p>
+
+
+
+<ol>
+<li>Log into your Stripe Express account as detailed <a href="https://woocommerce.com/document/woocommerce-payments/account-management/access-stripe-account/">on this page</a>.</li>
+
+
+
+<li>Scroll down to look under <em>Platform Settings</em> and click your site name.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png" alt="" class="wp-image-18734001443299" width="523" height="390" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png 1556w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=620,463 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=768,574 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=650,485 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=1536,1147 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=300,224 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-19-at-20.18.28-UTC@2x.png?resize=958,715 958w" sizes="(max-width: 523px) 100vw, 523px"></figure></div>
+
+
+<ol start="3">
+<li>In the <em>Team Members</em> section, click the <strong>Invite and remove</strong> box.</li>
+
+
+
+<li>Enter the verification code sent to your phone number.</li>
+
+
+
+<li>On the next page, click the <strong>X</strong> icon by the old owner’s account to remove it.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png" alt="" class="wp-image-18734001446278" width="425" height="398" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png 1016w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png?resize=620,581 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png?resize=768,720 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png?resize=650,609 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png?resize=300,281 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-20-at-15.35.50-UTC@2x.png?resize=958,898 958w" sizes="(max-width: 425px) 100vw, 425px"></figure></div>
+
+
+<ol start="6">
+<li>Click <strong>Remove</strong> in the confirmation modal that appears.</li>
+
+
+
+<li>Click the <strong>Done</strong> button.</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="finishing-up"><a class="wccom-docs-anchor-links" href="#finishing-up">Finishing up<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>After this is all done, the new owner should now control all the relevant accounts:</p>
+
+
+
+<ul>
+<li>The WordPress.com connection</li>
+
+
+
+<li>The site itself, via their admin account</li>
+
+
+
+<li>The Stripe Express account</li>
+</ul>
+
+
+
+<p>Note that it may still be necessary to transfer ownership of some other accounts, e.g. the web hosting account, but those are out of the scope of this guide.</p>
+			</div>
+					

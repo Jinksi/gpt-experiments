@@ -1,0 +1,61 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Deactivating WooCommerce Subscriptions with WooCommerce Payments active</h1>
+			<div class="entry">
+				
+<p>If you’re using&nbsp;<a href="https://woocommerce.com/document/payments/">WooCommerce Payments</a>, you have two options to sell subscription products:</p>
+
+
+
+<ul>
+<li>The subscriptions functionality built into WooCommerce Payments, or…</li>
+
+
+
+<li>The separate&nbsp;<a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a>&nbsp;extension.</li>
+</ul>
+
+
+
+<p>This document reviews what happens if you are using WooCommerce Payments in addition to the Subscriptions extension, and then you deactivate the Subscriptions extension under <strong>Plugins &gt; Installed Plugins</strong> in your WordPress dashboard.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> WooCommerce Subscriptions and the WooCommerce Payments subscriptions functionality have some <a href="https://woocommerce.com/document/payments/subscriptions-basics/comparison/">differences in features</a>. Please be sure that you are not using any of the features exclusive to the Subscriptions extension before deactivating it.</p></div>
+
+
+
+<header class="toc-header"><h2 id="warning"><a class="wccom-docs-anchor-links" href="#warning">Warning when deactivating Subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you go to <strong>Plugins &gt; Installed Plugins</strong> and click the <strong>Deactivate</strong> link for the Subscriptions extension, a popup will warn you of the consequences of doing so:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png" alt="" class="wp-image-18734001298151" width="792" height="351" srcset="https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png 1624w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=620,275 620w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=768,340 768w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=650,288 650w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=1536,681 1536w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=300,133 300w, https://woocommerce.com/wp-content/uploads/2022/12/Screenshot-taken-on-2022-12-09-at-19.37.40-UTC@2x.png?resize=958,425 958w" sizes="(max-width: 792px) 100vw, 792px"></figure></div>
+
+
+<p>To deactivate Subscriptions, click <strong>Yes, deactivate WooCommerce Subscriptions</strong>. Otherwise, click <strong>Cancel</strong> to keep WooCommerce Subscriptions activated.</p>
+
+
+
+<header class="toc-header"><h2 id="existing-subscriptions"><a class="wccom-docs-anchor-links" href="#existing-subscriptions">Effects on existing subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Existing subscriptions will be set to <a href="https://woocommerce.com/document/subscriptions/renewal-process/#section-4">manual renewal</a> as soon as the Subscriptions extension is deactivated. This means that, on their next renewal date, your subscribers will get an email with a link to log into your site and pay for their renewal by hand.</p>
+
+
+
+<p>After the customer has manually renewed one time, WooCommerce Payments will “take over” the subscription and automatic payments will resume.</p>
+
+
+
+<header class="toc-header"><h2 id="new-subscriptions"><a class="wccom-docs-anchor-links" href="#new-subscriptions">Effects on new subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>New subscriptions will start with WooCommerce Payments from the first transaction, and as such will not need to renewal manually.</p>
+			</div>
+					

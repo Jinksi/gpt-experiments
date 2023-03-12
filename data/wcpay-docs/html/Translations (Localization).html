@@ -1,0 +1,162 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Translations (Localization)</h1>
+			<div class="entry">
+				
+<p>When you install or update WooCommerce Payments, WordPress will automatically look for a translation file in your language and download it. Having said that, we have not yet translated WooCommerce Payments into every language. Here are the languages we support:</p>
+
+
+
+<ul>
+<li>Chinese (Cantonese)</li>
+
+
+
+<li>Chinese (Mandarin)</li>
+
+
+
+<li>Dutch (Belgium)</li>
+
+
+
+<li>Dutch (Netherlands)</li>
+
+
+
+<li>English (Australia)</li>
+
+
+
+<li>English (Great Britain)</li>
+
+
+
+<li>English (United States)</li>
+
+
+
+<li>French</li>
+
+
+
+<li>French (Belgium)</li>
+
+
+
+<li>French (Canada)</li>
+
+
+
+<li>French (Switzerland)</li>
+
+
+
+<li>German</li>
+
+
+
+<li>German (Austrian)</li>
+
+
+
+<li>German (Switzerland)</li>
+
+
+
+<li>Italian</li>
+
+
+
+<li>Italian (Switzerland)</li>
+
+
+
+<li>Polish</li>
+
+
+
+<li>Portuguese (Portugal)</li>
+
+
+
+<li>Spanish</li>
+</ul>
+
+
+
+<p>The sections below explain how to translate WooCommerce Payments strings into your own language if that does not occur automatically.</p>
+
+
+
+<header class="toc-header"><h2 id="some-strings-not-translated"><a class="wccom-docs-anchor-links" href="#some-strings-not-translated">Why some strings are not being translated?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>You may see that some strings are not translated. Up-to-date translations are automatically downloaded for supported languages, but you can manually trigger an update by going to <strong>Dashboard &gt; Updates</strong> and clicking on the button to update translations.</p>
+
+
+
+<p>If the problem persists, you can try manually removing the current plugin translation files and reinstalling them like so:</p>
+
+
+
+<ol>
+<li>Use an <a href="https://wordpress.org/support/article/ftp-clients/">FTP client</a> to connect to your site.</li>
+
+
+
+<li>Browse to this directory: <code>wp-content/plugins/woocommerce-payments/languages/</code>.</li>
+
+
+
+<li>Delete all files that have names starting with <code>woocommerce-payments_*</code>. </li>
+
+
+
+<li>Back in your site’s dashboard, go to&nbsp;<strong>Dashboard &gt; Updates</strong>. </li>
+
+
+
+<li>Click on the button to update translations.</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="can-i-translate"><a class="wccom-docs-anchor-links" href="#can-i-translate">Can I translate WooCommerce Payments into my language?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The language files for WooCommerce Payments can be found within this directory:</p>
+
+
+
+<p><code>wp-content/plugins/woocommerce-payments/languages/</code> </p>
+
+
+
+<p>The default English language file is named <code>woocommerce-payments.pot</code>.</p>
+
+
+
+<p>With a plugin like <a href="https://wordpress.org/plugins/loco-translate/">Loco Translate</a> or an app like <a href="https://poedit.net/">PoEdit</a>, you can use the <code>.pot</code> file to create your own language translation files. For example, if you want a translation of the WooCommerce Payments extension in Dutch from the Netherlands, you would translate the strings and create the following translation files: </p>
+
+
+
+<ul>
+<li><code>woocommerce-payments-nl_NL.mo</code> </li>
+
+
+
+<li><code>woocommerce-payments-nl_NL.po</code></li>
+</ul>
+
+
+
+<p>Those two language files would then need to be moved into this directory:</p>
+
+
+
+<p><code>wp-content/languages/plugins/</code></p>
+			</div>
+					

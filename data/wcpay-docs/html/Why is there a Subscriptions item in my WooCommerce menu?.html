@@ -1,0 +1,90 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Why is there a Subscriptions item in my WooCommerce menu?</h1>
+			<div class="entry">
+				
+<p>Starting with WooCommerce 6.6, a <em>Subscriptions</em> item in the menu offers eligible merchants a chance to use the <a href="https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/">built-in subscriptions functionality</a> of WooCommerce Payments.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2688" height="1750" src="https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png" alt="" class="wp-image-18734000545251" srcset="https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png 2688w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=620,404 620w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=768,500 768w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=650,423 650w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=1536,1000 1536w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=2048,1333 2048w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=300,195 300w, https://woocommerce.com/wp-content/uploads/2022/06/Markup-2022-05-30-at-18.10.30.png?resize=958,624 958w" sizes="(max-width: 2688px) 100vw, 2688px"></figure>
+
+
+
+<header class="toc-header"><h2 id="eligibility-criteria"><a class="wccom-docs-anchor-links" href="#eligibility-criteria">Eligibility criteria<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>In order to see the <em>Subscriptions</em> menu item suggestion, the site must:</p>
+
+
+
+<ul>
+<li>Allow tracking under&nbsp;<strong>WooCommerce &gt; Settings &gt; Advanced &gt; WooCommerce.com</strong>.</li>
+
+
+
+<li>Be based in the U.S.</li>
+
+
+
+<li>Be at least 6 months old.</li>
+
+
+
+<li>Have at least 1 order in the last 30 days.</li>
+
+
+
+<li>Not have any of the following plugins installed:
+<ul>
+<li>WooCommerce Subscriptions</li>
+
+
+
+<li>WooCommerce Payments</li>
+
+
+
+<li>Sumo Subscriptions</li>
+
+
+
+<li>YITH Subscriptions</li>
+
+
+
+<li>Subscripto</li>
+
+
+
+<li>Subscriptions For WooCommerce</li>
+</ul>
+</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="remove-menu-item"><a class="wccom-docs-anchor-links" href="#remove-menu-item">Remove the Subscriptions menu item<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To remove the <em>Subscriptions</em> item from the WooCommerce menu, click the <strong>No Thanks</strong> button and the <em>Subscriptions</em> item will disappear. </p>
+
+
+
+<p>To programmatically remove the item (if, for example, you are a hosting provider or developer), create an option named <code>woocommerce-wcpay-subscriptions_dismissed</code> and set it to <code>yes</code>. This will prevent the <em>Subscriptions</em> item from displaying even for qualifying merchants.</p>
+
+
+
+<header class="toc-header"><h2 id="return-menu-item"><a class="wccom-docs-anchor-links" href="#return-menu-item">Returning the Subscriptions menu item<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>There is no real reason to bring the <em>Subscriptions</em> menu item back after dismissing it, since you can still get started at any time by simply <a href="https://woocommerce.com/document/payments/">installing WooCommerce Payments</a> and using <a href="https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/">the built-in subscriptions features</a>.</p>
+
+
+
+<p>However, if you need to bring the <em>Subscriptions</em> menu item back after dismissing it, you can delete the&nbsp;<code>woocommerce-wcpay-subscriptions_dismissed</code> option in your database. This will restore the menu item provided you meet the criteria above.</p>
+			</div>
+					

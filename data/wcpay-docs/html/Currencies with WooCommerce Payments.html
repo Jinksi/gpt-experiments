@@ -1,0 +1,120 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Currencies with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>With WooCommerce Payments, you can accept payments in <a href="https://woocommerce.com/document/payments/faq/available-currencies/">over 100 different currencies</a>. This document explains how multi-currency transactions work, the different types of currencies that might be involved in a transaction, and how to view which currency conversions were involved with a given transaction.</p>
+
+
+
+<p>To learn how to display your products in your customer’s preferred currency, manage exchange rates, and other such configuration options, refer to our <a href="https://woocommerce.com/document/payments/currencies/multi-currency-setup/">multi-currency guide</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="currencies-in-a-transaction"><a class="wccom-docs-anchor-links" href="#currencies-in-a-transaction">Currencies in a transaction<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>A single transaction can potentially involve multiple currencies. Each one is explained below.</p>
+
+
+
+<header class="toc-header"><h3 id="customer-currency"><a class="wccom-docs-anchor-links" href="#customer-currency">Customer currency<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The customer currency is the currency displayed to a customer while they’re browsing your store. It’s also the currency the customer is charged in when they pay for their order. In the payments industry, this is often referred to as the “presentment currency.”</p>
+
+
+
+<p>By default, the customer currency will be the same as your store’s currency, as defined under <strong>WooCommerce &gt; Settings &gt; General</strong>. The customer currency can also be set using a multi-currency plugin, or WooCommerce Payments’ built-in multi-currency functions.</p>
+
+
+
+<p>As such, a single store may have more than one customer currency used in transactions.</p>
+
+
+
+<header class="toc-header"><h3 id="deposit-currency"><a class="wccom-docs-anchor-links" href="#deposit-currency">Deposit currency<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The <a href="https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/">deposit currency</a> is the currency used to deposit funds into your bank account, and is not necessarily the same as the customer currency. For example, a store based in the UK may receive deposits in pound sterling but offer the Euro as a customer currency for payments.</p>
+
+
+
+<p>For some merchants, it’s possible to receive deposits in different currencies into <a href="https://woocommerce.com/document/payments/currencies/multiple-deposit-currencies/">different bank accounts</a>. For example, the UK store mentioned above could elect to receive GBP deposits into one bank account, and EUR deposits into another account.</p>
+
+
+
+<header class="toc-header"><h3 id="store-currency"><a class="wccom-docs-anchor-links" href="#store-currency">Store currency<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The store currency is the base currency used by your site, chosen during the WooCommerce setup process. You can change it at any time under <strong>WooCommerce &gt; Settings &gt; General</strong>. </p>
+
+
+
+<p>Without customization (via the use of a multi-currency plugin or other code), the customer currency will be the same as the store currency.</p>
+
+
+
+<header class="toc-header"><h3 id="account-currency"><a class="wccom-docs-anchor-links" href="#account-currency">Account currency<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>During the WooCommerce Payments signup process, you must select the country of your business entity. This country is used to determine <a href="https://woocommerce.com/document/woocommerce-payments/fees-and-debits/fees/">the fees</a> you pays for transactions. For example, accounts for U.S. businesses pay their fees in U.S. dollars, regardless of other currencies involved in the transaction.</p>
+
+
+
+<header class="toc-header"><h2 id="tracking-currencies"><a class="wccom-docs-anchor-links" href="#tracking-currencies">Tracking currencies<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The WooCommerce Payments dashboard can be used to track the currencies involved in different transactions, including deposits, payments, and disputes. This section highlights the elements of the dashboard that provide details on a transaction’s currency.</p>
+
+
+
+<header class="toc-header"><h3 id="transactions-page"><a class="wccom-docs-anchor-links" href="#transactions-page">Transactions page<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The <strong>Payments &gt; Transactions</strong> page shows all WooCommerce Payments transactions, regardless of currency. The amounts, fees, and the net are all displayed in the deposit currency. Transactions with a customer currency different from the deposit currency have a tooltip to view the amount paid by the customer in the customer currency.</p>
+
+
+
+<figure class="wp-block-image size-large has-lightbox"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/03/image-1.png?w=950" alt="WooCommerce Payments transactions screenshot with multiple customer currencies." class="wp-image-3043197" title="WooCommerce Payments transactions screen with multiple currencies"></figure>
+
+
+
+<header class="toc-header"><h3 id="transaction-details-page"><a class="wccom-docs-anchor-links" href="#transaction-details-page">Transaction details page<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The transaction details page displays the transaction in the customer’s currency at the top of the overview. Underneath that amount, the amount converted to the deposit currency is displayed, along with the fees and net amounts deposited for the charge.</p>
+
+
+
+<p>The timeline view provides details on the exchange rate used when converting the customer currency to the deposit currency. The <a href="https://woocommerce.com/document/payments/faq/fees/">fee for currency conversion</a> is included in the exchange rate as an additional amount on top of the mid-market rate, rather than becoming part of the separate transaction fees charged on the transaction.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/03/image-2.png?w=950" alt="WooCommerce Payments transaction details screenshot with customer currency that differs to deposit currency." class="wp-image-3043198" title="WooCommerce Payments multi-currency transaction details screen"></figure>
+
+
+
+<header class="toc-header"><h3 id="deposit-details-page"><a class="wccom-docs-anchor-links" href="#deposit-details-page">Deposit details page<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The deposit details page shows both the amount transferred to your bank account as well as all of the individual transactions associated with that particular deposit. The amounts displayed on this page are in your deposit currency.</p>
+
+
+
+<p>For transactions with a customer currency different from the deposit currency, a tooltip is displayed to view the amount paid by the customer in the customer currency.</p>
+
+
+
+<figure class="wp-block-image size-large has-lightbox"><img decoding="async" src="https://woocommerce.com/wp-content/uploads/2021/03/image-3.png?w=950" alt="WooCommerce Payments deposit details screenshot with customer currency that differs to deposit currency." class="wp-image-3043199" title="WooCommerce Payments multi-currency deposit details screen"></figure>
+			</div>
+					

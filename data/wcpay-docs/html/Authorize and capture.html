@@ -1,0 +1,361 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Authorize and capture</h1>
+			<div class="entry">
+				
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title">Our suggestion is that you <strong>leave the authorize and capture later setting disabled</strong> unless you have a very specific and well-justified use case in mind. If you do need or want to enable it, please read the entirety of this document!</p></div>
+
+
+
+<p>Card transactions occur very quickly, which is what makes them convenient. In fact, they happen so fast that many people don’t realize that there are actually <em>two</em> events taking place: an authorization and a capture.</p>
+
+
+
+<p>By default, WooCommerce Payments will perform the authorization and capture at the same time. However, by enabling the <strong>Issue an authorization on checkout, and capture later</strong> setting, you can prevent WooCommerce Payments from automatically capturing charges. This allows you to manually capture the charge at a later time.</p>
+
+
+
+<p>Although most merchants won’t need to use this feature, it may be helpful in certain scenarios. This document explains a bit more about how authorizations and captures work, and provides some example uses cases for which enabling the option might be a good idea.</p>
+
+
+
+<header class="toc-header"><h2 id="authorize-vs-capture"><a class="wccom-docs-anchor-links" href="#authorize-vs-capture">What is an authorization vs. a capture?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>An <strong>authorization</strong> is the first part of the charge process, in which the payment processor connects to the bank that issued the customer’s card and determines if the customer has enough money to cover the transaction cost. During this step, the funds are “held” or reserved for payment, but not actually sent to the merchant yet.</p>
+
+
+
+<p>A <strong>capture</strong> (also known as “settlement”) occurs when the merchant instructs the payment processor to transfer some or all of the held funds from the customer’s account to their own. The customer’s bank then sends the requested amount of money. The merchant also has the option of cancelling the authorization.</p>
+
+
+
+<p>Notably, authorizations are temporary in nature. They must be captured within seven days or the authorization will automatically expire. If that happens, the reserved funds are freed back up in the customer’s account.</p>
+
+
+
+<header class="toc-header"><h2 id="when-is-manual-capture-helpful"><a class="wccom-docs-anchor-links" href="#when-is-manual-capture-helpful">When is manual capture helpful?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Manually capturing authorizations is usually used in scenarios where some payment is needed up-front, but the exact final amount is not known initially.</p>
+
+
+
+<p>Here’s a list of some common examples where this workflow is used:</p>
+
+
+
+<ul>
+<li>Gas/petrol stations where you “pay at the pump” issue an authorization before you beginning filling up your vehicle. When you’re done, and the exact amount of the charge is known to their system, they will capture that amount. </li>
+
+
+
+<li>Hotels have an even longer time between when the charge is authorized (usually at check-in) and when the charge is captured (usually at check-out).</li>
+
+
+
+<li>Equipment rental businesses may request a card so that they can issue an authorization prior to allowing their customers to take the equipment home.</li>
+
+
+
+<li>Craftsmen who take custom orders (for a piece of furniture, say) might decide to authorize a customer’s card ahead of time and capture a different amount later on, depending on the exact work involved in the customer’s request.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="manual-capture-disadvantages"><a class="wccom-docs-anchor-links" href="#manual-capture-disadvantages">Manual capture disadvantages<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>As you can see above, there are a few limited situations where authorizing first and capturing later are needed. However, for the vast majority of merchants using WooCommerce Payments, authorizing and capturing separately has several disadvantages:</p>
+
+
+
+<ul>
+<li>Authorizations are temporary: they expire after seven days. If you don’t capture them in time, the customer will need to start the purchase process all over again. You might not even notice that you did not capture the charge until after you have shipped the customer their goods!</li>
+
+
+
+<li>You cannot capture more than the amount originally authorized. If you initially authorize too little, you will need to cancel that authorization and have the customer repurchase.</li>
+
+
+
+<li>The authorize and capture workflow only supports cards. It does not support any <a href="https://woocommerce.com/document/payments/additional-payment-methods/">local payment methods</a>, which can cause inconvenience for your customers.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="enabling-auth-and-capture"><a class="wccom-docs-anchor-links" href="#enabling-auth-and-capture">Enabling authorize and capture later<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If, after considering the above, you wish to enable authorize first and capture later, you can do that like so:</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Settings</strong> in your site’s dashboard.</li>
+
+
+
+<li>In the <em>Transactions</em> section, check the box next to “Issue an authorization on checkout, and capture later.”</li>
+
+
+
+<li>A popup will appear to ask if you are sure. Click <strong>Enable</strong>.</li>
+
+
+
+<li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+</ol>
+
+
+
+<p>If you’re using our <a href="https://woocommerce.com/document/payments/additional-payment-methods/">new checkout experience</a> and have any local payment methods enabled, a warning will be shown stating that they cannot be used while authorize and capture is enabled.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png" alt="" class="wp-image-18734001185850" width="467" height="269" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png 992w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png?resize=620,358 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png?resize=768,443 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png?resize=650,375 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png?resize=300,173 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.06.56-UTC@2x.png?resize=958,552 958w" sizes="(max-width: 467px) 100vw, 467px"></figure></div>
+
+
+<header class="toc-header"><h2 id="viewing-authorized-orders"><a class="wccom-docs-anchor-links" href="#viewing-authorized-orders">Viewing authorized orders<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If an order is placed while capture later is enabled, it will be assigned the On Hold status, which you can see under <strong>WooCommerce &gt; Orders</strong>.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1970" height="464" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png" alt="" class="wp-image-18734001185911" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png 1970w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=620,146 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=768,181 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=650,153 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=1536,362 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=300,71 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.19.56-UTC@2x.png?resize=958,226 958w" sizes="(max-width: 1970px) 100vw, 1970px"></figure>
+
+
+
+<p>If you open the order itself, you’ll see a note indicating that it was authorized:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2252" height="862" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png" alt="" class="wp-image-18734001185919" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png 2252w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=620,237 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=768,294 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=650,249 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=1536,588 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=2048,784 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=300,115 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.21.58-UTC@2x.png?resize=958,367 958w" sizes="(max-width: 2252px) 100vw, 2252px"></figure>
+
+
+
+<p>Authorized orders will also appear under <strong>Payments &gt; Transactions</strong>. Because these orders are not yet completed, and no funds have changed hands, they are listed under a separate <em>Uncaptured</em> tab.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2258" height="776" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png" alt="" class="wp-image-18734001249735" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png 2258w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=620,213 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=768,264 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=650,223 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=1536,528 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=2048,704 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=300,103 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.33.50-UTC@2x.png?resize=958,329 958w" sizes="(max-width: 2258px) 100vw, 2258px"></figure>
+
+
+
+<header class="toc-header"><h2 id="capturing-authorized-orders"><a class="wccom-docs-anchor-links" href="#capturing-authorized-orders">Capturing authorized orders<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> You have seven days after the order was placed to capture the charge. After that time, the authorization will automatically expire and you will be unable to capture.</p></div>
+
+
+
+<p>When your site has uncaptured orders, WooCommerce Payments will notify you of that by adding a badge to the <strong>Payments &gt; Transactions</strong> menu item. This badge shows the number of uncaptured transactions.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.52.43-UTC@2x.png" alt="" class="wp-image-18734001249847" width="196" height="245" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.52.43-UTC@2x.png 364w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.52.43-UTC@2x.png?resize=300,374 300w" sizes="(max-width: 196px) 100vw, 196px"></figure></div>
+
+
+<p>There are two ways to capture an authorized order, from the <strong>WooCommerce &gt; Orders</strong> page or via <strong>Payments &gt; Transactions</strong>. They both do the same thing, but the latter method is faster if you have multiple orders that need to be captured.</p>
+
+
+
+<p>The video below gives a brief overview of how to capture a payment, and we also have more detailed instructions below.</p>
+
+
+
+<figure class="wp-block-video"><video controls="" poster="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-12-29-at-16.59.03-UTC@2x.png" src="https://woocommerce.com/wp-content/uploads/2022/12/WC_PaymentsCapture_120722_BK_V1_C.mp4"></video></figure>
+
+
+
+<header class="toc-header"><h3 id="capture-using-woocommerce-orders"><a class="wccom-docs-anchor-links" href="#capture-using-woocommerce-orders">Using WooCommerce &gt; Orders<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To capture a charge for an authorized order under <strong>WooCommerce &gt; Orders</strong>:</p>
+
+
+
+<ol>
+<li>Find the order you wish to capture and click to open it.</li>
+
+
+
+<li>In the <em>Order Actions</em> box, use the dropdown to select <strong>Capture charge</strong>.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png" alt="" class="wp-image-18734001185961" width="432" height="317" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png 936w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=620,454 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=768,563 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=650,476 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=300,220 300w" sizes="(max-width: 432px) 100vw, 432px"></figure></div>
+
+
+<ol start="3">
+<li>Click the <strong>Update</strong> button.</li>
+</ol>
+
+
+
+<p>Assuming the capture is successful, the charge will be captured, an order note will be added, and the order status will be set to Completed.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.34.53-UTC@2x.png" alt="" class="wp-image-18734001185972" width="299" height="414" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.34.53-UTC@2x.png 610w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.34.53-UTC@2x.png?resize=300,415 300w" sizes="(max-width: 299px) 100vw, 299px"></figure></div>
+
+
+<header class="toc-header"><h3 id="capture-using-payments-transactions"><a class="wccom-docs-anchor-links" href="#capture-using-payments-transactions">Using Payments &gt; Transactions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To capture a charge for an authorized order under <strong>Payments &gt; Transactions</strong>:</p>
+
+
+
+<ol>
+<li>Click the <strong>Uncaptured</strong> tab to show the list of uncaptured transactions.</li>
+
+
+
+<li>Click the Capture button for the order you wish to capture payment for.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1858" height="726" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png" alt="" class="wp-image-18734001249785" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png 1858w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=620,242 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=768,300 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=650,254 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=1536,600 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=300,117 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.02-UTC@2x.png?resize=958,374 958w" sizes="(max-width: 1858px) 100vw, 1858px"></figure>
+
+
+
+<ol start="3">
+<li>The payment will be captured, and a notice will appear at the bottom.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png" alt="" class="wp-image-18734001249791" width="406" height="94" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png 780w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png?resize=620,143 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png?resize=768,177 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png?resize=650,150 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.42.56-UTC@2x.png?resize=300,69 300w" sizes="(max-width: 406px) 100vw, 406px"></figure></div>
+
+
+<p>You can optionally also click the order in the list to open the transaction details page, and then capture from there.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1866" height="1188" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png" alt="" class="wp-image-18734001249810" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png 1866w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=620,395 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=768,489 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=650,414 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=1536,978 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=300,191 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-29-at-18.46.34-UTC@2x.png?resize=958,610 958w" sizes="(max-width: 1866px) 100vw, 1866px"></figure>
+
+
+
+<header class="toc-header"><h2 id="partial-captures"><a class="wccom-docs-anchor-links" href="#partial-captures">Partial captures<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>You may, if you wish, capture <em>less</em> than the amount you originally authorized on the customer’s card. To do this:</p>
+
+
+
+<ol>
+<li>Find the order under <strong>WooCommerce &gt; Orders</strong> and click to open it.</li>
+
+
+
+<li>Hover your cursor over a line item from the order and click the pencil icon that appears.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2182" height="1228" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png" alt="" class="wp-image-18734001186007" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png 2182w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=620,349 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=768,432 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=650,366 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=1536,864 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=2048,1153 2048w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=300,169 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.39.54-UTC@2x.png?resize=958,539 958w" sizes="(max-width: 2182px) 100vw, 2182px"></figure>
+
+
+
+<ol start="3">
+<li>In the <em>Total</em> box, enter the amount you wish to capture, then click <strong>Save</strong>.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1578" height="758" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png" alt="" class="wp-image-18734001186011" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png 1578w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=620,298 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=768,369 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=650,312 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=1536,738 1536w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=300,144 300w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.41.44-UTC@2x.png?resize=958,460 958w" sizes="(max-width: 1578px) 100vw, 1578px"></figure>
+
+
+
+<ol start="4">
+<li>The cost of the item will updated as if a coupon were applied.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.43.41-UTC@2x.png" alt="" class="wp-image-18734001186019" width="366" height="267" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.43.41-UTC@2x.png 766w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.43.41-UTC@2x.png?resize=620,453 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.43.41-UTC@2x.png?resize=650,475 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.43.41-UTC@2x.png?resize=300,219 300w" sizes="(max-width: 366px) 100vw, 366px"></figure></div>
+
+
+<ol start="5">
+<li>In the <em>Order Actions</em> box, use the dropdown to select <strong>Capture charge</strong>.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png" alt="" class="wp-image-18734001185961" width="432" height="317" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png 936w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=620,454 620w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=768,563 768w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=650,476 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.32.45-UTC@2x.png?resize=300,220 300w" sizes="(max-width: 432px) 100vw, 432px"></figure></div>
+
+
+<ol start="6">
+<li>Click the <strong>Update</strong> button.</li>
+</ol>
+
+
+
+<p>Assuming the capture is successful, the lesser amount will be captured, an order note will be added, and the order status will be set to Completed.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.49.51-UTC@2x.png" alt="" class="wp-image-18734001186051" width="330" height="526" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.49.51-UTC@2x.png 672w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.49.51-UTC@2x.png?resize=564,900 564w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.49.51-UTC@2x.png?resize=650,1037 650w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-18.49.51-UTC@2x.png?resize=300,479 300w" sizes="(max-width: 330px) 100vw, 330px"></figure></div>
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE: </strong>Attempting to capture more than the authorized amount will fail with an error. The order can still be captured once it’s been edited to have a total less than or equal to the original authorized amount.</p></div>
+
+
+
+<header class="toc-header"><h2 id="cancelling-authorizations"><a class="wccom-docs-anchor-links" href="#cancelling-authorizations">Cancelling authorizations<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If a customer wishes to cancel their order after it’s been authorized but before it’s been captured, you can do so using steps below.</p>
+
+
+
+<p>Although authorizations expire automatically after seven days, it’s best to cancel them if you’ve confirmed that you won’t need to charge the customer. Doing so releases the hold their bank placed on their funds.</p>
+
+
+
+<p>To cancel an authorization:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Orders</strong> in your site’s dashboard.</li>
+
+
+
+<li>Find the order you wish to cancel and click to open it.</li>
+
+
+
+<li>In the <em>Order Actions</em> box, use the dropdown to select <strong>Cancel authorization</strong>.</li>
+
+
+
+<li>Click the <strong>Update</strong> button.</li>
+</ol>
+
+
+
+<p>The order status will be set to Cancelled and a note will be added:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-19.02.19-UTC@2x.png" alt="" class="wp-image-18734001186116" width="306" height="400" srcset="https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-19.02.19-UTC@2x.png 598w, https://woocommerce.com/wp-content/uploads/2022/11/Screenshot-taken-on-2022-11-18-at-19.02.19-UTC@2x.png?resize=300,392 300w" sizes="(max-width: 306px) 100vw, 306px"></figure></div>
+
+
+<p></p>
+			</div>
+					

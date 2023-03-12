@@ -1,0 +1,228 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Connecting to WordPress.com with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<div class="is-layout-flow wp-block-group"><div class="wp-block-group__inner-container">
+<p>WooCommerce Payments requires a connection to a WordPress.com account to accept payments from buyers and to show sellers details about transactions, deposits, and disputes.</p>
+
+
+
+<header class="toc-header"><h2 id="setting-up-the-connection"><a class="wccom-docs-anchor-links" href="#setting-up-the-connection">Setting up the connection<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>After activating WooCommerce Payments for the first time, you’ll be prompted to connected to WordPress.com. If you don’t have a WordPress.com account, you’ll be prompted to create one as a part of this process.</p>
+
+
+
+<p>If you have the Jetpack plugin activated and connected to a WordPress.com account, your Jetpack plugin connection will be used instead of having to connected WooCommerce Payments separately.</p>
+
+
+
+<header class="toc-header"><h2 id="resetting-the-connection"><a class="wccom-docs-anchor-links" href="#resetting-the-connection">Resetting the connection<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>On occasion, such as after restoring your site from a backup, WooCommerce Payments might become disconnected from WordPress.com. To fix this problem, you can use <a href="https://wordpress.org/plugins/jetpack/">Jetpack</a> to reset the connection so that it works again.</p>
+
+
+
+<p>To reset the connection, follow the <em><a href="#changing-the-account-you're-connected-to">Changing the account you’re connected to</a></em> section shown below. However, instead of reconnecting your site to a different WordPress.com account, simply reconnect to your original one to restore the connection.</p>
+
+
+
+<header class="toc-header"><h2 id="changing-the-account-you're-connected-to"><a class="wccom-docs-anchor-links" href="#changing-the-account-you're-connected-to">Changing the account you’re connected to<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you want to change the WordPress.com account that your WooCommerce Payments store is connected to, you can do so. There are two ways to do this, depending on whether you have (or want to have) Jetpack installed on your site.</p>
+
+
+
+<ul>
+<li><a href="#if-you-do-not-have-or-want-jetpack">If you do NOT have or want Jetpack</a></li>
+
+
+
+<li><a href="#if-you-do-have-or-want-jetpack">If you DO have or want Jetpack</a></li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="if-you-do-not-have-or-want-jetpack"><a class="wccom-docs-anchor-links" href="#if-you-do-not-have-or-want-jetpack">If you do NOT have or want Jetpack<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong>&nbsp;After you click the red <strong>Disconnect</strong> button in the steps below, WooCommerce Payments will be unable to take payments until reconnected to WordPress.com. Thus, we suggest that you reconnect to the new account as quickly as possible. If you are at all unsure of how to proceed, please&nbsp;<a href="https://woocommerce.com/my-account/create-a-ticket/">contact our support</a>&nbsp;for guidance.</p></div>
+
+
+
+<p>To change which WordPress.com account your site is connected to, but without keeping Jetpack installed on your site permanently, follow the  steps below:</p>
+
+
+
+<ol>
+<li>Install and activate Jetpack on your site <a href="https://jetpack.com/support/install-jetpack-and-connect-your-new-plan/#installing-jetpack">per this document</a>.
+<ul>
+<li>Jetpack should automatically connect to whichever WordPress.com account you used during the WooCommerce Payments signup process.</li>
+</ul>
+</li>
+
+
+
+<li>Disconnect Jetpack following <a href="https://jetpack.com/support/disconnect-jetpack-sites/#disconnect-a-jetpack-site-using-wp-admin">these instructions</a>.
+<ul>
+<li>You will see a popup indicating that this will break WooCommerce Payments.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1974" height="1148" src="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png" alt="" class="wp-image-18734000925258" srcset="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png 1974w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=620,361 620w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=768,447 768w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=650,378 650w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=1536,893 1536w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=300,174 300w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=958,557 958w" sizes="(max-width: 1974px) 100vw, 1974px"></figure>
+
+
+
+<ol start="3">
+<li>Click the <strong>Disconnect</strong> button. </li>
+
+
+
+<li>Click the <strong>No thank you</strong> link.
+<ul>
+<li>Jetpack and WooCommerce Payments are now disconnected from WordPress.com.</li>
+</ul>
+</li>
+
+
+
+<li>Under <strong>Plugins &gt; Installed Plugins</strong>, deactivate Jetpack and delete it.</li>
+
+
+
+<li>Go to the <a href="https://wordpress.com/me">WordPress.com profile page</a> and click the <strong>Log Out</strong> button.
+<ul>
+<li>This will log you out of WordPress.com so that, when you reconnect WooCommerce Payments, you can connect to any WordPress.com account you choose.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1346" height="908" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png" alt="" class="wp-image-18734001465901" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png 1346w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=620,418 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=768,518 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=650,438 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=300,202 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=958,646 958w" sizes="(max-width: 1346px) 100vw, 1346px"><figcaption class="wp-element-caption">Logging out of WordPress.com </figcaption></figure>
+
+
+
+<ol start="7">
+<li>Go back to the admin dashboard of your site using WooCommerce Payments.</li>
+
+
+
+<li>Click the <strong>Payments</strong> menu.</li>
+
+
+
+<li>Click <strong>Finish Setup</strong>.</li>
+
+
+
+<li>Connect to a WordPress.com account of your choosing.
+<ul>
+<li>Once you are connected to any WordPress.com account, WooCommerce Payments will automatically be connected to the same <a href="https://woocommerce.com/document/payments/built-in-partnership-with-stripe/">Stripe Express account</a> as before.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<div class="wp-block-coblocks-alert is-style-success" aria-label="Alert section of type success"><p class="wp-block-coblocks-alert__title">After the site is reconnected to WordPress.com, WooCommerce Payments will resume taking payments. This will happen automatically, without any other steps needed.</p></div>
+
+
+
+<header class="toc-header"><h3 id="if-you-do-have-or-want-jetpack"><a class="wccom-docs-anchor-links" href="#if-you-do-have-or-want-jetpack">If you DO have or want Jetpack<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong>&nbsp;After you click the red <strong>Disconnect</strong> button in the steps below, WooCommerce Payments will be unable to take payments until reconnected to WordPress.com. Thus, we suggest that you reconnect to the new account as quickly as possible. If you are at all unsure of how to proceed, please&nbsp;<a href="https://woocommerce.com/my-account/create-a-ticket/">contact our support</a>&nbsp;for guidance.</p></div>
+
+
+
+<p>To change which WordPress.com account your site is connected to, while keeping Jetpack installed on your site, follow the steps below:</p>
+
+
+
+<ol>
+<li>Temporarily disconnect Jetpack following <a href="https://jetpack.com/support/disconnect-jetpack-sites/#disconnect-a-jetpack-site-using-wp-admin">these instructions</a>.
+<ul>
+<li>You will see a popup indicating that this will break WooCommerce Payments.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1974" height="1148" src="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png" alt="" class="wp-image-18734000925258" srcset="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png 1974w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=620,361 620w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=768,447 768w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=650,378 650w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=1536,893 1536w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=300,174 300w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-15-at-19.34.52-UTC@2x.png?resize=958,557 958w" sizes="(max-width: 1974px) 100vw, 1974px"></figure>
+
+
+
+<ol start="3">
+<li>Click the <strong>Disconnect</strong> button.</li>
+
+
+
+<li>Click the <strong>No thank you</strong> link.
+<ul>
+<li>Jetpack and WooCommerce Payments are now disconnected from WordPress.com.</li>
+</ul>
+</li>
+
+
+
+<li>Go to the <a href="https://wordpress.com/me">WordPress.com profile page</a> and click the <strong>Log Out</strong> button.
+<ul>
+<li>This will log you out of WordPress.com so that, when you reconnect WooCommerce Payments, you can connect to any WordPress.com account you choose.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1346" height="908" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png" alt="" class="wp-image-18734001465901" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png 1346w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=620,418 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=768,518 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=650,438 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=300,202 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-25-at-20.04.52-UTC@2x.png?resize=958,646 958w" sizes="(max-width: 1346px) 100vw, 1346px"><figcaption class="wp-element-caption">Logging out of WordPress.com </figcaption></figure>
+
+
+
+<ol start="6">
+<li>Go back to the admin dashboard of your site using WooCommerce Payments.</li>
+
+
+
+<li>Click the <strong>Payments</strong> menu.</li>
+
+
+
+<li>Click <strong>Finish Setup</strong>.</li>
+
+
+
+<li>Connect to a WordPress.com account of your choosing.
+<ul>
+<li>Jetpack will automatically be connected to that same WordPress.com account.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<div class="wp-block-coblocks-alert is-style-success" aria-label="Alert section of type success"><p class="wp-block-coblocks-alert__title">After the site is reconnected to WordPress.com, WooCommerce Payments will resume taking payments. This will happen automatically, without any other steps needed.</p></div>
+
+
+
+<header class="toc-header"><h2 id="troubleshooting"><a class="wccom-docs-anchor-links" href="#troubleshooting">Troubleshooting<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you’re having trouble connecting WooCommerce Payments, please <a href="https://woocommerce.com/my-account/create-a-ticket/?select=5278104" rel="sponsored nofollow">contact our support team</a>. If you’re having trouble creating a WordPress.com account or accessing that account, please <a href="https://wordpress.com/support/contact/">contact our WordPress.com support team</a>.</p>
+</div></div>
+			</div>
+					

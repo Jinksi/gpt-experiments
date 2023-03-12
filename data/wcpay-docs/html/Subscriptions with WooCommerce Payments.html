@@ -1,0 +1,342 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Subscriptions with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>When using <a href="https://woocommerce.com/document/payments/">WooCommerce Payments</a>, you have two options to sell subscription products:</p>
+
+
+
+<ul>
+<li>The built-in subscriptions functionality</li>
+
+
+
+<li>The <a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a> extension</li>
+</ul>
+
+
+
+<p class="woo-sc-box info">This document provides information on using the subscriptions built into WooCommerce Payments. For help choosing the ideal solution for your business, refer to the <a href="https://woocommerce.com/document/payments/subscriptions/comparison/">guide comparing subscription options</a>.</p>
+
+
+
+<p>If using the WooCommerce Subscriptions extension with WooCommerce Payments, everything will work as covered in the <a href="https://woocommerce.com/document/subscriptions/store-manager-guide/">WooCommerce Subscriptions store manager guide</a>. If you are already using WooCommerce Subscriptions and want to move to built-in subscriptions, refer to the <a href="https://woocommerce.com/document/payments/subscriptions/moving-from-woocommerce-subscriptions/">guide to moving</a>. </p>
+
+
+
+<header class="toc-header"><h2 id="eligibility"><a class="wccom-docs-anchor-links" href="#eligibility">Eligibility requirements<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To be eligible to use subscriptions built-in to WooCommerce, you must:</p>
+
+
+
+<ul>
+<li>Be based in the United States. Not yet available for territories of the US.</li>
+
+
+
+<li>Have the <a href="https://woocommerce.com/products/woocommerce-payments/">WooCommerce Payments plugin</a> active.</li>
+
+
+
+<li>Have a WooCommerce Payments account that is enabled for payments.</li>
+
+
+
+<li>Offer credit and debit cards via WooCommerce Payments as a payment method on checkout.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="section-2"><a class="wccom-docs-anchor-links" href="#section-2">Set up subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>After <a href="https://woocommerce.com/document/payments/#section-2">setting up WooCommerce Payments</a> version <strong>3.2.0</strong> or newer, subscription functionality will be available and ready to use. There is no special configuration required.</p>
+
+
+
+<p>To create a subscription product:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Products &gt; Add new</strong></li>
+
+
+
+<li>Select <strong>Simple Subscription</strong> as the product type.</li>
+
+
+
+<li>Set the terms for the subscription, including <strong>price</strong>, <strong>billing interval</strong>, <strong>billing period</strong>, <strong>length</strong>, <strong>sign-up fee</strong> and <strong>trial period</strong> (length, sign-up fee and trial period are all optional).</li>
+
+
+
+<li>Add any other product details you require, as instructed by <a href="https://woocommerce.com/document/managing-products/">Managing Products</a>.</li>
+
+
+
+<li>Click <strong>Publish</strong>.</li>
+</ol>
+
+
+
+<p>Your store now has a subscription product available that customers can subscribe to using WooCommerce Payments.</p>
+
+
+
+<p>Once purchased, future recurring payments on the associated subscription will be processed automatically with <a href="https://woocommerce.com/document/subscriptions/orders/">renewal orders</a> generated in your store for you to track and manage. You can also <a href="https://woocommerce.com/document/subscriptions/store-manager-guide/#section-13">manage the subscriptions via the <strong>WooCommerce &gt; Subscriptions </strong>administration dashboard</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-3"><a class="wccom-docs-anchor-links" href="#section-3">Subscription settings<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>When you enable Subscriptions with WooCommerce Payments, you can find the Subscriptions setting at <strong>WP Admin &gt; WooCommerce &gt; Settings &gt; Subscriptions</strong>:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png" alt="" class="wp-image-18734000801569" width="740" height="497" srcset="https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png 1035w, https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png?resize=620,416 620w, https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png?resize=768,516 768w, https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png?resize=650,436 650w, https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png?resize=300,201 300w, https://woocommerce.com/wp-content/uploads/2022/08/wcpay-subscription-setting.png?resize=958,643 958w" sizes="(max-width: 740px) 100vw, 740px"></figure></div>
+
+
+<header class="toc-header"><h2 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Viewing transactions linked to a subscription<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To view all transactions for a particular subscription</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Subscriptions</strong>.</li>
+
+
+
+<li>Click the subscription ID number for the particular subscription you’re interested in.
+<ul>
+<li>This will open the <em>Edit Subscription</em> page for that particular subscription.</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png" alt="" class="wp-image-18734001058457" width="649" height="187" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png 1636w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=620,180 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=768,223 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=650,188 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=1536,445 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=300,87 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=958,278 958w" sizes="(max-width: 649px) 100vw, 649px"></figure></div>
+
+
+<ol start="3">
+<li><span style="color: initial;">At the bottom of the page, the </span><em style="color: initial;">Related Orders</em><span style="color: initial;"> section contains all orders associated with that subscription.</span></li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png" alt="" class="wp-image-18734001058468" width="867" height="301" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png 2102w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=620,215 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=768,267 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=650,226 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=1536,533 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=2048,711 2048w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=300,104 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.26.19-UTC@2x.png?resize=958,333 958w" sizes="(max-width: 867px) 100vw, 867px"></figure></div>
+
+
+<header class="toc-header"><h2 id="section-5"><a class="wccom-docs-anchor-links" href="#section-5">Payment method changes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If needed, store owners can change the payment method used to pay for subscriptions order from the WooCommerce dashboard. To do so, follow these steps:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Subscriptions</strong>.</li>
+
+
+
+<li>Click the subscription ID number for the particular subscription you’re interested in.
+<ul>
+<li>This will open the <em>Edit Subscription</em> page for that particular subscription.</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png" alt="" class="wp-image-18734001058457" width="649" height="187" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png 1636w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=620,180 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=768,223 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=650,188 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=1536,445 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=300,87 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.23.30-UTC@2x.png?resize=958,278 958w" sizes="(max-width: 649px) 100vw, 649px"></figure></div>
+
+
+<ol start="3">
+<li>Click the pencil icon in the <em>Billing</em> section at the top.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png" alt="" class="wp-image-18734001058524" width="705" height="305" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png 2102w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=620,269 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=768,333 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=650,282 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=1536,666 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=2048,889 2048w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=300,130 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.33.26-UTC@2x.png?resize=958,416 958w" sizes="(max-width: 705px) 100vw, 705px"></figure></div>
+
+
+<ol start="4">
+<li>Scroll down to the bottom of the billing info form, to the <em>Saved Payment Method</em> dropdown.</li>
+
+
+
+<li>Click the dropdown menu and select a new payment method, if one is available.</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.35.52-UTC@2x.png" alt="" class="wp-image-18734001058536" width="280" height="259" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.35.52-UTC@2x.png 758w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.35.52-UTC@2x.png?resize=620,573 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.35.52-UTC@2x.png?resize=650,600 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-19-at-13.35.52-UTC@2x.png?resize=300,277 300w" sizes="(max-width: 280px) 100vw, 280px"></figure></div>
+
+
+<ol start="6">
+<li>Click the <strong>Update</strong> button to update the subscription to use the new payment method.</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="section-6"><a class="wccom-docs-anchor-links" href="#section-6">Disable built-in subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> When the Subscriptions extension is activated, the built-in WooCommerce Payments subscriptions functionality will remain in use for pre-existing subscriptions only. Any subscriptions created after the activation of the Subscriptions extension will use the <a href="https://woocommerce.com/document/payments/subscriptions-basics/comparison/#billing-engines">on-site billing engine</a>.</p></div>
+
+
+
+<p>If you need to manually disable subscriptions functionality built-in to WooCommerce Payments:</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Settings</strong></li>
+
+
+
+<li>Select <strong>Advanced settings</strong> at the bottom of the screen</li>
+
+
+
+<li>Select <strong>Enable Subscriptions with WooCommerce Payments</strong> to uncheck the box</li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="section-7"><a class="wccom-docs-anchor-links" href="#section-7">Tracking fees<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>On subscription-related transactions via the subscription functionality built-in to WooCommerce Payments, an <a href="https://woocommerce.com/document/payments/faq/fees/">additional fee</a> is charged. This fee is included on transactions for the initial sale of a subscription product and the future recurring payments associated with the subscription.</p>
+
+
+
+<p>On the timeline of subscription-related transactions, visible under <strong>Payments &gt; Transactions &gt; Payment details</strong> screen, this fee will be displayed as a separate line item on the charge:</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="2364" height="1824" src="https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?w=650" alt="" class="wp-image-8777410" srcset="https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png 2364w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=620,478 620w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=768,593 768w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=650,502 650w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=1536,1185 1536w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=2048,1580 2048w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=300,231 300w, https://woocommerce.com/wp-content/uploads/2021/11/Screen-Shot-2021-11-05-at-11.21.45-am.png?resize=958,739 958w" sizes="(max-width: 2364px) 100vw, 2364px"><figcaption class="wp-element-caption">Example timeline of subscription-related payment</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="section-8"><a class="wccom-docs-anchor-links" href="#section-8">Extension compatibility<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The WooCommerce.com marketplace offers many extensions for the <a href="https://woocommerce.com/product-category/woocommerce-extensions/merchandising/subscriptions-merchandising/">WooCommerce Subscriptions extension</a> itself that expand its functionality. Because the WooCommerce Subscriptions code is used to power subscriptions with WooCommerce Payments, many of these extensions can work with both subscription options. However, the extension may require a small change to be compatible, as explained in the <a href="https://woocommerce.com/document/payments/faq/subscriptions/compatibility/">Developer updates section of the add-on compatibility FAQ</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="section-9"><a class="wccom-docs-anchor-links" href="#section-9">Preview availability<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The subscription functionality built into WooCommerce Payments is currently available in preview release. During this time, <strong>it is only available to US merchants for debit and credit card payments</strong>. Merchants in the US can sell subscriptions to customers in other countries in <a href="https://woocommerce.com/document/payments/faq/available-currencies/">over 100 different currencies</a>.</p>
+
+
+
+<p>This functionality will be made available to other <a href="https://woocommerce.com/document/payments/countries/">supported countries</a> and for other <a href="https://woocommerce.com/document/payments/additional-payment-methods/">payment methods available in WooCommerce Payments</a>, like Sofort and iDeal, in the coming months.</p>
+
+
+
+<p>If you want to see the built-in subscriptions functionality with WooCommerce Payments be made available in your country, or for WooCommerce Payments’ <a href="https://woocommerce.com/document/payments/additional-payment-methods/">additional payment methods</a>, please request or vote for that request on the <a href="https://woocommerce.com/feature-requests/woocommerce-payments/">Feature Requests board</a>.</p>
+
+
+
+<p>Alternatively, you can use the <a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a> extension with WooCommerce Payments in <a href="https://woocommerce.com/document/payments/countries/">any supported country</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="subscriptions-with-indian-cards"><a class="wccom-docs-anchor-links" href="#subscriptions-with-indian-cards">Subscriptions with Indian cards<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Due to <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11668">Reserve Bank of India regulations</a> around how payment processors can charge cards issued by banks in India, paying for subscriptions with an Indian card may present some issues for your customers. These are explained below.</p>
+
+
+
+<header class="toc-header"><h3 id="section-11"><a class="wccom-docs-anchor-links" href="#section-11">Subscriptions created before version 5.2.0<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Customers who initiate subscriptions while the merchant’s site is running WooCommerce Payments <strong>5.1.2 or prior</strong> will have all of their automatic renewals fail. Specifically, the initial purchase will work, but all renewals after that will fail with <code>transaction_not_allowed</code>. </p>
+
+
+
+<p>At that point, the customer will get an email alerting them that their renewal has failed. They will need to log into the merchant website and pay for the order manually, at which point the subscription will resume (until the next renewal, when it will fail again).</p>
+
+
+
+<header class="toc-header"><h3 id="section-12"><a class="wccom-docs-anchor-links" href="#section-12">Subscriptions created after version 5.2.0<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Customers who initiate subscriptions while the merchant’s site is running WooCommerce Payments <strong>5.2.0 or later</strong> will have a much better experience. The initial purchase will be subject to <a href="https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/3d-secure/">3DS</a>, but after that, renewals happen automatically and without customer interaction.</p>
+
+
+
+<p>There is one exception: renewals that exceed 15,000 Indian rupees (INR) will require an additional manual verification process via the customer’s bank.</p>
+
+
+
+<p>Also, please note that <a href="https://woocommerce.com/document/subscriptions/customers-view/#section-11">payment method updates</a> on these subscriptions will not work yet, although a fix for that is in development by our engineering team.</p>
+
+
+
+<header class="toc-header"><h3 id="section-13"><a class="wccom-docs-anchor-links" href="#section-13">Updating existing subscriptions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you have subscriptions on your site created with a WooCommerce Payments version prior to 5.2.0, and wish to allow your customers to get the newer, more convenient automatic renewals, the best method for doing that is to simply <a href="https://woocommerce.com/document/subscriptions/store-manager-guide/#cancel-or-suspend-subscription">cancel their existing subscriptions</a> when their existing term is over, and then advise the customers to start a fresh subscription.</p>
+
+
+
+<p>It’s likely best to communicate this plan to your customers ahead of time though, as cancelling their subscriptions will send them an automated email, which could cause confusion if they see it with no advance warning.</p>
+
+
+
+<header class="toc-header"><h2 id="section-14"><a class="wccom-docs-anchor-links" href="#section-14">Migrating<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you’re using&nbsp;<a href="https://woocommerce.com/document/payments/">WooCommerce Payments</a>, you have two options to sell subscription products:</p>
+
+
+
+<ul>
+<li>The subscriptions functionality built into WooCommerce Payments, or…</li>
+
+
+
+<li>The&nbsp;<a href="https://woocommerce.com/products/woocommerce-subscriptions/">WooCommerce Subscriptions</a>&nbsp;extension mentioned above.</li>
+</ul>
+
+
+
+<p>If you are already using one subscription offering and want to migrate to the other option, please refer to our guides here:</p>
+
+
+
+<ul>
+<li><a href="https://woocommerce.com/document/woocommerce-payments/built-in-subscriptions/moving-from-subscriptions-plugin/">Moving from Subscriptions to WooCommerce Payments</a></li>
+
+
+
+<li><a href="https://woocommerce.com/document/payments/subscriptions/upgrade-to-extension/">Moving from WooCommerce Payments to Subscriptions</a></li>
+</ul>
+			</div>
+					

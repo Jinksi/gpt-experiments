@@ -1,0 +1,162 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">WooCommerce Payments: Dev Mode</h1>
+			<div class="entry">
+				
+<p>If you want to test WooCommerce Payments on a site that will not need to process real payments, you can use Dev Mode.</p>
+
+
+
+<p>With Dev Mode, it’s possible to create a test account that requires no personal information. This account can then be used to process test transactions. It will only operate in <a href="https://woocommerce.com/document/payments/testing/">Test Mode</a> and cannot be used to process live transactions.</p>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> WooCommerce Payments must be <a href="https://woocommerce.com/document/payments/connection/">connected to WordPress.com</a>, even in Dev Mode. This means it’s not possible to run WooCommerce Payments locally unless you expose your site to the Internet with <a href="https://ngrok.com/">ngrok</a> or a similar tool.</p></div>
+
+
+
+<header class="toc-header"><h2 id="section-1"><a class="wccom-docs-anchor-links" href="#section-1">Enable Dev Mode<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To enable Dev Mode, you can either:</p>
+
+
+
+<ul>
+<li>Ensure your <a href="https://developer.wordpress.org/apis/wp-config-php/#wp-environment-type">site’s environment type</a> is set to either <code>development</code> or <code>staging</code>.</li>
+
+
+
+<li>Add the following constant to your site’s <code>wp-config.php</code> file:</li>
+</ul>
+
+
+
+<pre class="wp-block-preformatted">define( 'WCPAY_DEV_MODE', true );</pre>
+
+
+
+<p>Note that Dev Mode must be enabled before starting the signup process in order to properly create a test account!</p>
+
+
+
+<header class="toc-header"><h2 id="section-2"><a class="wccom-docs-anchor-links" href="#section-2">Create a test account<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Once you’ve enabled Dev Mode, complete the WooCommerce Payments test account creation process by following these steps:</p>
+
+
+
+<ol>
+<li>In your site’s dashboard, click the <strong>Payments</strong> menu item.</li>
+
+
+
+<li>Click the <strong>Finish Setup</strong> button.</li>
+
+
+
+<li><a href="https://woocommerce.com/document/payments/connection/">Connect to your WordPress.com account</a> by entering your credentials.</li>
+
+
+
+<li>After connect to WordPress.com, the setup process will continue on <code>connect.stripe.com</code>.
+<ul>
+<li>You can verify that Dev Mode is enabled by looking for the “Test Mode” box.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1772" height="862" src="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png" alt="" class="wp-image-18734000919820" srcset="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png 1772w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=620,302 620w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=768,374 768w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=650,316 650w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=1536,747 1536w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=300,146 300w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.00.22-UTC@2x.png?resize=958,466 958w" sizes="(max-width: 1772px) 100vw, 1772px"><figcaption class="wp-element-caption">Test Mode box, indicating that WooCommerce Payments is in Dev Mode.</figcaption></figure>
+
+
+
+<ol start="5">
+<li>For the phone number, enter all zeros.</li>
+
+
+
+<li>Stripe will ask you to verify the phone number. Click the <strong>Use Test Code</strong> button.</li>
+
+
+
+<li>Enter anything for country and type of business.</li>
+
+
+
+<li>Enter any name and birthdate that’s in the past.</li>
+
+
+
+<li>Enter any valid email address.</li>
+
+
+
+<li>Enter any valid physical address.</li>
+
+
+
+<li>Enter all zeros for your tax ID, e.g. a Social Security Number.</li>
+
+
+
+<li>Enter any industry.</li>
+
+
+
+<li>For your bank details, click the <strong>Use Test Account</strong> button.</li>
+
+
+
+<li>At the end, click <strong>Submit</strong> to create the test account.</li>
+
+
+
+<li>Back on your site, you can verify that you’re in Dev Mode again under <strong>Payments &gt; Settings</strong>.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2154" height="796" src="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png" alt="" class="wp-image-18734000919860" srcset="https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png 2154w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=620,229 620w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=768,284 768w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=650,240 650w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=1536,568 1536w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=2048,757 2048w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=300,111 300w, https://woocommerce.com/wp-content/uploads/2022/09/Screenshot-taken-on-2022-09-14-at-18.09.03-UTC@2x.png?resize=958,354 958w" sizes="(max-width: 2154px) 100vw, 2154px"><figcaption class="wp-element-caption">Verifying that Dev Mode is enabled after setting up a test account.</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="cloning-production-to-staging"><a class="wccom-docs-anchor-links" href="#cloning-production-to-staging">Cloning from production to staging<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you copy a production site to a staging or development environment, and the site has never been in Dev Mode before, you will need to complete the account set up process again using the test details shown above. This will create a new test account for use while in Dev Mode on that site.</p>
+
+
+
+<p>Your transaction data from the production environment will not be available while in Dev Mode on the staging or development environments. It will remain available on the production environment of course.</p>
+
+
+
+<header class="toc-header"><h2 id="disabling-dev-mode"><a class="wccom-docs-anchor-links" href="#disabling-dev-mode">Disabling Dev Mode<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To disable Dev Mode, remove this line from your <code>wp-config.php</code> file:</p>
+
+
+
+<pre class="wp-block-preformatted">define( 'WCPAY_DEV_MODE', true );</pre>
+
+
+
+<p>Keep in mind that, even after removing that line, Dev Mode will still be enabled if your <a href="https://developer.wordpress.org/apis/wp-config-php/#wp-environment-type">site’s environment type</a> is set to either <code>development</code> or <code>staging</code>.</p>
+
+
+
+<p>Once Dev Mode is disabled, you will need to go through the account setup again, this time using real information for the account. (If an account was connected before Dev Mode was enabled, the store will revert to that setup.)</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> Using the same site for both testing in Dev Mode and live transactions later on could lead to confusion. This is because test transactions done in Dev Mode will still be visible under <strong>WooCommerce &gt; Orders</strong>, but not under <strong>Payments &gt; Transactions</strong>. Other such inconsistencies make this workflow inadvisable. It’s best to use dev mode on staging URLs only, which will never need to take real transactions.</p></div>
+			</div>
+					

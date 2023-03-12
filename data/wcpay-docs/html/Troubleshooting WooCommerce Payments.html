@@ -1,0 +1,834 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Troubleshooting</h1>
+			<div class="entry">
+				
+<header class="toc-header"><h2 id="section-1"><a class="wccom-docs-anchor-links" href="#section-1">General<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="section-2"><a class="wccom-docs-anchor-links" href="#section-2">Where can I report a bug or suggest improvements?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Log into your WooCommerce.com account and place your ticket there. </p>
+
+
+
+<p>Additionally please copy and paste the debug information from the support page of the plugin into your support ticket. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?w=650" alt="" class="wp-image-18734000212893" width="788" height="593" srcset="https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png 1290w, https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?resize=620,467 620w, https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?resize=768,578 768w, https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?resize=650,489 650w, https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?resize=300,226 300w, https://woocommerce.com/wp-content/uploads/2022/03/copy-debug-info-6943a66184bf3e0c0b0201bffade9fdf.png?resize=958,721 958w" sizes="(max-width: 788px) 100vw, 788px"></figure></div>
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="section-3"><a class="wccom-docs-anchor-links" href="#section-3">The most common issues in case the pixels don’t work<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<ul>
+<li>Caching: If you run some caching layer, the server might still serve cached versions of the pages. You will need to delete the cache.</li>
+
+
+
+<li>Minification, combination and concatenation: Some minification and combination plugins mangle up the injected JavaScript code to an extend, that the tracking pixels stop working. You will need to turn minification, combination and concatenation off and try again.</li>
+</ul>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Is wpm_get_cart_items slowing down my website?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Short answer:&nbsp;<strong>No</strong></p>
+
+
+
+<p>Long answer:</p>
+
+
+
+<p>First some information on what&nbsp;<code>wpm_get_cart_items</code>&nbsp;is doing.</p>
+
+
+
+<blockquote class="wp-block-quote is-style-plain">
+<p>While a visitor is browsing a shop he might add some products to the cart. Each time he uses the minicart to modify his selection, by adding or removing products, we need to make sure to have all product information handy in order to send pixel events with all relevant data to Google, Meta (Facebook), etc. Unfortunately it is not possible to include this information on page load within the HTML code, because caching mechanisms could serve outdated data to the browser. That’s why we need a mechanism like&nbsp;<code>wpm_get_cart_items</code>&nbsp;that will fetch all the current product data for the minicart from the server.</p>
+</blockquote>
+
+
+
+<p></p>
+
+
+
+<p>And now to the question&nbsp;<em>if</em>&nbsp;<code>wpm_get_cart_items</code>&nbsp;is slowing down the website.</p>
+
+
+
+<p>Some users have noticed in the network tab of their browsers that the&nbsp;<code>wpm_get_cart_items</code>&nbsp;call adds one more request, which on slow servers can take even more than a second to fullfil. It is using the standard WordPress Ajax function to fetch the product data.</p>
+
+
+
+<p>But is this&nbsp;<strong>not</strong>&nbsp;slowing down the website?</p>
+
+
+
+<p>The&nbsp;<code>wpm_get_cart_items</code>&nbsp;call happens&nbsp;<strong>after</strong>&nbsp;the browser has signalled the&nbsp;<code>load</code>&nbsp;event,&nbsp;<em>which happens after all content has already been successfully loaded</em>.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" style="background-color:;color:" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>INFO</strong></p><p class="wp-block-coblocks-alert__text">The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images.</p></div>
+
+
+
+<p></p>
+
+
+
+<p>Reference:&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event" target="_blank" rel="noreferrer noopener">Mozilla MDN Web Docs</a></p>
+
+
+
+<p></p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" style="background-color:;color:" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>INFO</strong></p><p class="wp-block-coblocks-alert__text">PageSpeed measures the loading time of your page starting from the initial request to when the last embedded resource (JS, CSS, images, etc.) has finished loading. So that’s essentially when $(window).load() is triggered.</p></div>
+
+
+
+<p></p>
+
+
+
+<p>Reference:&nbsp;<a href="https://webmasters.stackexchange.com/a/39512/51846" target="_blank" rel="noreferrer noopener">Lèse Majesté’s answer on Stackoverflow</a></p>
+
+
+
+<p>So the&nbsp;<code>wpm_get_cart_items</code>&nbsp;doesn’t slow down the download or rendering of a WooCommerce shop in any way.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="my-theme-shows-a-script-code-on-the-front-end-that-shouldnt-be-there"><a class="wccom-docs-anchor-links" href="#my-theme-shows-a-script-code-on-the-front-end-that-shouldnt-be-there">My theme shows a script code on the front-end that shouldn’t be there​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The plugin uses a script output to track products in a way that works with every caching system.</p>
+
+
+
+<p>It outputs that code wrapped in a&nbsp;<code>&lt;script&gt;&lt;/script&gt;</code>&nbsp;tag that is fully compliant HTML code.</p>
+
+
+
+<p>Because the code is wrapped in&nbsp;<code>&lt;script&gt;&lt;/script&gt;</code>&nbsp;tags the theme should ignore the code and not output it visibly to the front-end.</p>
+
+
+
+<p>There is nothing we can do from our side. You have to ask the theme developer to update the theme to ignore all code that’s wrapped in&nbsp;<code>&lt;script&gt;&lt;/script&gt;</code>&nbsp;tags.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="elementor-related-products-and-upsell-products-widgets"><a class="wccom-docs-anchor-links" href="#elementor-related-products-and-upsell-products-widgets">Elementor Related Products and Upsell Products Widgets​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In its current version, the Elementor Related Product and Upsell Product Widgets don’t properly process the&nbsp;<code>&lt;script&gt;</code>&nbsp;output created by the WooCommerce Pixel Manager. It should be hidden and not visible. This is an issue that only can be fixed by the creators of the Elementor Related Products and Upsell Product Widgets as described in the following troubleshooting&nbsp;<a href="https://sweetcode.com/docs/wpm/troubleshooting#my-theme-shows-a-script-code-on-the-front-end-that-shouldnt-be-there" target="_blank" rel="noreferrer noopener">article</a>.</p>
+
+
+
+<p>Luckily, there is a workaround for users of the Elementor Related Products Widget. Instead of using the built-in Elementor Related Products Widget, you can use the following shortcode,</p>
+
+
+
+<pre class="wp-block-code"><code>[related_products limit="X"]</code></pre>
+
+
+
+<p>Similarly, for replacing the Elementor Upsell Products Widget, you can use this code published by bekarice:&nbsp;<a href="https://gist.github.com/bekarice/a3305c18d32b4de9d8b7" target="_blank" rel="noreferrer noopener">https://gist.github.com/bekarice/a3305c18d32b4de9d8b7</a></p>
+
+
+
+<p>We already have placed a bug report on Elementor’s GitHub issue tracker:&nbsp;<a href="https://github.com/elementor/elementor/issues/16934" target="_blank" rel="noreferrer noopener">https://github.com/elementor/elementor/issues/16934</a></p>
+
+
+
+<p>The bug report shows another way for the users to fix the problem, enabling them to keep using the Elementor widgets. But it can’t persist over Elemetor updates, so you need to keep updating this with every Elementor update. Use it at your own risk.</p>
+
+
+
+<p>We’d recommend that you give the issue a thumbs up or add your own comment so that the Elementor developers see how frequently that problem happens and increase the priority of that issue.</p>
+
+
+
+<p>We’re in direct contact with Elementor, but at the moment we can’t say for sure if and when they are going to fix this on their end.</p>
+
+
+
+<header class="toc-header"><h3 id="the-purchase-confirmation-page-doesnt-load-and-shows-a-blank-page"><a class="wccom-docs-anchor-links" href="#the-purchase-confirmation-page-doesnt-load-and-shows-a-blank-page">The Purchase Confirmation Page Doesn’t Load and Shows a Blank Page​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If a blank page shows up when trying to load the purchase confirmation page the reason is typically too low allocated memory. The Pixel Manager runs a few queries on the purchase confirmation page which use more memory than on other pages. If in the shop configuration the memory limit is too low, this problem can occur. The solution is simple. Increase the memory limit in your configuration.</p>
+
+
+
+<p>Make sure that the memory limit is well above your maximum memory allocation.</p>
+
+
+
+<p>Add one of the following lines to the configuration file&nbsp;<code>wp-config.php</code></p>
+
+
+
+<p>/wp-config.php</p>
+
+
+
+<pre class="wp-block-code"><code>define('WP_MEMORY_LIMIT', '256M');</code></pre>
+
+
+
+<p>/wp-config.php</p>
+
+
+
+<pre class="wp-block-code"><code>define('WP_MEMORY_LIMIT', '512M');</code></pre>
+
+
+
+<p>/wp-config.php</p>
+
+
+
+<pre class="wp-block-code"><code>define('WP_MEMORY_LIMIT', '1024M');</code></pre>
+
+
+
+<p>Here’s a&nbsp;<a href="https://woocommerce.com/document/increasing-the-wordpress-memory-limit/" target="_blank" rel="noreferrer noopener">support article on WooCommerce</a>&nbsp;that also shows other ways how to increase the memory limit.</p>
+
+
+
+<header class="toc-header"><h3 id="the-purchase-confirmation-page-loads-very-slowly-when-the-pixel-manager-is-enabled"><a class="wccom-docs-anchor-links" href="#the-purchase-confirmation-page-loads-very-slowly-when-the-pixel-manager-is-enabled">The purchase confirmation page loads very slowly when the Pixel Manager is enabled​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The Pixel Manager runs a few queries on the purchase confirmation page to evaluate if the customer is a new customer or an existing customer. It also determines different types of customer lifetime values for that customer. Those queries, on some shops, can take a long time to execute.</p>
+
+
+
+<p>The simplest way to fix this is to add high-performance indexes to the tables. One of our tests improved the query speed by a factor of 133!</p>
+
+
+
+<p>Use the&nbsp;<a href="https://wordpress.org/plugins/index-wp-mysql-for-speed/" target="_blank" rel="noreferrer noopener">Index WP MySQL For Speed</a>&nbsp;plugin to add those high-performance indexes to your shop too. It will not just help on the purchase confirmation page but on every page of your shop.</p>
+
+
+
+<p>Read more about this optimization in our&nbsp;<a href="https://sweetcode.com/blog/improving-database-performance-made-easy">blog article about adding high-performance indexes</a>.</p>
+
+
+
+<header class="toc-header"><h3 id="section-9"><a class="wccom-docs-anchor-links" href="#section-9">Why I can’t verify my site on HotJar?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The plugin configuration for HotJar is really simple. You just have to paste the Site ID from HotJar’s tracking code to Pixel Manager and you’re good to go.<br><br>However, sometimes, there will be instances where your site can’t be verified. Usually, it’s because of these things:</p>
+
+
+
+<ol>
+<li><strong>Cookie Banner</strong>&nbsp;– make sure that you have disabled the cookie banner when verifying your site on HotJar. This sometimes blocks the cookies coming from HotJar as well causing it not to verify successfully</li>
+
+
+
+<li><strong>Explicit Consent Mode</strong>&nbsp;– having this option enabled in the plugin will also not allow cookie tracking on your site. Just like the Cookie Banner, this will also cause your site’s verification to be unsuccessful</li>
+
+
+
+<li><strong>You’re logged in while verifying</strong>&nbsp;– You also have to do the verification while you’re logged out on your WordPress Dashboard so your site will be tracked.</li>
+
+
+
+<li><strong>Server-side caching</strong>&nbsp;– Make sure to clear all server-side caches after each configuration so the HotJar verifier will not load a cached version.</li>
+</ol>
+
+
+
+<header class="toc-header"><h3 id="duplicate-jquery-library-causes-random-issues"><a class="wccom-docs-anchor-links" href="#duplicate-jquery-library-causes-random-issues">Duplicate jQuery library causes random issues​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p><strong>Problem</strong></p>
+
+
+
+<p>The theme, a plugin, or a custom code that loads an additional jQuery library overwrites the events the Pixel Manager hooks into.</p>
+
+
+
+<p>WordPress for a long time was shipped with an old version of jQuery. Therefore, some theme developers or shop managers loaded an additional, newer jQuery library in the HTML source. But, if done incorrectly, this would overwrite all events a plugin like the Pixel Manager has hooked into, rendering all event listeners useless.</p>
+
+
+
+<p>Luckily WordPress, since version 5.5, is shipped with the most modern jQuery library. This means the additional jQuery library can be safely removed.</p>
+
+
+
+<p><strong>Verification</strong></p>
+
+
+
+<ol>
+<li>Open the development console</li>
+
+
+
+<li>Search the entire source code using OPT+CMD+F (on a Mac) for the following string: “jQuery requires a window with a document”</li>
+
+
+
+<li>If you get two results then the jQuery library is duplicated and is causing issues.</li>
+</ol>
+
+
+
+<p><strong>Solution</strong></p>
+
+
+
+<p>Remove the additional jQuery library. Keep the jQuery library that WordPress is injecting.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="render-issues-that-show-pixel-manager-javascript-code-on-the-frond-end"><a class="wccom-docs-anchor-links" href="#render-issues-that-show-pixel-manager-javascript-code-on-the-frond-end">Render issues that show Pixel Manager JavaScript code on the frond-end​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In rare cases you might run into rendering issues on the front end which visibly show JavaScript code that is injected by the Pixel Manager into the page source.</p>
+
+
+
+<p>This typically starts with the following line:</p>
+
+
+
+<p><code>window.wpmDataLayer.products = window.wpmDataLayer.products || {};</code></p>
+
+
+
+<p>There are two known cases where this problem appears.</p>
+
+
+
+<ol>
+<li>Users of the Elementor Pro widget for related and upsell products. For them, we have an own support article with a workaround:&nbsp;<a href="https://sweetcode.com/docs/wpm/troubleshooting#elementor-related-products-and-upsell-products-widgets">Elementor Render Issue</a></li>
+
+
+
+<li>The theme is using a front end JavaScript library which makes a mistake when rendering the code that the Pixel Manager injects into the product templates. The Pixel Manager injects the following three HTML elements into the page source:&nbsp;<code>&lt;meta&gt;</code>,&nbsp;<code>&lt;input type="hidden"&gt;</code>&nbsp;and&nbsp;<code>&lt;script&gt;&lt;/script&gt;</code>. All those HTML elements&nbsp;<strong>are invisible elements by definition</strong>&nbsp;and should not be visibly rendered. However, some JavaScript helper libraries don’t account for those invisible elements and render some or all of them visibly nonetheless.This needs to be fixed by the developers of those render libraries. The Pixel Manager cannot work around this issue.</li>
+</ol>
+
+
+
+<header class="toc-header"><h3 id="updates-not-visible"><a class="wccom-docs-anchor-links" href="#updates-not-visible">Updates not visible​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Sometimes it can happen that updates don’t show up anymore, despite the subscription still being active.</p>
+
+
+
+<h4 id="sync-the-license-manually">Sync the license manually<a href="https://sweetcode.com/docs/wpm/troubleshooting#sync-the-license-manually">​</a></h4>
+
+
+
+<p>Go to the&nbsp;<strong>Account</strong>&nbsp;tab of the plugin and click the&nbsp;<strong>Sync</strong>&nbsp;button. This will sync the license and might fix the issue already. If it doesn’t continue with the next approach.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://d33wubrfki0l68.cloudfront.net/4a41f57cbab101104f3e82f2d7ce1e7291e48be9/346f7/assets/images/freemius-sync-f43143400d29b052c64014beb49a5b93.png" alt="Freemius sync"></figure>
+
+
+
+<h4 id="full-reset">Full Reset<a href="https://sweetcode.com/docs/wpm/troubleshooting#full-reset">​</a></h4>
+
+
+
+<p>Sometimes manually syncing the license or deactivating and reactivating the plugin will not help. In that case a full reset should help.</p>
+
+
+
+<ol>
+<li>Download the Freemius Fixer plugin from here:&nbsp;<a href="https://github.com/Freemius/freemius-fixer" target="_blank" rel="noreferrer noopener">https://github.com/Freemius/freemius-fixer</a></li>
+</ol>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://d33wubrfki0l68.cloudfront.net/de7eb1bdda2c3b2f7fef7d76535eecbcde628b80/bc8c6/assets/images/freemius-fixer-1-1c7e329f347d0bd9c416c7b2327e0381.png" alt="Freemius Fixer download"></figure>
+
+
+
+<ol start="2">
+<li>Install the plugin on your website.</li>
+
+
+
+<li>Run the Freemius Fixer.</li>
+</ol>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://d33wubrfki0l68.cloudfront.net/5e2c8229d5964cd5018445a7a46e07b079426826/c4429/assets/images/freemius-fixer-2-a18416a24e9af3855ae23ba0374b1182.png" alt="Freemius Fixer download"></figure>
+
+
+
+<ol start="4">
+<li>Now you will have to add your license back to the Pixel Manager by going to the&nbsp;<strong>Account</strong>&nbsp;page of the Pixel Manager. If you don’t have it on file you can always log into your account and get it from there:&nbsp;<a href="https://sweetcode.com/freemius-account/" target="_blank" rel="noreferrer noopener">https://sweetcode.com/freemius-account/</a></li>
+</ol>
+
+
+
+<header class="toc-header"><h2 id="the-rest-endpoints-for-the-pixel-manager-are-not-working"><a class="wccom-docs-anchor-links" href="#the-rest-endpoints-for-the-pixel-manager-are-not-working">The REST endpoints for the Pixel Manager are not working​<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>In some edge cases it can happen that the&nbsp;<code>wp-json</code>&nbsp;REST endpoints for the Pixel Manager stop working and return a&nbsp;<code>404</code>.</p>
+
+
+
+<p>Typically, this happens when switching from pretty links to non-pretty links in the WordPress permalink settings and if the website uses caching.</p>
+
+
+
+<p>Clearing all server-side cache (caching plugin, server cache, CDN cache, etc.) should fix that issue.</p>
+
+
+
+<header class="toc-header"><h2 id="action-scheduler"><a class="wccom-docs-anchor-links" href="#action-scheduler">Action Scheduler​<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The Pixel Manager ships with the&nbsp;<a href="https://actionscheduler.org/" target="_blank" rel="noreferrer noopener">Action Scheduler</a>&nbsp;library. It helps to compile reports at night, because they can take a long time to process.</p>
+
+
+
+<p>In rare cases the Action Scheduler tables are bloated, locked and can cause the entire website to go down. It seems to be an ongoing issue that’s not limited to users of the Pixel Manager:&nbsp;<a href="https://clicknathan.com/web-design/woocommerce-actionscheduler-table-error/" target="_blank" rel="noreferrer noopener">https://clicknathan.com/web-design/woocommerce-actionscheduler-table-error/</a></p>
+
+
+
+<p>There are various ways to deal with this. All of them have essentially the goal to clean up and fix the Action Scheduler tables.</p>
+
+
+
+<header class="toc-header"><h3 id="remove-unnecessary-records-such-as-failed-cancelled-and-completed-jobs"><a class="wccom-docs-anchor-links" href="#remove-unnecessary-records-such-as-failed-cancelled-and-completed-jobs">Remove unnecessary records such as failed, cancelled and completed jobs<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>DANGER</strong></p><p class="wp-block-coblocks-alert__text">Only do this if you know how to restore a database backup.</p></div>
+
+
+
+<ol>
+<li>Take a backup of your database</li>
+
+
+
+<li>Open your database and run the following SQL statements.</li>
+</ol>
+
+
+
+<p>If your tables use a custom prefix other than&nbsp;<code>wp_</code>, adjust the prefix in the statement.</p>
+
+
+
+<pre class="wp-block-code"><code>DELETE FROM <span style="background-color: initial;font-family: inherit;font-size: inherit;color: initial">wp_actionscheduler_actions</span> WHERE <span style="background-color: initial;font-family: inherit;font-size: inherit;color: initial">status</span> = 'canceled';
+DELETE FROM <span style="background-color: initial;font-family: inherit;font-size: inherit;color: initial">wp_actionscheduler_actions</span> WHERE <span style="background-color: initial;font-family: inherit;font-size: inherit;color: initial">status</span> = 'failed';
+DELETE FROM <span style="background-color: initial;font-family: inherit;font-size: inherit;color: initial">wp_actionscheduler_actions</span> WHERE <span style="font-family: inherit;font-size: inherit;color: initial">status</span> = 'complete';</code></pre>
+
+
+
+<header class="toc-header"><h3 id="section-16"><a class="wccom-docs-anchor-links" href="#section-16">Locked database<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>DANGER</strong></p><p class="wp-block-coblocks-alert__text">Only do this if you know how to restore a database backup.</p></div>
+
+
+
+<p>It can happen that the Action Scheduler is messed up so much, that the database is constantly locked by Action Scheduler reads/writes. As a result you can’t access the database and fix the issue. Here’s how deal with this problem.</p>
+
+
+
+<ol>
+<li>Take a backup of your database.</li>
+
+
+
+<li>Open the&nbsp;<code>wp-config.php</code>&nbsp;file, take a note of the database password, delete the password in the file and save the file. The website will not be able to access the database anymore. The database should now be accessible again.</li>
+
+
+
+<li>Get your fixes done.</li>
+
+
+
+<li>Add the database password back to&nbsp;<code>wp-config.php</code>.</li>
+</ol>
+
+
+
+<header class="toc-header"><h3 id="drop-current-tables-and-replace-them-with-fresh-ones"><a class="wccom-docs-anchor-links" href="#drop-current-tables-and-replace-them-with-fresh-ones">Drop current tables and replace them with fresh ones<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<div class="wp-block-coblocks-alert is-style-warning" aria-label="Alert section of type warning"><p class="wp-block-coblocks-alert__title"><strong>DANGER</strong></p><p class="wp-block-coblocks-alert__text">Only do this if you know how to restore a database backup.</p></div>
+
+
+
+<ol>
+<li>Take a backup of your database.</li>
+
+
+
+<li>Download the following file by right-clicking on it and selecting “Save link as”:&nbsp;<a href="https://gist.githubusercontent.com/alewolf/8ab7eef493efd9bb0518ee91769a4fca/raw/792acea4453148dd4dcce722a36917ffe35d2605/replace-as-tables.sql" target="_blank" rel="noreferrer noopener">replace-as-tables.sql</a>&nbsp;and save it under the name&nbsp;<code>replace-as-tables.sql</code>&nbsp;on your local computer.</li>
+
+
+
+<li>Import the file into your database. If you use the default WordPress prefix&nbsp;<code>wp_</code>&nbsp;in your database it will replace the existing tables.</li>
+
+
+
+<li>Now you have fresh Action Scheduler tables. If you’re using the default WordPress prefix&nbsp;<code>wp_</code>&nbsp;you’re done. The tables are fixed. If you use a custom prefix, please continue with the next step.</li>
+
+
+
+<li>Drop the old tables manually.</li>
+
+
+
+<li>Take the following SQL statement and replace&nbsp;<code>custom_prefix_</code>&nbsp;with the prefix you’re using in your database. Then run the SQL statement.</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>RENAME TABLE<br>    wp_actionscheduler_logs TO custom_prefix_actionscheduler_logs,<br>    wp_actionscheduler_groups TO custom_prefix_actionscheduler_groups,<br>    wp_actionscheduler_claims TO custom_prefix_actionscheduler_claims,<br>    wp_actionscheduler_actions TO custom_prefix_actionscheduler_actions</code></pre>
+
+
+
+<ol start="6">
+<li>Now you have fresh Action Scheduler tables with the correct prefix and everything should be working again.</li>
+</ol>
+
+
+
+<header class="toc-header"><h3 id="further-action-scheduler-support"><a class="wccom-docs-anchor-links" href="#further-action-scheduler-support">Further Action Scheduler Support​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The Action Scheduler is maintained by the Automattic team. If you need further support, please contact them directly:&nbsp;<a href="https://woocommerce.com/contact-us/" target="_blank" rel="noreferrer noopener">https://woocommerce.com/contact-us/</a></p>
+
+
+
+<header class="toc-header"><h2 id="facebook"><a class="wccom-docs-anchor-links" href="#facebook">Meta (Facebook)​<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="server-sending-invalid-match-key-parameters"><a class="wccom-docs-anchor-links" href="#server-sending-invalid-match-key-parameters">Server Sending Invalid Match Key Parameters​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>The way our plugin generates and sends the match key parameters prevents a mismatch to happen. Either they are sent correctly and matched by our plugin, or they are not sent at all.</p>
+
+
+
+<p>The usual explanation for this warning is one or several of the following:</p>
+
+
+
+<ul>
+<li>You recently enabled Meta (Facebook) CAPI. In that case, Meta (Facebook) sometimes, unfortunately, mixes up old with new values and generates this warning. Fortunately, this transitory situation is only temporary and resolves just by waiting a few days. In this case the recommendation is to simply dismiss the warning. If the warning shows up again, have a look at the other possible reasons. If the issue you are encountering is not listed, feel free to contact support.</li>
+
+
+
+<li>You are running a second instance of the Meta (Facebook) pixel through another plugin or custom code. If that is the case then that code is missing the correct match keys and causes the warning. Please disable additional Meta (Facebook) plugins and/or remove additional custom Meta (Facebook) code. Then dismiss the warning in Meta (Facebook). If the warning reappears, go ahead and contact support.</li>
+</ul>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="purchase-event-delay-from-server-conversion-api"><a class="wccom-docs-anchor-links" href="#purchase-event-delay-from-server-conversion-api">Purchase Event delay from the server (Conversion API)​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Under normal conditions, the plugin sends the purchase event immediately to Meta (Facebook). But, when a payment for the order fails, no purchase event is being sent through the Conversion API. Only when the payment on that order is recovered at a later point in time, then the purchase event is sent to Meta (Facebook). This can lead to a&nbsp;<code>Purchase Event delay from server</code>&nbsp;warning. It can be safely ignored.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="potentially-violating-personal-data-sent-to-facebook"><a class="wccom-docs-anchor-links" href="#potentially-violating-personal-data-sent-to-facebook">Potentially violating Personal data sent to Meta (Facebook)​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>This happens when Meta (Facebook) detects URL parameters that potentially contain personal data (PII) in the path of the URL.</p>
+
+
+
+<p>Example:&nbsp;<code>http://example.com/account/reset-password?username=johndoe</code></p>
+
+
+
+<p>In this case Meta (Facebook) detects that&nbsp;<code>username</code>&nbsp;probably contains personal information, issues a warning and redacts the information like this:&nbsp;<code>http://example.com/account/reset-password?username=_removed_</code></p>
+
+
+
+<blockquote class="wp-block-quote is-style-plain">
+<p>Our plugin does not add any information to the URL path. The only information that our plugin is sending through the browser pixel is product and order data. The source of this warning are URL paths generated by the server and must be fixed there.</p>
+</blockquote>
+
+
+
+<p>Meta (Facebook) in some cases is “trigger happy” and issues a warning although there is no personal data in the URL path.</p>
+
+
+
+<p>Example:&nbsp;<code>http://example.com?_ip=123456</code></p>
+
+
+
+<p>In this case&nbsp;<code>_ip=123456</code>&nbsp;resembles an IP address, but in your case, it might be something completely different. If you are sure it is not personal information, you can safely ignore the warning.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="i-am-getting-failed-to-load-resource-neterr_blocked_by_client"><a class="wccom-docs-anchor-links" href="#i-am-getting-failed-to-load-resource-neterr_blocked_by_client">I am getting “Failed to load resource: net::ERR_BLOCKED_BY_CLIENT”​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>This is usually caused by an ad-blocker in the browser.</p>
+
+
+
+<p>In order to fix this, temporarily disable the ad-blocker or switch to another browser that doesn’t have an ad-blocker enabled.</p>
+
+
+
+<p>Read more about this&nbsp;<a href="https://stackoverflow.com/a/22403173/4688612" target="_blank" rel="noreferrer noopener">here</a>.</p>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h2 id="incompatible-plugins"><a class="wccom-docs-anchor-links" href="#incompatible-plugins">Incompatible Plugins​<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="wc-custom-thank-you"><a class="wccom-docs-anchor-links" href="#wc-custom-thank-you">WC Custom Thank You<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<blockquote class="wp-block-quote is-style-plain">
+<p>Plugin homepage:&nbsp;<a href="https://wordpress.org/plugins/wc-custom-thank-you/" target="_blank" rel="noreferrer noopener">link</a></p>
+</blockquote>
+
+
+
+<p></p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" style="background-color:;color:" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>INFO</strong></p><p class="wp-block-coblocks-alert__text">The plugin creates a custom order thankyou page for WooCommerce, but doesn’t follow the WooCommerce standard for the order confirmation page. In order for conversion pixels to fire on the WooCommerce order confirmation page, every WooCommerce theme must implement the correct output for the&nbsp;<code>is_order_received_page()</code>&nbsp;conditional. This is valid for plugins that modify the purchase confirmation page too. On top of that, the WC Custom Thank You plugin has not been updated in a long time and the developer has stopped to answer support requests.</p></div>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h2 id="google-ads"><a class="wccom-docs-anchor-links" href="#google-ads">Google Ads​<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="misconfigured-bidding-strategy"><a class="wccom-docs-anchor-links" href="#misconfigured-bidding-strategy">Misconfigured Bidding Strategy<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<blockquote class="wp-block-quote is-style-plain">
+<p>It can happen that Google Ads throws the warning “<strong>Misconfigured bidding strategy</strong>“. The hover text shows “<strong>Your campaign is running with limited performance. Set up conversion tracking for your account to improve your performance, spending and see reporting</strong>“.</p>
+</blockquote>
+
+
+
+<p></p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" style="background-color:;color:" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>INFO</strong></p><p class="wp-block-coblocks-alert__text">Unfortunately, this warning sometimes is thrown even if conversion tracking is set up just fine.</p></div>
+
+
+
+<p></p>
+
+
+
+<p>Typically, the warning is thrown on Smart Shopping campaigns. Additionally, conversion tracking for Smart Shopping campaigns have more requirements in order to run well. If those are not met, the same warning is thrown.</p>
+
+
+
+<ol>
+<li>First, make sure that conversion tracking has been set up correctly. Double check the conversion ID and conversion label.</li>
+
+
+
+<li>Make sure that the product ID type is the same as the one you use in Google Merchant Center. The product IDs must match.</li>
+
+
+
+<li>Smart Shopping campaigns require at least 30 conversions within a time frame of the past 30 days. And, in order for them to be able to use the remarketing lists, there must be at least 100 visitors per list in the past 30 days. Once the requirements are matched, the warning will go away.</li>
+
+
+
+<li>If you don’t think you can match the requirements in the near future, it is better to run a standard shopping campaign.</li>
+</ol>
+
+
+
+<p></p>
+
+
+
+<header class="toc-header"><h3 id="issue-id-never-received"><a class="wccom-docs-anchor-links" href="#issue-id-never-received">Issue: ID never received​<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Sometimes Google Ads shows a warning saying the ID was never received. Unfortunately, that warning is shown even in cases where everything works perfectly fine.</p>
+
+
+
+<p>You can check yourself if IDs are being received in the audience report. Switch the graph to <strong>Parameters &gt; ID hits</strong>. If you see a graph like the following, everything is ok and you can dismiss the warning and don’t need to continue reading further.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?w=650" alt="" class="wp-image-18734000213433" width="786" height="544" srcset="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png 1015w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?resize=620,429 620w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?resize=768,532 768w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?resize=650,450 650w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?resize=300,208 300w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-id-hits-graph-88fc9db1ffec488a988bd1aa0f5a9408.png?resize=958,664 958w" sizes="(max-width: 786px) 100vw, 786px"></figure></div>
+
+
+<p></p>
+
+
+
+<p>If you see incoming ID hits in the graph and still want to investigate the warning further, please ask Google support.</p>
+
+
+
+<p>On the other hand, if you don’t see ID hits in the graph, please continue reading.</p>
+
+
+
+<p>It doesn’t mean that Google Ads is always wrong when it comes to that warning. There are cases where the Google Ads warning can be right. Here is a list of possible causes:</p>
+
+
+
+<ul>
+<li>You’ve set the wrong conversion ID. Double-check and correct it if necessary.</li>
+
+
+
+<li>When setting up the remarketing audiences you’ve enabled&nbsp;<code>retail</code>&nbsp;<strong>and</strong>&nbsp;the&nbsp;<code>custom</code>&nbsp;audience. The plugin can only send the signal for one or the other, not for both (which would not make sense anyway). So one of those verticals never receives an ID (usually&nbsp;<code>custom</code>), in which case you will see that warning show up regularly, but usually can dismiss it. Unfortunately the&nbsp;<code>custom</code>&nbsp;vertical can not be turned off once enabled.</li>
+
+
+
+<li>There is some reason that is blocking the remarketing script from sending events correctly, usually some kind of JavaScript optimization plugin.</li>
+</ul>
+
+
+
+<p>Make sure that none of the above reasons are causing this problem.</p>
+
+
+
+<p>The best way to check if the ID is being sent is to use the&nbsp;<a href="https://tagassistant.google.com/" target="_blank" rel="noreferrer noopener">Google Tag Assistant</a></p>
+
+
+
+<p>Here’s how to check:</p>
+
+
+
+<p>1. Open the Google Tag Assistant:&nbsp;<a href="https://tagassistant.google.com/" target="_blank" rel="noreferrer noopener">tagassistant.google.com</a>.</p>
+
+
+
+<p>2. In Google Tag Assistant, instruct to open one of your product pages.</p>
+
+
+
+<p>3. If the product page is a variable product, select the drop-down(s) to choose one variation.</p>
+
+
+
+<p>4. Then switch back to the Google Tag Assistant tab.</p>
+
+
+
+<p>5. In the middle pane, click on dataLayer.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?w=650" alt="" class="wp-image-18734000212911" width="829" height="436" srcset="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png 1394w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?resize=620,326 620w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?resize=768,404 768w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?resize=650,342 650w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?resize=300,158 300w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-datalayer-987877fcb1f0155d414dfcce5bc752f2.png?resize=958,504 958w" sizes="(max-width: 829px) 100vw, 829px"></figure></div>
+
+
+<p></p>
+
+
+
+<p>6. In the left sidebar, click on the view_item event. If you’ve also set up Google Analytics, you will see several view_item events. Click through each of those until you see in the dataLayer the event that is sending events to your Google Ads conversion ID.</p>
+
+
+
+<p>7. Once you find the correct event, check if the ID is being sent. If so, all is good. You have proof that the ID&nbsp;<strong>is</strong>&nbsp;being sent and the warning is wrong. You can dismiss it.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?w=650" alt="" class="wp-image-18734000213437" width="832" height="435" srcset="https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png 1378w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?resize=620,324 620w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?resize=768,402 768w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?resize=650,340 650w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?resize=300,157 300w, https://woocommerce.com/wp-content/uploads/2022/03/id-not-sent-issue-view-item-55f92db979c148560b890f219048b053.png?resize=958,501 958w" sizes="(max-width: 832px) 100vw, 832px"></figure></div>
+
+
+<p></p>
+
+
+
+<p>8. If you would like, you can also take those results and ask Google Ads support to fix that warning. (It would be a great help for us, because we investigate way too many of those false positive warnings).</p>
+			</div>
+					

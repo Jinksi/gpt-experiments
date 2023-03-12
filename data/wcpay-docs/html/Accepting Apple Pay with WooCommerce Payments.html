@@ -1,0 +1,338 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Accepting Apple Pay with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>WooCommerce Payments provides your store with <a href="https://www.apple.com/apple-pay/">Apple Pay</a>, which makes it easier for customers to checkout using Touch ID or Face ID on Apple devices. This document describes how to set up, test, and troubleshoot the Apple Pay feature in WooCommerce Payments.</p>
+
+
+
+<p>Apple Pay is only available for <a href="https://support.apple.com/en-us/HT208531">eligible devices</a> with an active Apple Wallet.</p>
+
+
+
+<header class="toc-header"><h2 id="setup"><a class="wccom-docs-anchor-links" href="#setup">Setup<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>To enable Apple Pay:</p>
+
+
+
+<ol>
+<li>Go to <strong><strong>Payments</strong> &gt; <strong>Settings</strong></strong>.</li>
+
+
+
+<li>In the Express Checkouts section, check the box for <strong>Apple Pay / Google Pay</strong>.</li>
+
+
+
+<li>At the bottom of the page, click <strong>Save Changes</strong>.</li>
+</ol>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> There is no way to enable only Apple Pay without <a href="https://woocommerce.com/document/woocommerce-payments/payment-methods/google-pay/">Google Pay</a>. The two must be enabled together.</p></div>
+
+
+
+<header class="toc-header"><h2 id="customizing"><a class="wccom-docs-anchor-links" href="#customizing">Customizing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>When Apple Pay is enabled, the Apple Pay button can appear in three places:</p>
+
+
+
+<ul>
+<li>On the Checkout page</li>
+
+
+
+<li>On the Cart page</li>
+
+
+
+<li>On individual product pages</li>
+</ul>
+
+
+
+<p>You can customize which of these locations show the Apple Pay button by going to <strong>Payments &gt; Settings</strong> and then clicking the <strong>Customize</strong> link for Apple Pay / Google Pay in the Express Checkouts section.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2268" height="640" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png" alt="" class="wp-image-18734001026272" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png 2268w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=620,175 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=768,217 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=650,183 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=1536,433 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=2048,578 2048w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=300,85 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.13.22-UTC@2x.png?resize=958,270 958w" sizes="(max-width: 2268px) 100vw, 2268px"></figure>
+
+
+
+<p>Once there, you can change where the Apple Pay button shows up, the text of the Apple Pay button itself, as well as the size and color scheme of the button.</p>
+
+
+
+<header class="toc-header"><h2 id="purchasing"><a class="wccom-docs-anchor-links" href="#purchasing">Purchasing<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>By checking out with Apple Pay, customers don’t need to go through the regular checkout process and spend time filling in all of their information. Everything is handled using the Apple Pay interface, where customers can select their billing and shipping details, as well as which Apple Wallet card to use.</p>
+
+
+
+<p>Once the transaction is authorized via Touch ID or Face ID, WooCommerce Payments then processes the transaction and redirects the customer to the “Order Received” / “Thank you” page.</p>
+
+
+
+<header class="toc-header"><h2 id="product-compatibility"><a class="wccom-docs-anchor-links" href="#product-compatibility">Product compatibility<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The express checkouts integration in WooCommerce Payments is compatible with all of these product types:</p>
+
+
+
+<ul>
+<li>Simple products</li>
+
+
+
+<li>Variable products</li>
+
+
+
+<li>Subscription products</li>
+
+
+
+<li>Variable subscriptions</li>
+
+
+
+<li>Bookable products<sup>1</sup></li>
+
+
+
+<li>Pre-order products</li>
+</ul>
+
+
+
+<p><sup>1</sup> For bookable products, the Apple Pay button cannot be shown on the product page itself.</p>
+
+
+
+<header class="toc-header"><h2 id="testing-apple-pay"><a class="wccom-docs-anchor-links" href="#testing-apple-pay">Testing Apple Pay<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>You can Apple Pay by making purchases in <a href="https://docs.woocommerce.com/document/payments/testing/">test mode</a> using a real Apple ID with a real Apple Wallet card.</p>
+
+
+
+<p>First, enable Test Mode by following the guide linked above. As long as you have Test Mode enabled under <strong>Payments &gt; Settings</strong>, you can complete test transactions with a real card in your Apple Pay wallet without incurring any actual charges.</p>
+
+
+
+<p>To set up Apple Pay on your device, you will need a supported card from a participating card issuer. See the full <a href="https://support.apple.com/en-us/HT204506">list of requirements</a> for Apple Pay users for more information.</p>
+
+
+
+<header class="toc-header"><h2 id="faq"><a class="wccom-docs-anchor-links" href="#faq">FAQ<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<header class="toc-header"><h3 id="faq-authorize-charges"><a class="wccom-docs-anchor-links" href="#faq-authorize-charges">Can I authorize charges with Apple Pay and capture them later?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Yes. If you have checked the “Issue an authorization on checkout, and capture later” option in <strong>Payments &gt; Settings</strong>, you can <a href="https://woocommerce.com/document/payments/#section-10">manually capture authorized charges</a> done with Apple Pay, just like other credit card transactions.</p>
+
+
+
+<header class="toc-header"><h3 id="faq-refunds"><a class="wccom-docs-anchor-links" href="#faq-refunds">Can I issue refunds with Apple Pay?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Yes. WooCommerce Payments allows you to issue refunds for Apple Pay transactions just like normal transactions. <a href="https://woocommerce.com/document/payments/#section-8">This section</a> of our Startup Guide shows how to refund a payment.</p>
+
+
+
+<header class="toc-header"><h3 id="faq-subscriptions-and-preorders"><a class="wccom-docs-anchor-links" href="#faq-subscriptions-and-preorders">Can I use Apple Pay for subscription products and Pre-Orders?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p id="subscriptions">Yes. As long as you allow customers to create an account at checkout, and enable automatic generation of a username and password under <strong>WooCommerce &gt; Settings &gt; Accounts &amp; Privacy</strong>, the Apple Pay button will be visible on the product page for subscription and pre-order products.</p>
+
+
+
+<header class="toc-header"><h3 id="faq-countries"><a class="wccom-docs-anchor-links" href="#faq-countries">Is Apple Pay available in my country?<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Apple Pay is available for all <a href="https://woocommerce.com/document/payments/countries/#section-1">countries supported by WooCommerce Payments</a>.</p>
+
+
+
+<header class="toc-header"><h2 id="troubleshooting"><a class="wccom-docs-anchor-links" href="#troubleshooting">Troubleshooting<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Before troubleshooting Apple Pay, ensure you have <strong>Log Error Messages</strong> enabled under <strong>Payments &gt; Settings &gt; Advanced settings</strong>. This lets you see any error messages from WooCommerce Payments under <strong>WooCommerce &gt; Status &gt; Logs</strong>, which could potentially be useful if you need to contact our support staff.</p>
+
+
+
+<header class="toc-header"><h3 id="button-does-not-appear"><a class="wccom-docs-anchor-links" href="#button-does-not-appear">Apple Pay button does not appear<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>To ensure there isn’t a problem with your browser and device combination, try using the Apple Pay button on another website. You can try <a href="https://stripe-payments-demo.appspot.com/">this demo</a>, for example. </p>
+
+
+
+<p>If Apple Pay does not appear there either, there is likely not an issue with WooCommerce Payments itself, bur rather something about your device or browser is not configured correctly.</p>
+
+
+
+<p>If Apple Pay does appear on that demo, but not on your WooCommerce Payments store, this can happen for several reasons. To try to remedy the issue, please make sure:</p>
+
+
+
+<ul>
+<li>The <strong>Apple Pay / Google Pay</strong> setting is enabled under <strong>Payments &gt; Settings</strong>.</li>
+
+
+
+<li>Your site is not in <a href="https://docs.woocommerce.com/document/payments/testing/dev-mode/">Dev Mode</a>.</li>
+
+
+
+<li>Your site is served over HTTPS.</li>
+
+
+
+<li><span style="color: initial;">You’re testing with an </span><a href="https://support.apple.com/kb/KM207105">eligible device</a><span style="color: initial;"> and that </span><a href="https://support.apple.com/en-us/HT204506">Apple Pay is enabled</a><span style="color: initial;">.</span></li>
+
+
+
+<li>“Allow customers to place orders without an account” is enabled under <strong>WooCommerce &gt; Settings &gt; Accounts &amp; Privacy</strong>, OR “Allow customers to create an account during checkout” and “When creating an account, send the new user a link to set their password” are enabled.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="2528" height="780" src="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png" alt="" class="wp-image-18734001026469" srcset="https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png 2528w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=620,191 620w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=768,237 768w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=650,201 650w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=1536,474 1536w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=2048,632 2048w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=300,93 300w, https://woocommerce.com/wp-content/uploads/2022/10/Screenshot-taken-on-2022-10-11-at-14.56.44-UTC@2x.png?resize=958,296 958w" sizes="(max-width: 2528px) 100vw, 2528px"></figure>
+
+
+
+<p>If you’ve ruled out all of those potential issues, that may mean that WooCommerce Payments was unable to verify your domain with Apple. See the section below for some background and potential fixes.</p>
+
+
+
+<header class="toc-header"><h3 id="domain-registration"><a class="wccom-docs-anchor-links" href="#domain-registration">Domain registration<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>In order for your store to accept Apple Pay transactions, WooCommerce Payments automatically registers your domain as a verified Apple Pay merchant. Our plugin hosts the <code>apple-developer-merchantid-domain-association</code> file under your domain root, for example:</p>
+
+
+
+<p><code>https://www.example.com/.well-known/apple-developer-merchantid-domain-association</code></p>
+
+
+
+<p>Please check if this file is available from your own domain. If it’s not available, make sure you have your <a href="https://wordpress.org/support/article/using-permalinks/">permalinks</a> (under <strong>Settings &gt; Permalinks</strong>) set to anything other than <strong>Plain</strong>. After you do that, trigger domain registration again per the steps below and test if the button appears afterward.</p>
+
+
+
+<p id="triggering-domain-registration"><strong>To trigger domain registration manually:</strong></p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Settings</strong>.</li>
+
+
+
+<li>Uncheck the <strong>Apple Pay / Google Pay</strong> box in the Express Checkouts section.</li>
+
+
+
+<li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+
+
+
+<li>Check the <strong>Apple Pay / Google Pay</strong> box in the Express Checkouts section.</li>
+
+
+
+<li>Scroll to the bottom and click <strong>Save Changes</strong> again.</li>
+</ol>
+
+
+
+<p>If the button still does not show up, check the error logs under <strong>WooCommerce &gt; Status &gt; Logs</strong> and see if there are domain registration related errors. If you see an error, it may be that the <code>apple-developer-merchantid-domain-association</code> file is not publicly available from your domain root.</p>
+
+
+
+<p>If WooCommerce Payments cannot automatically write the file to your server, you can add it manually. First, <a href="https://stripe.com/files/apple-pay/apple-developer-merchantid-domain-association">download the here</a>, then use FTP or SSH to upload it to the <code>.well-known</code> directory on your server. The final location should be:</p>
+
+
+
+<p><code>https://www.example.com/.well-known/apple-developer-merchantid-domain-association</code></p>
+
+
+
+<p>(You may need to create a <code>.well-known</code> directory in the root directory of your site if none exists.) </p>
+
+
+
+<p>Once uploaded, follow the above steps to trigger domain registration again and see if the button appears afterward.</p>
+
+
+
+<p>If you don’t see any errors in the logs, but are still unable to see the Apple Pay button, try temporarily switching your theme to <a href="https://wordpress.org/themes/storefront/">our free Storefront theme</a>, and then opening a simple product page.</p>
+
+
+
+<p><a href="https://woocommerce.com/my-account/create-a-ticket/">Contact support</a> if you are stuck and cannot get Apple Pay to show with the above steps.</p>
+
+
+
+<header class="toc-header"><h3 id="button-missing-some-locations"><a class="wccom-docs-anchor-links" href="#button-missing-some-locations">Apple Pay button does not appear at a specific location<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If the Apple Pay button is missing from only some locations, but not others (say, it appears on the Checkout page but not on the product page), this can happen for a number of different reasons:</p>
+
+
+
+<ul>
+<li>The product <a href="#product-compatibility">may not be compatible</a> with express checkouts.</li>
+
+
+
+<li>Your theme may not support the necessary WooCommerce hooks, which are needed for Apple Pay to show up.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="other-issues"><a class="wccom-docs-anchor-links" href="#other-issues">Other issues<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you experience any other issues with Apple Pay, please take the following steps:</p>
+
+
+
+<ul>
+<li>Please enable logging under <strong><strong>Payments</strong> &gt; <strong>Settings</strong> &gt; <strong>Advanced settings</strong></strong>.</li>
+
+
+
+<li>Attempt an Apple Pay transaction and review the logs under <strong>WooCommerce &gt; Status &gt; Logs</strong>.</li>
+
+
+
+<li>If you see any errors, please&nbsp;<a href="https://woocommerce.com/my-account/create-a-ticket/">get in touch with support</a>&nbsp;and provide the logs for review.</li>
+</ul>
+			</div>
+					

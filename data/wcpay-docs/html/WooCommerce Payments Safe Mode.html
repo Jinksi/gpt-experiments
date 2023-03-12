@@ -1,0 +1,133 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">WooCommerce Payments Safe Mode</h1>
+			<div class="entry">
+				
+<p>WooCommerce Payments Safe Mode helps prevent disruptions to your store in cases where two or more sites are connected to the same WooCommerce Payments account. You’ll know your site is in Safe Mode when you see the following warning:<br></p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png" alt="" class="wp-image-9122929" width="636" height="468" srcset="https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png 2432w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=620,456 620w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=768,565 768w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=650,478 650w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=1536,1129 1536w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=2048,1506 2048w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=300,221 300w, https://woocommerce.com/wp-content/uploads/2022/01/safe-mode-woocommerce-payments.png?resize=958,704 958w" sizes="(max-width: 636px) 100vw, 636px"></figure></div>
+
+
+<header class="toc-header"><h2 id="when-does-safe-mode-happen"><a class="wccom-docs-anchor-links" href="#when-does-safe-mode-happen">When does Safe Mode happen?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Safe Mode is activated when your site’s address changes for one of the following reasons:</p>
+
+
+
+<ul>
+<li>You bought a new domain name and updated your site to use that domain.</li>
+
+
+
+<li>You cloned your site from production to staging, or from staging to production.</li>
+
+
+
+<li>You’ve allowed two URLs to point to the same WordPress installation.</li>
+
+
+
+<li>Your site was created with Bitnami, Amazon Lightsail, or similar services.</li>
+
+
+
+<li>Your site as multiple web servers running behind a load balancer.</li>
+
+
+
+<li>Any other scenario where the address of your site might change.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="what-issues-could-safe-mode-cause"><a class="wccom-docs-anchor-links" href="#what-issues-could-safe-mode-cause">What potential issues could Safe Mode cause WooCommerce Payments?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>While Safe Mode is active, payments will not be interrupted, so your customers can still finish checking out on your site with WooCommerce Payments.&nbsp;</p>
+
+
+
+<p>However, some features may not be available, or will at least be unreliable, until you solve the root issue. Some of those are:</p>
+
+
+
+<ul>
+<li>Dispute and refund updates.</li>
+
+
+
+<li>Payment confirmations for <a href="https://woocommerce.com/document/payments/additional-payment-methods/#available-methods">alternative payment methods</a>.</li>
+</ul>
+
+
+
+<header class="toc-header"><h2 id="what-does-each-button-do"><a class="wccom-docs-anchor-links" href="#what-does-each-button-do">What does each button do?<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>The Safe Mode notice, pictured above, has the following buttons: <strong>Transfer Your Connection</strong> and <strong>Create a New Connection</strong>. Each is explained below.</p>
+
+
+
+<header class="toc-header"><h3 id="section-4"><a class="wccom-docs-anchor-links" href="#section-4">Transfer your connection<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Clicking this option moves all WooCommerce Payments data to the current site, including your account information, transaction history, deposits, payments, and so on. </p>
+
+
+
+<p>The other site will be disconnected from the WooCommerce Payments account.</p>
+
+
+
+<header class="toc-header"><h3 id="section-5"><a class="wccom-docs-anchor-links" href="#section-5">Create a new connection<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Clicking this option means that, with respect to WooCommerce Payments, the current site will start over as a brand new site. You will have to go through the signup process again in order to get WooCommerce Payments working and accept payments. No transaction or other history will be moved to the current site. </p>
+
+
+
+<p>The other site will continue using WooCommerce Payments without any changes.</p>
+
+
+
+<header class="toc-header"><h2 id="dynamic-site-urls"><a class="wccom-docs-anchor-links" href="#dynamic-site-urls">Dynamic Site URLs<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>In some cases, WooCommerce Payments can be put into Safe Mode when the WordPress site URL is defined in a “dynamic” way. This most often happens when sites have been created by Bitnami, or are hosted on Amazon Lightsail, or are running on multiple web servers behind a load balancer.</p>
+
+
+
+<p>To determine if this applies to you, check your <code>wp-config.php</code> file for the presence of code similar to this:</p>
+
+
+
+<pre class="wp-block-preformatted">define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/' );
+define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/' );</pre>
+
+
+
+<p>If that code is present, you’ll want to remove it and replace it with this code instead:</p>
+
+
+
+<pre class="wp-block-preformatted">define( 'WP_SITEURL', 'https://www.example.com' );
+define( 'WP_HOME', 'https://www.example.com' );</pre>
+
+
+
+<p>Be sure to swap out the example domain with your actual domain!</p>
+
+
+
+<p>Making this change in your <code>wp-config.php</code> file should prevent the site from being placed into Safe Mode in the future.</p>
+			</div>
+					

@@ -1,0 +1,203 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Deposit currencies</h1>
+			<div class="entry">
+				
+<p>WooCommerce Payments can accept payments in <a href="https://woocommerce.com/document/payments/faq/available-currencies/">over 100 different currencies</a>. However, when the <a href="https://woocommerce.com/document/woocommerce-payments/currencies/currencies-overview/#customer-currency">customer currency</a> is different from your account’s <a href="https://woocommerce.com/document/woocommerce-payments/currencies/currencies-overview/#deposit-currency">deposit currency</a>, you will be charged a <a href="https://woocommerce.com/document/woocommerce-payments/fees-and-debits/fees/">currency conversion fee</a>. To avoid these fees, you may be able to have funds in different currencies deposited into separate bank accounts.</p>
+
+
+
+<p>When using multiple bank accounts, one must be selected as the default. If you receive a payment in a currency that does not match the currency of one of your bank accounts, it will be converted into your default deposit currency and deposit into that default account.</p>
+
+
+
+<div class="wp-block-coblocks-alert" aria-label="Alert section"><p class="wp-block-coblocks-alert__title"><strong>EXAMPLE:</strong> A store in Germany sells their goods throughout Europe, and has a default bank account in Euro. After adding a second bank account denominated in Swiss francs, payments that use that currency will be deposited into their alternative CHF bank account, while all other payments will be converted to EUR and deposited into the default account.</p></div>
+
+
+
+<p>WooCommerce Payments supports the following countries and deposit currencies. Note that only one bank account can be added per currency.</p>
+
+
+
+<table>
+	<thead>
+	  <tr>
+		<th>Country</th>
+		<th>Currency</th>
+		<th>Can be deposited to banks in…</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><strong>Australia</strong></td>
+		<td>AUD</td>
+		<td>Australia</td>
+	  </tr>
+	  <tr>
+		<td rowspan="7"><strong>Austria, Belgium, France, Germany, Ireland, Italy, Netherlands, Poland, Portugal, Spain, Switzerland, United Kingdom</strong></td>
+		<td>EUR</td>
+		<td>Austria, Belgium, Bulgaria, Switzerland, Cyprus, Czech Republic, Germany, Denmark, Estonia, Spain, Finland, France, United Kingdom, Gibraltar, Greece, Croatia, Hungary, Ireland, Italy, Liechtenstein, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Norway, Poland, Portugal, Romania, Sweden, Slovenia, Slovakia</td>
+	  </tr>
+	  <tr>
+		<td>USD</td>
+		<td>United States</td>
+	  </tr>
+	  <tr>
+		<td>SEK</td>
+		<td>Sweden</td>
+	  </tr>
+	  <tr>
+		<td>NOK</td>
+		<td>Norway</td>
+	  </tr>
+	  <tr>
+		<td>DKK</td>
+		<td>Denmark</td>
+	  </tr>
+	  <tr>
+		<td>CHF</td>
+		<td>Switzerland, Liechtenstein</td>
+	  </tr>
+	  <tr>
+		<td>GBP</td>
+		<td>United Kingdom, Gibraltar</td>
+	  </tr>
+	  <tr>
+		<td rowspan="2"><strong>Canada</strong></td>
+		<td>CAD</td>
+		<td>Canada<br></td>
+	  </tr>
+	  <tr>
+		<td>USD</td>
+		<td>United States, Canada</td>
+	  </tr>
+	  <tr>
+		<td><strong>Hong Kong</strong></td>
+		<td>HKD</td>
+		<td>Hong Kong</td>
+	  </tr>
+	  <tr>
+		<td><strong>New Zealand</strong></td>
+		<td>NZD</td>
+		<td>New Zealand</td>
+	  </tr>
+	  <tr>
+		<td><strong>Singapore</strong></td>
+		<td>SGD</td>
+		<td>Singapore</td>
+	  </tr>
+	  <tr>
+		<td><strong>United States</strong></td>
+		<td>USD</td>
+		<td>United States</td>
+	  </tr>
+	</tbody>
+	</table>
+
+
+
+<header class="toc-header"><h2 id="adding-multiple-bank-accounts"><a class="wccom-docs-anchor-links" href="#adding-multiple-bank-accounts">Adding multiple bank accounts<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Assuming the chart above shows that your WooCommerce Payments account can deposit into bank accounts in multiple currencies, you can do so by following these steps:</p>
+
+
+
+<ol>
+<li>Go to <strong>Payments &gt; Overview</strong> in your WordPress dashboard.</li>
+
+
+
+<li>Click <strong>Account Details</strong> box, click the “Edit details” link.</li>
+
+
+
+<li>You will be taken to <code>connect.stripe.com</code> to log in.</li>
+
+
+
+<li>Enter the 6-digit code sent to your phone number.</li>
+
+
+
+<li>In the Stripe Express dashboard, click the person icon in the upper-right.</li>
+
+
+
+<li>In the <strong>Payout Details</strong> section, click the name of your store.
+<ul>
+<li>You may see multiple stores listed here if you have more than one site using WooCommerce Payments.</li>
+</ul>
+</li>
+
+
+
+<li>The bank account you added during the signup process will be shown.</li>
+
+
+
+<li>Click the <strong>Add an account button</strong> to add another bank account for a different currency.</li>
+
+
+
+<li>Fill out the bank account information and click the <strong>Save</strong> button at the bottom.</li>
+
+
+
+<li>Both bank accounts will be shown, along with the currency each one accepts.</li>
+
+
+
+<li>Click <strong>Done</strong>.
+<ul>
+<li>You should see a “Payout details updated” alert box.</li>
+</ul>
+</li>
+
+
+
+<li>Click the <strong>Sign Out</strong> button to sign out of the Stripe Express dashboard.</li>
+</ol>
+
+
+
+<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper-container"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="2412" height="1356" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000847615" data-id="18734000847615" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png 2412w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=620,349 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=768,432 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=650,365 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=1536,864 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=2048,1151 2048w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=300,169 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.22.13-UTC@2x.png?resize=958,539 958w" sizes="(max-width: 2412px) 100vw, 2412px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Under Payments &gt; Overview, click the Edit Details link</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1837" height="1212" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000847616" data-id="18734000847616" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png 1837w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=620,409 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=768,507 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=650,429 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=1536,1013 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=300,198 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.23.27-UTC@2x.png?resize=958,632 958w" sizes="(max-width: 1837px) 100vw, 1837px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Enter the 6-digit verification code sent to your phone</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1778" height="952" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000847617" data-id="18734000847617" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png 1778w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=620,332 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=768,411 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=650,348 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=1536,822 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=300,161 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.24.19-UTC@2x.png?resize=958,513 958w" sizes="(max-width: 1778px) 100vw, 1778px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Click the person icon in the upper-right</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1828" height="1128" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000847673" data-id="18734000847673" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png 1828w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=620,383 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=768,474 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=650,401 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=1536,948 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=300,185 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.41.32-UTC@2x.png?resize=958,591 958w" sizes="(max-width: 1828px) 100vw, 1828px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Click your site name in the Payout Details section</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1428" height="1052" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861896" data-id="18734000861896" src="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png 1428w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png?resize=620,457 620w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png?resize=768,566 768w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png?resize=650,479 650w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png?resize=300,221 300w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.13.17-UTC@2x.png?resize=958,706 958w" sizes="(max-width: 1428px) 100vw, 1428px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1496" height="1750" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861891" data-id="18734000861891" src="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png 1496w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=620,725 620w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=768,898 768w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=650,760 650w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=1313,1536 1313w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=300,351 300w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.03-UTC@2x.png?resize=958,1121 958w" sizes="(max-width: 1496px) 100vw, 1496px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1388" height="1026" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861892" data-id="18734000861892" src="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png 1388w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png?resize=620,458 620w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png?resize=768,568 768w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png?resize=650,480 650w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png?resize=300,222 300w, https://woocommerce.com/wp-content/uploads/2021/06/Screenshot-taken-on-2022-08-30-at-19.08.55-UTC@2x.png?resize=958,708 958w" sizes="(max-width: 1388px) 100vw, 1388px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1982" height="984" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000847623" data-id="18734000847623" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png 1982w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=620,308 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=768,381 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=650,323 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=1536,763 1536w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=300,149 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-26-at-09.29.26-UTC@2x.png?resize=958,476 958w" sizes="(max-width: 1982px) 100vw, 1982px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Verify the account was updated and sign out</figcaption></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
+
+
+
+<header class="toc-header"><h2 id="default-bank-account"><a class="wccom-docs-anchor-links" href="#default-bank-account">Default bank account<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>As noted above, all payments made in a currency without a corresponding bank account will be converted to the currency of your default bank account and deposited there.</p>
+
+
+
+<p>To set your default bank account, begin by following the same instructions as above to add at least one additional bank account. After you’ve added multiple accounts, you can change the default by clicking the <strong>Change Default Currency button</strong> and picking which currency you would like to use as the default.</p>
+
+
+
+<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide"><div class="wp-block-jetpack-slideshow_container swiper-container"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1488" height="1116" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861927" data-id="18734000861927" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?w=650" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png 1488w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=620,465 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=768,576 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=650,488 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=700,525 700w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=1280,960 1280w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=300,225 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.18.54-UTC@2x.png?resize=958,719 958w" sizes="(max-width: 1488px) 100vw, 1488px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Click the Change Default Currency button</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="958" height="732" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861928" data-id="18734000861928" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png?w=650" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png 958w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png?resize=620,474 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png?resize=768,587 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png?resize=650,497 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.25-UTC@2x.png?resize=300,229 300w" sizes="(max-width: 958px) 100vw, 958px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Choose your default currency, click Submit</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img decoding="async" loading="lazy" width="1432" height="1044" alt="" class="wp-block-jetpack-slideshow_image wp-image-18734000861929" data-id="18734000861929" src="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?w=650" srcset="https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png 1432w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?resize=620,452 620w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?resize=768,560 768w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?resize=650,474 650w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?resize=300,219 300w, https://woocommerce.com/wp-content/uploads/2022/08/Screenshot-taken-on-2022-08-30-at-19.19.40-UTC@2x.png?resize=958,698 958w" sizes="(max-width: 1432px) 100vw, 1432px"><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">The default currency and bank account will change</figcaption></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
+
+
+
+<header class="toc-header"><h2 id="viewing-deposits"><a class="wccom-docs-anchor-links" href="#viewing-deposits">Viewing deposits with multiple currencies<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If you’ve added multiple bank accounts, WooCommerce Payments will create separate deposit balances for each currency, shown on the <strong>Payments &gt; Overview</strong> page.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1840" height="1374" src="https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png" alt="" class="wp-image-18734001495546" srcset="https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png 1840w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=620,463 620w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=768,573 768w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=650,485 650w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=1536,1147 1536w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=300,224 300w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.27.44-UTC@2x.png?resize=958,715 958w" sizes="(max-width: 1840px) 100vw, 1840px"><figcaption class="wp-element-caption">The Payments &gt; Overview page showing balances in multiple currencies</figcaption></figure>
+
+
+
+<p>Additionally, the <strong>Payments &gt; Deposits</strong> page and the <strong>Payments &gt; Transactions</strong> page will show a filter allowing you to see deposits or transactions for a single currency, or everything together.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2520" height="1196" src="https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png" alt="" class="wp-image-18734001495566" srcset="https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png 2520w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=620,294 620w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=768,364 768w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=650,308 650w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=1536,729 1536w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=2048,972 2048w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=300,142 300w, https://woocommerce.com/wp-content/uploads/2023/02/Screenshot-taken-on-2023-02-01-at-21.30.08-UTC@2x.png?resize=958,455 958w" sizes="(max-width: 2520px) 100vw, 2520px"></figure>
+			</div>
+					

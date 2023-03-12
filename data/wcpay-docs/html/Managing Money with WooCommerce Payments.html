@@ -1,0 +1,434 @@
+
+				
+						<h1 id="doc-title" class="wccom-docs-title">Managing Money with WooCommerce Payments</h1>
+			<div class="entry">
+				
+<p>Although WooCommerce Payments makes charging your customers as easy as possible, it’s still helpful to be familiar with the various ways in which money can move through your site and your account. This document explains how WooCommerce Payments presents information to you about where your money came from and where it’s going.</p>
+
+
+
+<header class="toc-header"><h2 id="deposits"><a class="wccom-docs-anchor-links" href="#deposits">Deposits<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>Deposits are when some or all of your account balance is sent to your bank account or debit card. (These <a href="https://woocommerce.com/document/woocommerce-payments/deposits/deposits-and-payouts/">may also be called</a> “payouts.”) Deposits almost always <a href="https://woocommerce.com/document/woocommerce-payments/deposits/deposit-schedule/">occur automatically</a>. Eligible merchants can also request <a href="https://woocommerce.com/document/payments/instant-deposits/">instant deposits</a>.</p>
+
+
+
+<p>WooCommerce Payments provides all the relevant information about your deposits under the <strong>Payments &gt; Deposits</strong> menu. On that page, you can do the following:</p>
+
+
+
+<ul>
+<li>View a list containing all past and future (“estimated”) deposits.</li>
+
+
+
+<li>See each deposit date, amount, and the account to which it was sent.</li>
+
+
+
+<li>View which transactions are associated with each given deposit.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2498" height="1738" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png" alt="" class="wp-image-18734001416038" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png 2498w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=620,431 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=768,534 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=650,452 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=1536,1069 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=2048,1425 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=300,209 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.11.46-UTC@2x.png?resize=958,667 958w" sizes="(max-width: 2498px) 100vw, 2498px"><figcaption class="wp-element-caption">An example of the Payments &gt; Deposits page showing a list of deposits.</figcaption></figure>
+
+
+
+<p>Each deposit has a status associated with it. Here are the common ones and what they mean:</p>
+
+
+
+<ul>
+<li><strong>Paid:</strong> The deposit was successfully sent to your bank.</li>
+
+
+
+<li><strong>In Transit:</strong> The deposit is on the way to your bank account, but not there yet.</li>
+
+
+
+<li><strong>Pending:</strong> The deposit has not occurred yet, and future transactions can still be added to it.</li>
+
+
+
+<li><strong>Estimated:</strong> The deposit has not occurred yet, but future transactions <em>cannot</em> be added to it.</li>
+
+
+
+<li><strong>Failed:</strong> There was a problem with the deposit. It will be retried in 24 hours.</li>
+</ul>
+
+
+
+<p>If your account balance ever <a href="https://woocommerce.com/document/payments/faq/why-is-my-account-showing-a-negative-balance/">becomes negative</a>, you may also see a <strong>Withdrawal</strong> transaction type in the <strong>Payments &gt; Deposits</strong> list. Withdrawals represent a <a href="https://woocommerce.com/document/payments/faq/withdrawals/">debit from your bank account</a> to cover the negative account balance.</p>
+
+
+
+<p>By clicking on any deposit, you can open the deposit details page, where more information about that particular deposit is shown. Most importantly, the separate transactions that all went into the deposit are listed.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2380" height="950" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png" alt="" class="wp-image-18734001416093" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png 2380w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=620,247 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=768,307 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=650,259 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=1536,613 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=2048,817 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=300,120 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.23.26-UTC@2x.png?resize=958,382 958w" sizes="(max-width: 2380px) 100vw, 2380px"><figcaption class="wp-element-caption">Viewing the deposit details page for one particular deposit.</figcaption></figure>
+
+
+
+<header class="toc-header"><h3 id="filtering-deposits"><a class="wccom-docs-anchor-links" href="#filtering-deposits">Filtering deposits<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you wish, you can filter the list of deposits so that it contains only the ones you’re interested in viewing. To do that, follow these steps:</p>
+
+
+
+<ol>
+<li>Click the <strong>Show</strong> dropdown menu at the top of the list.</li>
+
+
+
+<li>Click <strong>Advanced filters</strong>.</li>
+
+
+
+<li>Click <strong>Add a filter</strong>.</li>
+
+
+
+<li>Filter the list by Date, Status, or both.</li>
+
+
+
+<li>When you’ve added the filters you want, click the <strong>Filter</strong> button.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1928" height="1398" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png" alt="" class="wp-image-18734001416033" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png 1928w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=620,450 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=768,557 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=650,471 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=1536,1114 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=300,218 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.10.21-UTC@2x.png?resize=958,695 958w" sizes="(max-width: 1928px) 100vw, 1928px"><figcaption class="wp-element-caption">Filtering the deposits list to show paid deposits from September 2022.</figcaption></figure>
+
+
+
+<header class="toc-header"><h3 id="downloading-deposits"><a class="wccom-docs-anchor-links" href="#downloading-deposits">Downloading deposits<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>You can also download deposits in the form of a CSV file for later use in Microsoft Excel, Google Sheets, Apple’s Numbers, or other spreadsheet editing applications. </p>
+
+
+
+<p>To download all your deposits, simply go to <strong>Payments &gt; Deposits</strong> and click the <strong>Download</strong> button at the top of the list. </p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" loading="lazy" width="1814" height="801" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png" alt="" class="wp-image-18734001416072" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png 1814w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=620,274 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=768,339 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=650,287 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=1536,678 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=300,132 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.19.35-UTC@2x.png?resize=958,423 958w" sizes="(max-width: 1814px) 100vw, 1814px"></figure>
+
+
+
+<p>If you have less than about 25 deposits in the list when you click the <strong>Download</strong> button, the CSV will download immediately. If you have more than that, WooCommerce Payments will compile the CSV in the background and email you when it’s done. The email will contain a link where you can download the complete CSV.</p>
+
+
+
+<figure class="wp-block-image size-full is-resized has-lightbox"><img decoding="async" loading="lazy" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png" alt="" class="wp-image-18734001416078" width="683" height="391" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png 1370w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png?resize=620,355 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png?resize=768,439 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png?resize=650,372 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png?resize=300,172 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-19.20.43-UTC@2x.png?resize=958,548 958w" sizes="(max-width: 683px) 100vw, 683px"><figcaption class="wp-element-caption">An example CSV containing deposit information.</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="transactions"><a class="wccom-docs-anchor-links" href="#transactions">Transactions<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>WooCommerce Payments provides all the relevant information about your transactions under the <strong>Payments &gt; Transactions</strong> menu. This page includes information such as the date and time of a transaction, the amount, the fees, the order number, and so on.</p>
+
+
+
+<div class="wp-block-coblocks-alert is-style-info" aria-label="Alert section of type info"><p class="wp-block-coblocks-alert__title"><strong>NOTE:</strong> The <em>Transactions</em> page only shows transactions and order that were paid for with WooCommerce Payments. It does not show information on orders that were paid for using other gateways you might have installed.</p></div>
+
+
+
+<p>To access the transactions list view, go to <strong>Payments &gt; Transactions</strong>.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2932" height="1622" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png" alt="" class="wp-image-18734001416268" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png 2932w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=620,343 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=768,425 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=650,360 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=1536,850 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=2048,1133 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=300,166 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.04.50-UTC@2x.png?resize=958,530 958w" sizes="(max-width: 2932px) 100vw, 2932px"><figcaption class="wp-element-caption">Viewing the list of transactions under Payments &gt; Transactions.</figcaption></figure>
+
+
+
+<p>If the payment was authorized but not captured, those will appear under the <em>Uncaptured</em> tab at the top. For further details on that workflow, see our <a href="https://woocommerce.com/document/woocommerce-payments/settings-guide/authorize-and-capture/">authorize and capture guide</a>.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2258" height="776" src="https://woocommerce.com/wp-content/uploads/2023/01/image-1.png" alt="" class="wp-image-18734001416256" srcset="https://woocommerce.com/wp-content/uploads/2023/01/image-1.png 2258w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=620,213 620w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=768,264 768w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=650,223 650w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=1536,528 1536w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=2048,704 2048w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=300,103 300w, https://woocommerce.com/wp-content/uploads/2023/01/image-1.png?resize=958,329 958w" sizes="(max-width: 2258px) 100vw, 2258px"><figcaption class="wp-element-caption">Viewing a list of uncaptured transactions under Payments &gt; Transactions &gt; Uncaptured.</figcaption></figure>
+
+
+
+<p>Each transaction has a type associated with it. Here are the common ones and what they mean:</p>
+
+
+
+<ul>
+<li><strong>Charge:</strong> Customer paid for their order using their credit or debit card.</li>
+
+
+
+<li><strong>Payment:</strong> Customer paid using <a href="https://woocommerce.com/document/woocommerce-payments/payment-methods/additional-payment-methods/">a non-card method</a>, e.g. Sofort or SEPA.</li>
+
+
+
+<li><strong>Refund:</strong> Customer’s money was sent back to their credit or debit card.</li>
+
+
+
+<li><strong>Payment Refund:</strong> Customer’s money was sent back to their non-card method.</li>
+
+
+
+<li><strong>Dispute:</strong> Customer <a href="https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/">disputed the charge</a>, deducting the money from your account.</li>
+
+
+
+<li><strong>Dispute reversal:</strong> You won the dispute, returning the money to your account.</li>
+</ul>
+
+
+
+<header class="toc-header"><h3 id="searching-transactions"><a class="wccom-docs-anchor-links" href="#searching-transactions">Searching transactions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you need to quickly find a specific transaction or set of transactions, you can use the search bar at the top of the list. You can search by order number, customer name, or billing email.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2324" height="690" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png" alt="" class="wp-image-18734001416343" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png 2324w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=620,184 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=768,228 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=650,193 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=1536,456 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=2048,608 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=300,89 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.20.03-UTC@2x.png?resize=958,284 958w" sizes="(max-width: 2324px) 100vw, 2324px"><figcaption class="wp-element-caption">Searching transactions for those from a specific customer name.</figcaption></figure>
+
+
+
+<header class="toc-header"><h3 id="filtering-transactions"><a class="wccom-docs-anchor-links" href="#filtering-transactions">Filtering transactions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If you wish, you can filter the list of transactions so that it contains only the ones you’re interested in viewing. To do so:</p>
+
+
+
+<ol>
+<li>Click the <strong>Show</strong> dropdown menu at the top of the list.</li>
+
+
+
+<li>Click <strong>Advanced filters</strong>.</li>
+
+
+
+<li>Click <strong>Add a filter</strong>.</li>
+
+
+
+<li>Filter the list by Date, Customer Currency, Type, Loan, or a combination of those.</li>
+
+
+
+<li>When you’ve added the filters you want, click the <strong>Filter</strong> button.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2740" height="1566" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png" alt="" class="wp-image-18734001420806" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png 2740w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=620,354 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=768,439 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=650,371 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=1536,878 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=2048,1170 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=300,171 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.16.49-UTC.png?resize=958,548 958w" sizes="(max-width: 2740px) 100vw, 2740px"><figcaption class="wp-element-caption">Filtering the transactions list to show only EUR transactions from Dec 2022.</figcaption></figure>
+
+
+
+<header class="toc-header"><h3 id="downloading-transactions"><a class="wccom-docs-anchor-links" href="#downloading-transactions">Downloading transactions<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>You can also download transactions in the form of a CSV file for later use in Microsoft Excel, Google Sheets, Apple’s Numbers, or other spreadsheet editing applications. </p>
+
+
+
+<p>To download all your transactions, simply go to <strong>Payments &gt; Transactions</strong> and click the <strong>Download</strong> button at the top of the list. </p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2150" height="727" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png" alt="" class="wp-image-18734001416407" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png 2150w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=620,210 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=768,260 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=650,220 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=1536,519 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=2048,693 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=300,101 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.32.05-UTC@2x.png?resize=958,324 958w" sizes="(max-width: 2150px) 100vw, 2150px"><figcaption class="wp-element-caption">Downloading a list of transactions.</figcaption></figure>
+
+
+
+<p>If you have less than about 25 transactions in the list when you click the <strong>Download</strong> button, the CSV will download immediately. If you have more than that, WooCommerce Payments will compile the CSV in the background and email you when it’s done. The email will contain a link where you can download the complete CSV.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2322" height="594" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png" alt="" class="wp-image-18734001416421" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png 2322w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=620,159 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=768,196 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=650,166 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=1536,393 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=2048,524 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=300,77 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-12-at-20.34.02-UTC@2x.png?resize=958,245 958w" sizes="(max-width: 2322px) 100vw, 2322px"><figcaption class="wp-element-caption">An example CSV containing transaction information.</figcaption></figure>
+
+
+
+<header class="toc-header"><h2 id="refunds"><a class="wccom-docs-anchor-links" href="#refunds">Refunds<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>If a customer contacts you to request a refund, and your refund policy permits it, you can refund their payment from within the usual WooCommerce dashboard. To do so:</p>
+
+
+
+<ol>
+<li>Go to <strong>WooCommerce &gt; Orders</strong>.</li>
+
+
+
+<li>Search for the order using the customer name, email, or order number.</li>
+
+
+
+<li>Click the order to open it.</li>
+
+
+
+<li>Scroll down a bit below the items list and click the Refund button.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1846" height="1044" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png" alt="" class="wp-image-18734001420419" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png 1846w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=620,351 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=768,434 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=650,368 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=1536,869 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=300,170 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.28.31-UTC@2x.png?resize=958,542 958w" sizes="(max-width: 1846px) 100vw, 1846px"></figure>
+
+
+
+<ol start="5">
+<li>In the <em>Qty</em> column, adjust the quantity of each item to be refunded.
+<ul>
+<li>If you want to provide a full refund, ensure that the quantity to be refunded is equal to the quantity that the customer originally purchased, and that any shipping charges are also being refunded (if your policies permit that).</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1720" height="1204" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png" alt="" class="wp-image-18734001420444" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png 1720w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=620,434 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=768,538 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=650,455 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=1536,1075 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=300,210 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-18.32.41-UTC@2x.png?resize=958,671 958w" sizes="(max-width: 1720px) 100vw, 1720px"></figure>
+
+
+
+<ol start="6">
+<li>Optionally enter something in the <em>Reason for refund</em> box.</li>
+
+
+
+<li>Click the <strong>Refund via WooCommerce Payments</strong> button.</li>
+</ol>
+
+
+
+<p>The charge amount <a href="https://woocommerce.com/document/payments/faq/fees-refund/">plus transaction fees</a> will be deducted from your account balance and returned to the customer’s original payment method.</p>
+
+
+
+<header class="toc-header"><h3 id="refund-durations"><a class="wccom-docs-anchor-links" href="#refund-durations">Refund durations<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Refunds are processed immediately. However, depending on the customer’s bank, it can take anywhere from 5 to 10 business days before they get their money back in their account.</p>
+
+
+
+<p>If your customer doesn’t see the refund after 10 business days and the original charge is still visible on their bank statement, they should contact their bank for more information.</p>
+
+
+
+<header class="toc-header"><h3 id="reversals"><a class="wccom-docs-anchor-links" href="#reversals">Reversals<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>If a refund is sent within a few hours of the original purchase, the refund might be processed as a “reversal.” What this means is that the original charge will drop off the customer’s bank statement, and a separate credit is not issued.</p>
+
+
+
+<p>Thus, if you refund a customer soon after they ordered, but they never seen the amount added back to their statement, you can simply ask them to review their statement <em>for the original charge</em>. It should be gone, as if they never transacted with you at all.</p>
+
+
+
+<header class="toc-header"><h2 id="disputes"><a class="wccom-docs-anchor-links" href="#disputes">Disputes<span class="dashicons dashicons-admin-links"></span></a> </h2></header>
+
+
+
+<p>A dispute (also called a “chargeback”) occurs when a card owner questions a payment with their bank. You can learn more about <a href="https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/preventing-disputes-with-woocommerce-payments/">preventing disputes</a> and <a href="https://woocommerce.com/document/woocommerce-payments/fraud-and-disputes/managing-disputes-with-woocommerce-payments/">responding to them</a> at those links. This section is simply an overview of how disputes are shown in WooCommerce Payments.</p>
+
+
+
+<p>WooCommerce Payments provides all the relevant information about your disputes under the <strong>Payments &gt; Disputes</strong> menu. This page includes information such as when the charge was disputed, the amount, the status, and deadline for responding.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2974" height="1248" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png" alt="" class="wp-image-18734001419779" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png 2974w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=620,260 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=768,322 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=650,273 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=1536,645 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=2048,859 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=300,126 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.43.52-UTC@2x.png?resize=958,402 958w" sizes="(max-width: 2974px) 100vw, 2974px"><figcaption class="wp-element-caption">Viewing the list of disputes under Payments &gt; Disputes.</figcaption></figure>
+
+
+
+<p>Each dispute has a status associated with it. Here are the common ones and what they mean:</p>
+
+
+
+<ul>
+<li><strong>Won:</strong> You won this dispute and recovered the money from the charge.</li>
+
+
+
+<li><strong>Lost:</strong> You lost this dispute, the money from the charge, and a dispute fee.</li>
+
+
+
+<li><strong>Needs Response:</strong> You have yet to respond or accept the dispute.</li>
+
+
+
+<li><strong>Under Review:</strong> The dispute is being decided by the customer’s bank.</li>
+</ul>
+
+
+
+<p>By clicking on any given dispute, you can open the dispute details page, where more information about that particular dispute is shown, </p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="1448" height="972" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png" alt="" class="wp-image-18734001419817" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png 1448w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png?resize=620,416 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png?resize=768,516 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png?resize=650,436 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png?resize=300,201 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-15.54.22-UTC@2x.png?resize=958,643 958w" sizes="(max-width: 1448px) 100vw, 1448px"></figure>
+
+
+
+<p>From here you can challenge the dispute or accept the dispute. Again, please see the guides linked above for a much more thorough review of this process.</p>
+
+
+
+<header class="toc-header"><h3 id="filtering-disputes"><a class="wccom-docs-anchor-links" href="#filtering-disputes">Filtering disputes<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>By default, the disputes list shows only those disputes that require a response. However, you can change this by using the filters at the top.</p>
+
+
+
+<p>First, you can use the <em>Dispute Currency</em> filter to show only disputes in the currency of your choosing. Second, you can use the <em>Show</em> filter to see only disputes needing a response, all dispute, or more advanced filters.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2580" height="1254" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png" alt="" class="wp-image-18734001419875" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png 2580w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=620,301 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=768,373 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=650,316 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=1536,747 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=2048,995 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=300,146 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.07.58-UTC@2x.png?resize=958,466 958w" sizes="(max-width: 2580px) 100vw, 2580px"><figcaption class="wp-element-caption">Filtering the disputes list to show only Under Review disputes in AUD</figcaption></figure>
+
+
+
+<header class="toc-header"><h3 id="downloading-disputes"><a class="wccom-docs-anchor-links" href="#downloading-disputes">Downloading disputes<span class="dashicons dashicons-admin-links"></span></a> </h3></header>
+
+
+
+<p>Similar to deposits and transactions above, you can also download your dispute data in the form of a CSV file for later use in Microsoft Excel, Google Sheets, Apple’s Numbers, or some other spreadsheet editing applications. </p>
+
+
+
+<p>To download all your transactions, simply go to&nbsp;<strong>Payments &gt; Disputes</strong>&nbsp;and click the&nbsp;<strong>Download</strong>&nbsp;button at the top of the list.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2264" height="978" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png" alt="" class="wp-image-18734001420815" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png 2264w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=620,268 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=768,332 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=650,281 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=1536,664 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=2048,885 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=300,130 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-20.18.21-UTC.png?resize=958,414 958w" sizes="(max-width: 2264px) 100vw, 2264px"><figcaption class="wp-element-caption">Downloading the list of currently displayed disputes.</figcaption></figure>
+
+
+
+<p>If you have less than about 25 disputes in the list when you click the&nbsp;<strong>Download</strong>&nbsp;button, the CSV will download immediately. If you have more than that, WooCommerce Payments will compile the CSV in the background and email you when it’s done. The email will contain a link where you can download the complete CSV.</p>
+
+
+
+<figure class="wp-block-image size-full has-lightbox"><img decoding="async" loading="lazy" width="2542" height="742" src="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png" alt="" class="wp-image-18734001419893" srcset="https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png 2542w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=620,181 620w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=768,224 768w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=650,190 650w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=1536,448 1536w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=2048,598 2048w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=300,88 300w, https://woocommerce.com/wp-content/uploads/2023/01/Screenshot-taken-on-2023-01-13-at-16.11.57-UTC@2x.png?resize=958,280 958w" sizes="(max-width: 2542px) 100vw, 2542px"><figcaption class="wp-element-caption">An example CSV containing dispute information.</figcaption></figure>
+			</div>
+					

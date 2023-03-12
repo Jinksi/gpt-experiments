@@ -1,0 +1,7 @@
+# What is the difference between a scheduled deposit and instant deposit?
+
+With WooCommerce Payments, after a customer makes a purchase through your store, the funds from that transaction are placed into a pending balance on your account.
+
+Normally, the funds in your account are subject to [a standard pending period](https://woocommerce.com/document/payments/faq/deposit-schedule/#section-2), after which they are made available for the next upcoming deposit. You can [change the deposit schedule](https://woocommerce.com/document/payments/faq/change-deposit-schedule/) if you wish, between daily, weekly, and monthly. Scheduled deposits such as these can take a day or more to arrive in your bank account. There are no extra fees for these regular deposits.
+
+With [Instant Deposits](https://woocommerce.com/document/payments/instant-deposits/), you can request some or all of your available balance to be deposited immediately, up to a daily maximum. These deposits can only be made to debit cards, and are subject to [an additional fee](https://woocommerce.com/document/payments/instant-deposits/), but the funds will arrive within minutes. Please see the linked documentation on Instant Deposits for more information.

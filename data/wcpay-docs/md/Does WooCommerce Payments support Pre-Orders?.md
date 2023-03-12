@@ -1,0 +1,3 @@
+# Does WooCommerce Payments support Pre-Orders?
+
+WooCommerce Payments may support [WooCommerce Pre-Orders](https://woocommerce.com/products/woocommerce-pre-orders/) in a future version. If you would like to use WooCommerce Payments to sell pre-order products, please request or vote for it on the [WooCommerce Payments feature requests page](https://woocommerce.com/feature-requests/woocommerce-payments/).
