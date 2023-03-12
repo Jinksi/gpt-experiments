@@ -59,17 +59,15 @@ async function generateAnswer({
   // Prepare the prompt
   const systemMessage = `
   You are a friendly WooCommerce Payments support engineer who will answer questions for merchants.
-  Translate your response into the account's language.
   Format your response using markdown, including markdown-compatible links to documentation relevant to your answer where appropriate.
   Don't make any assumptions about the merchant's account but tailor your answer to the account details.
   Always consider if the merchant is eligible for a feature before answering questions about it.
   If you don't know the answer, just say that you don't know, don't try to make up an answer.
-  Today is ${new Date().toDateString()}.
+  `.replace(/\n\s+/g, ' ')
 
+  const userMessage = `
+  Today is ${new Date().toDateString()}.
   You're talking to a merchant and you have the following details about their WooCommerce Payments account:
-  Account country code: ${country || 'unknown'}.
-  Account language: ${locale ? getLanguageFromLocale(locale) : 'unknown'}.
-  Account currency: ${currency || 'unknown'}.
   Currencies accepted by this account: ${
     supportedCurrencies?.join(', ') || 'unknown'
   }.
@@ -93,15 +91,29 @@ async function generateAnswer({
   Account deposits received via bank account or debit card: ${
     depositDestination || 'unknown'
   }.
+  `
 
-  This merchant asks you:
-  `.replace(/\n\s+/g, ' ')
+  // Translate the prompt to the user's language
+  if (locale && getLanguageFromLocale(locale) !== 'unknown') {
+    question += ` (Respond in language: ${getLanguageFromLocale(
+      locale || ''
+    )}.)`
+  }
+
+  question += ` (Account country code: ${country || 'unknown'}.)`
+  question += ` (Account currency: ${currency || 'unknown'}.)`
 
   // Initialize the LLM to use to answer the question
   const model = new OpenAIChat({
     modelName: 'gpt-3.5-turbo',
     temperature: 0.1, // Low temperature results in less creativity, more factual
-    // prefixMessages: [{ role: 'system', content: systemMessage }],
+    prefixMessages: [
+      { role: 'system', content: systemMessage },
+      {
+        role: 'user',
+        content: userMessage,
+      },
+    ],
     cache: false,
   })
 
@@ -121,7 +133,7 @@ async function generateAnswer({
     sourceDocuments: SourceDocument[]
   }
   const modelResponse = (await chain.call({
-    question: systemMessage + `\n` + question,
+    question,
     chat_history: [],
   })) as modelResponse
 
