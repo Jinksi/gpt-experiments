@@ -71,6 +71,7 @@ async function generateAnswer({
   Don't make any assumptions about the merchant's account but tailor your answer to the account details.
   Always consider if the merchant is eligible for a feature before answering questions about it.
   If you don't know the answer, just say that you don't know, don't try to make up an answer.
+  Pay extra attention to the merchant's eligibility for specific features, such as instant deposits, in-person payments and built-in subscriptions.
   `.replace(/\n\s+/g, ' ')
 
   const userMessage = `
@@ -108,7 +109,6 @@ async function generateAnswer({
 
   question += ` (Account country: ${getCountryFromCode(country || '')})`
   question += ` (Account currency: ${currency || 'unknown'})`
-  console.log(question)
 
   // Initialize the LLM to use to answer the question
   const model = new OpenAIChat({
