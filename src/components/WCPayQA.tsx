@@ -71,7 +71,9 @@ export function WCPayQAForm() {
       })
 
       const sourcesString = response.sources
-        .map((source) => `[${source.metadata.title}](${source.metadata.url})`)
+        .map(({ metadata }) =>
+          metadata.url ? `[${metadata.title}](${metadata.url})` : metadata.title
+        )
         .join('  \n')
 
       const output = response.answer + `\n\nSource:  \n${sourcesString}`
