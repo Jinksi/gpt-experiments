@@ -7,23 +7,47 @@ import fs from 'fs'
 // Load .env.local into process.env
 dotenv.config({ path: '.env.local' })
 
-// load csv
-const docsMetadata = Papa.parse(
-  fs.readFileSync('./data/wcpay-docs.csv', 'utf8'),
-  {
-    header: true,
-  }
-).data as { title: string; url: string }[]
-
 async function run() {
-  /* Load the documents */
+  // load csv
+  const docsMetadata = Papa.parse(
+    fs.readFileSync('./data/wcpay-docs.csv', 'utf8'),
+    {
+      header: true,
+    }
+  ).data as { title: string; url: string }[]
+
   console.log('Loading documents')
-  const posts = docsMetadata.map((doc) => {
-    const postContent = fs.readFileSync(
-      `data/wcpay-docs/md/${doc.title}.md`,
-      'utf8'
-    )
-    return postContent
+  const filesToSkip = ['What are the fees for WooCommerce Payments?.md']
+  const markdownFiles = fs.readdirSync('data/wcpay-docs/md').filter((file) => {
+    return !filesToSkip.includes(file)
+  })
+
+  type Post = {
+    content: string
+    metadata: {
+      title?: string
+      url?: string
+    }
+  }
+
+  const posts: Post[] = markdownFiles.map((file) => {
+    let metadata = docsMetadata.find((doc) => {
+      return doc.title === file.replace('.md', '')
+    })
+
+    if (!metadata) {
+      metadata = {
+        title: file.replace('.md', ''),
+        url: '',
+      }
+    }
+
+    const postContent = fs.readFileSync(`data/wcpay-docs/md/${file}`, 'utf8')
+    console.log(metadata.title)
+    return {
+      content: postContent,
+      metadata,
+    }
   })
 
   /* Split the text into chunks */
@@ -33,7 +57,12 @@ async function run() {
     chunkOverlap: 200,
   })
 
-  const chunks = await textSplitter.createDocuments(posts, docsMetadata)
+  const postContentArr = posts.map((post) => post.content)
+  const postMetadataArr = posts.map((post) => post.metadata)
+  const chunks = await textSplitter.createDocuments(
+    postContentArr,
+    postMetadataArr
+  )
   console.log(`Split ${posts.length} documents into ${chunks.length} chunks`)
 
   /* Create the vectorstore */
