@@ -1,5 +1,6 @@
 import path from 'path'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import cors from 'cors'
 import { OpenAIChat } from 'langchain/llms'
 import { ChatVectorDBQAChain } from 'langchain/chains'
 import { HNSWLib } from 'langchain/vectorstores'
@@ -159,11 +160,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const body: WCPayQARequestProps = req.body
+  cors()(req, res, async () => {
+    const body: WCPayQARequestProps = req.body
 
-  const answer = await generateAnswer({
-    ...body,
+    const answer = await generateAnswer({
+      ...body,
+    })
+
+    res.status(200).json({ ...answer })
   })
-
-  res.status(200).json({ ...answer })
 }
