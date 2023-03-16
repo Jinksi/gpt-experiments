@@ -11,6 +11,7 @@ type ProductDescriptionResponseProps = {
 
 type WCPayQARequestProps = {
   question: string
+  chatHistory?: string[]
   store?: string
   country?: string
   currency?: string

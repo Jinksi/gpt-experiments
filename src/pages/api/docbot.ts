@@ -64,6 +64,7 @@ async function generateAnswer({
   hasPendingRequirements,
   currency,
   depositDestination,
+  chatHistory,
 }: WCPayQARequestProps): Promise<WCPayQAResponseProps> {
   // Prepare the prompt
   const systemMessage = `
@@ -140,9 +141,12 @@ async function generateAnswer({
     text: string
     sourceDocuments: SourceDocument[]
   }
+
+  console.log('ChatHistory length: ' + chatHistory?.length)
+
   const modelResponse = (await chain.call({
     question,
-    chat_history: [],
+    chat_history: chatHistory,
   })) as modelResponse
 
   const end = Date.now()
