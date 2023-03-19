@@ -1,23 +1,6 @@
 // pages/api/wikipedia.ts
 import { NextApiRequest, NextApiResponse } from 'next'
-import wtf from 'wtf_wikipedia'
-
-async function fetchWikipediaArticle(title: string): Promise<Object> {
-  let doc = await wtf.fetch(title)
-
-  // Only use the first doc if array
-  if (Array.isArray(doc)) {
-    doc = doc[0]
-  }
-
-  if (!doc) {
-    throw new Error('No Wikipedia article found')
-  }
-
-  const json = doc.json()
-  const text = doc.text()
-  return { json, text }
-}
+import { fetchWikipediaArticle } from '../../lib/wiki'
 
 export default async function handler(
   req: NextApiRequest,

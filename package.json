@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "fetch-docs": "ts-node --esm ./scripts/fetch-docs.ts",
+    "fetch-species": "ts-node --esm ./scripts/fetch-species.ts",
     "create-vectorstore": "ts-node --esm ./scripts/create-vectorstore.ts",
     "deploy": "fly deploy"
   },
