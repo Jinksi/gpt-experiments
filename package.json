@@ -22,7 +22,7 @@
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "hnswlib-node": "^1.4.1",
-    "langchain": "^0.0.24",
+    "langchain": "^0.0.36",
     "next": "13.2.3",
     "openai": "^3.2.1",
     "papaparse": "^5.4.0",
